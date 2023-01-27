@@ -1,0 +1,26 @@
+{
+  "license": "MIT",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "npm run clean && zx scripts/dev/development.mjs",
+    "make": "npm run clean && npm run build",
+    "dev-html": "npm run make && npm run run-action && zx ./scripts/build-demo-html.mjs && cd ./dist/output && serve .",
+    "clean": "rimraf dist",
+    "build": "zx scripts/after-build.mjs",
+    "run-action": "zx scripts/run-action.mjs",
+    "prepublishOnly": "npm run make && tsc --emitDeclarationOnly"
+  },
+  "devDependencies": {
+    "archiver": "^5.3.1",
+    "chokidar": "^3.5.3",
+    "fs-extra": "^11.1.0",
+    "get-port": "^6.1.2",
+    "github-action-ts-run-api": "^2.3.0",
+    "rimraf": "^3.0.2",
+    "serve": "14.1.2",
+    "tiddlywiki": "^5.2.4",
+    "tw5-plugin-packer": "0.0.10",
+    "ws": "^8.11.0",
+    "zx": "7.1.1"
+  }
+}
