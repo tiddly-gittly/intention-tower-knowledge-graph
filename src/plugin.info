@@ -1,7 +1,7 @@
 {
-  "title": "$:/plugins/linonetwo/tw-example-plugin",
+  "title": "$:/plugins/linonetwo/intention-tower-knowledge-graph",
   "author": "LinOnetwo",
-  "description": "put your description here, and fill in the author and title above",
+  "description": "ITKG is a knowledge and task management framework for tiddlywiki. ",
   "core-version": ">=5.1.22",
   "plugin-type": "plugin",
   "version": "0.0.1",
