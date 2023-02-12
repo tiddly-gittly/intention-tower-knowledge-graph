@@ -1,0 +1,19 @@
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/Sidebar/ProjectList
+
+\define project-list-item()
+\whitespace trim
+<$link to=<<currentTiddler>> tooltip=<<currentTiddler>>>
+  <<currentTiddler>>
+</$link>
+\end
+
+\define project-list()
+\whitespace trim
+<div class="itkg-sidebar-project-list">
+  <$list
+    filter="[{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}] +[tagging[]]"
+  >
+    <<project-list-item>>
+  </$list>
+</div>
+\end

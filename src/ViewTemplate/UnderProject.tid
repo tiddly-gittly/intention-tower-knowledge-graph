@@ -1,0 +1,10 @@
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/UnderProject
+tags: $:/tags/ViewTemplate
+
+<$let graphRootTiddler=<<currentTiddler>> >
+  <$list filter="[all[current]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}then[yes]]">
+
+  <$flowchart tiddler=<<graphRootTiddler>> height="600px" $template-tags={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}} />
+
+  </$list>
+</$let>

@@ -1,0 +1,17 @@
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ControlPanel/Settings
+caption: ITKG
+tags: $:/tags/ControlPanel/SettingsTab
+
+\import $:/core/ui/EditTemplate/tags
+
+These settings let you customise the behaviour of intention-tower-knowledge-graph plugin.
+
+---
+
+!! Tags
+
+!!! 标注项目关键节点的标签
+
+项目：<$let currentTiddler="$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag"><$macrocall $name="edit-tags-template" tagField="text"/></$let>
+
+任务：<$let currentTiddler="$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag"><$macrocall $name="edit-tags-template" tagField="text"/></$let>

@@ -1,0 +1,10 @@
+/* can't use css variable in tid file, because it will become -— , maybe triggers --- syntax?
+Have to move them into a css file like this */
+div.itkg-sidebar-container {
+  height: 100%;
+}
+
+.itkg-sidebar-project-list {
+  display: flex;
+  flex-direction: column;
+}
