@@ -2,9 +2,9 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/UnderPr
 tags: $:/tags/ViewTemplate
 
 <$let graphRootTiddler=<<currentTiddler>> >
-  <$list filter="[all[current]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}then[yes]]">
+  <$list filter="[all[current]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}then<graphRootTiddler>]">
 
-  <$flowchart tiddler=<<graphRootTiddler>> height="600px" $template-tags={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}} />
+  <<tabs "[all[shadows]tag[$:/tags/ITKG/UnderProject]]" "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/TaskDynamicTable" >>
 
   </$list>
 </$let>
