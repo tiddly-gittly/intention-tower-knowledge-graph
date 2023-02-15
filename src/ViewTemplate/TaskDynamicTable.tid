@@ -1,5 +1,5 @@
 title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/TaskDynamicTable
-caption: TaskDynamicTable
+caption: {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Table}} 任务列表
 tags: $:/tags/ITKG/UnderProject
 
 <!-- use cal:completed as suggested in https://github.com/NoelDeMartin/solid-focus/blob/5db6787fcd9823b14b8062923dcfb9805a56a463/src/models/soukai/Task.ts#L35 -->

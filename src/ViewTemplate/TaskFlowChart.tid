@@ -1,5 +1,5 @@
 title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/TaskFlowChart
-caption: TaskFlowChart
+caption: {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Project}} 任务树
 tags: $:/tags/ITKG/UnderProject
 
 <$flowchart tiddler=<<graphRootTiddler>> height="600px" $template-tags={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}} />
