@@ -2,6 +2,18 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/Sidebar/Buttons
 
 \import [[$:/plugins/linonetwo/intention-tower-knowledge-graph/EditTemplate/title]]
 
+\define after-create()
+<$action-navigate $to=<<createTiddler-title>>/>
+<$let currentTiddler=<<createTiddler-title>> >
+  <$action-sendmessage $message="tm-save-tiddler" $param=<<currentTiddler>> />
+  <$action-sendmessage $message="tm-auto-save-wiki" />
+</$let>
+<$action-setfield
+  $tiddler="$:/state/Calendar/PageLayout/create-tiddler-title"
+  text=""
+/>
+\end
+
 <div class="itkg-sidebar-create-task">
 
   <<simple-title-edit "$:/state/Calendar/PageLayout/create-tiddler-title" >>
@@ -10,12 +22,17 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/Sidebar/Buttons
 
 <div class="itkg-sidebar-buttons">
   <$button>
-    <$action-createtiddler $basetitle={{$:/state/Calendar/PageLayout/create-tiddler-title}} tags={{{ [{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}] }}} />
+    <$action-createtiddler $basetitle={{$:/state/Calendar/PageLayout/create-tiddler-title}} tags={{{ [{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}] }}} >
+      <<after-create>>
+    </$action-createtiddler>
+
     {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Task}} 新任务
   </$button>
 
   <$button>
-    <$action-createtiddler $basetitle={{$:/state/Calendar/PageLayout/create-tiddler-title}} tags={{{ [{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}addsuffix[ ]addsuffix{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}] }}} />
+    <$action-createtiddler $basetitle={{$:/state/Calendar/PageLayout/create-tiddler-title}} tags={{{ [{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}addsuffix[ ]addsuffix{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}] }}} >
+      <<after-create>>
+    </$action-createtiddler>
     {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Project}} 新项目
   </$button>
 </div>
