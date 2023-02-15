@@ -8,3 +8,19 @@ div.itkg-sidebar-container {
   display: flex;
   flex-direction: column;
 }
+.itkg-sidebar-project-list-item {
+  padding: 5px 0;
+}
+
+.itkg-sidebar-buttons {
+  padding: 10px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.itkg-sidebar-buttons button {
+  padding: 15px 20px;
+}
+.itkg-sidebar-create-task .tc-edit-texteditor {
+  width: 100%;
+}

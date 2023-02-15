@@ -1,6 +1,21 @@
 title: $:/plugins/linonetwo/intention-tower-knowledge-graph/Sidebar/Buttons
 
-<$button>
-  <$action-sendmessage $message="tm-new-tiddler" title=<<now "YYYY-MM-DD">> tags={{{ [{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}addsuffix[ ]addsuffix{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}] }}} />
-  添加新项目
-</$button>
+\import [[$:/plugins/linonetwo/intention-tower-knowledge-graph/EditTemplate/title]]
+
+<div class="itkg-sidebar-create-task">
+
+  <<simple-title-edit "$:/state/Calendar/PageLayout/create-tiddler-title" >>
+
+</div>
+
+<div class="itkg-sidebar-buttons">
+  <$button>
+    <$action-createtiddler $basetitle={{$:/state/Calendar/PageLayout/create-tiddler-title}} tags={{{ [{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}] }}} />
+    新任务
+  </$button>
+
+  <$button>
+    <$action-createtiddler $basetitle={{$:/state/Calendar/PageLayout/create-tiddler-title}} tags={{{ [{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}addsuffix[ ]addsuffix{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}] }}} />
+    新项目
+  </$button>
+</div>

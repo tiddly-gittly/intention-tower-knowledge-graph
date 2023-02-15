@@ -2,9 +2,11 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/Sidebar/ProjectList
 
 \define project-list-item()
 \whitespace trim
-<$link to=<<currentTiddler>> tooltip=<<currentTiddler>>>
-  <<currentTiddler>>
-</$link>
+<div class="itkg-sidebar-project-list-item">
+  <$link to=<<currentTiddler>> tooltip=<<currentTiddler>>>
+    <<currentTiddler>>
+  </$link>
+</div>
 \end
 
 \define project-list()

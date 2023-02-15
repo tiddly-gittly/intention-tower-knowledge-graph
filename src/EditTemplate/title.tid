@@ -1,0 +1,22 @@
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/EditTemplate/title
+
+<!-- copy from $:/core/ui/EditTemplate/title and remove the auto focus, otherwise it will delete first char -->
+
+\define simple-title-edit(tiddler)
+\whitespace trim
+<$edit-text tiddler="$tiddler$" field="text" class="tc-titlebar tc-edit-texteditor" cancelPopups="yes" tag="input" focus="yes" tabindex="-1" />
+
+<$vars pattern="""[\|\[\]{}]""" bad-chars="""`| [ ] { }`""">
+  <$list filter="[[$tiddler$]regexp:text<pattern>]" variable="listItem">
+    <div class="tc-message-box">
+      {{$:/core/images/warning}}&#32;{{$:/language/EditTemplate/Title/BadCharacterWarning}}
+    </div>
+  </$list>
+</$vars>
+
+<$list filter="[{$tiddler$!!text}!is[missing]]" variable="listItem">
+  <div class="tc-message-box">
+    {{$:/core/images/warning}}&#32;{{$:/language/EditTemplate/Title/Exists/Prompt}}:&#32;<$link to={{$tiddler$!!text}} />
+  </div>
+</$list>
+\end
