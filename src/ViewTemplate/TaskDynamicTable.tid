@@ -3,4 +3,5 @@ caption: {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Table}} �
 tags: $:/tags/ITKG/UnderProject
 
 <!-- use cal:completed as suggested in https://github.com/NoelDeMartin/solid-focus/blob/5db6787fcd9823b14b8062923dcfb9805a56a463/src/models/soukai/Task.ts#L35 -->
+<$log graphRootTiddler=<<graphRootTiddler>> />
 <$macrocall $name=table-dynamic caption="优先待办列表" filter="[taggingtree<graphRootTiddler>]-[has:field[completed]]" fields="title tags" class="w-100"/>
