@@ -1,11 +1,21 @@
+created: 20230215005449858
+creator: 林一二
+modified: 20230215005508739
+modifier: 林一二
 title: Index
 type: text/vnd.tiddlywiki
 
 {{$:/snippets/minilanguageswitcher}}
 
+!! Concepts
+
 project: favorited tiddler, as a root of a flow chart
 
 the whole wiki is a graph of tasks, you can select multiple node in the graph as project, to view a sub graph of the wiki.
+
+!! Usage
+
+[[AddTask]]
 
 用一个单独的视图，左侧是加了project标签的条目作为列表展示。点击某个条目后，将它作为当前布局的focusedtiddler，在右侧展示以他作为父节点的子任务树或者意义之塔。在没有聚焦条目时，默认聚焦当前待办展示所有叶子节点。
 
