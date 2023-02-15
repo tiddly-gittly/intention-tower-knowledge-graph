@@ -22,7 +22,7 @@ type: text/vnd.tiddlywiki
 !! 概念
 
 * 任务：带有「{{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}}」标签的条目
-** 任务条目的标题一般为一个动词短语，例如「""写""意义之塔插件」
+** 任务条目的标题一般为一个动词短语，例如「''写''意义之塔插件」
 * 项目：带有「{{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}}」标签的条目。
 ** 项目下会有多个任务，任务会有子任务，形成树状关系
 ** 其实每个「项目」同时也是一个「任务」，所以也会带「{{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}}」标签
