@@ -11,11 +11,11 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/Sidebar/Buttons
 <div class="itkg-sidebar-buttons">
   <$button>
     <$action-createtiddler $basetitle={{$:/state/Calendar/PageLayout/create-tiddler-title}} tags={{{ [{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}] }}} />
-    新任务
+    {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Task}} 新任务
   </$button>
 
   <$button>
     <$action-createtiddler $basetitle={{$:/state/Calendar/PageLayout/create-tiddler-title}} tags={{{ [{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}addsuffix[ ]addsuffix{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}] }}} />
-    新项目
+    {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Project}} 新项目
   </$button>
 </div>

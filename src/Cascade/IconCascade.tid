@@ -1,0 +1,6 @@
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/Cascade/IconCascade
+tags: $:/tags/TiddlerIconFilter
+list-before: $:/config/TiddlerIconFilters/default
+
+[tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}then[$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Project]]
+[tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}then[$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Task]]
