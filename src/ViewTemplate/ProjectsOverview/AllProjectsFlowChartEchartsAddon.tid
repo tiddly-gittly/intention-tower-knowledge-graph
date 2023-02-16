@@ -1,0 +1,42 @@
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AllTaskFlowChartEchartsAddon
+type: text/vnd.tiddlywiki
+
+`{
+  "title": {
+    "text": "意义之塔"
+  },
+  "series": [
+    {
+      "type": "graph",
+      "layout": "circular",
+      "name": "意义之塔",
+      "label": {
+        "show": true,
+        "position": "right",
+        "backgroundColor": "transparent"
+      },
+      "edgeSymbol": ["circle", "arrow"],
+      "edgeSymbolSize": [4, 10],
+      "data": [`
+        <$list filter="[all[tiddlers]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}]" variable="projectName" counter="counter1">
+        `        {
+                  "name": "`<<projectName>>`"
+                }`<$list filter="[<counter1-last>match[no]]">`,`</$list>`
+        `
+        </$list>
+      `],
+      "links": [`
+        <$list filter="[all[tiddlers]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}]" variable="projectNameTo" counter="projectNameToCounter">
+          <$list filter="[<projectNameTo>taggingtree[]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}]" variable="projectNameFrom" counter="projectNameToCounter">
+          `       {
+                    "source": "`<<projectNameFrom>>`",
+                    "target": "`<<projectNameTo>>`"
+                    
+                  }` <$list filter="[<projectNameFromCounter-last>match[no]]"><$list filter="[<projectNameToCounter-last>match[no]]">`,`</$list></$list> `
+          `
+          </$list>
+        </$list>
+      `]
+    }
+  ]
+}`
