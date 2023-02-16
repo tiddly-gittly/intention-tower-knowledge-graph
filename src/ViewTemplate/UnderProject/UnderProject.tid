@@ -4,7 +4,7 @@ tags: $:/tags/ViewTemplate
 <$let graphRootTiddler=<<currentTiddler>> >
   <$list filter="[all[current]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}then<graphRootTiddler>]">
 
-  <<tabs "[all[shadows]tag[$:/tags/ITKG/UnderProject]]" "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/TaskDynamicTable" >>
+  <<tabs "[all[tiddlers+shadows]tag[$:/tags/ITKG/UnderProject]]" "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/TaskDynamicTable" >>
 
   </$list>
 </$let>

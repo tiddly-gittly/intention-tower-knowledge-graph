@@ -13,4 +13,6 @@ type: text/vnd.tiddlywiki
 
 <<project-list>>
 
+{{$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/ProjectsOverview}}
+
 </$scrollable>
