@@ -1,0 +1,5 @@
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/IntentionDynamicTable
+caption: {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Table}} 人生意义
+tags: $:/tags/ITKG/ProjectsOverview
+
+<$macrocall $name=table-dynamic caption="人生意义" filter="[all[tiddlers]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}]" fields="title" class="w-100"/>

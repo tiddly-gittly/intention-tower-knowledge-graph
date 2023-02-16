@@ -18,7 +18,7 @@ type: text/vnd.tiddlywiki
       "edgeSymbol": ["circle", "arrow"],
       "edgeSymbolSize": [4, 10],
       "data": [`
-        <$list filter="[all[tiddlers]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}]" variable="projectName" counter="counter1">
+        <$list filter="[all[tiddlers]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}] [all[tiddlers]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}]" variable="projectName" counter="counter1">
         `        {
                   "name": "`<<projectName>>`"
                 }`<$list filter="[<counter1-last>match[no]]">`,`</$list>`
@@ -26,13 +26,13 @@ type: text/vnd.tiddlywiki
         </$list>
       `],
       "links": [`
-        <$list filter="[all[tiddlers]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}]" variable="projectNameTo" counter="projectNameToCounter">
-          <$list filter="[<projectNameTo>taggingtree[]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}]" variable="projectNameFrom" counter="projectNameToCounter">
+        <$list filter="[all[tiddlers]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}] [all[tiddlers]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}]" variable="projectNameTo" counter="projectNameToCounter">
+          <$list filter="[<projectNameTo>taggingtree[]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}]" variable="projectNameFrom" counter="projectNameFromCounter">
           `       {
                     "source": "`<<projectNameFrom>>`",
                     "target": "`<<projectNameTo>>`"
                     
-                  }` <$list filter="[<projectNameFromCounter-last>match[no]]"><$list filter="[<projectNameToCounter-last>match[no]]">`,`</$list></$list> `
+                  }` <$list filter="[<projectNameFromCounter-last>match[yes]] =[<projectNameToCounter-last>match[yes]] +[count[yes]!compare:number:eq[2]]">`,`</$list> `
           `
           </$list>
         </$list>

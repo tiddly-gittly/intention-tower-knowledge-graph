@@ -1,4 +1,4 @@
 title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/ProjectsOverview
 
 <!-- similar to $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/UnderProject -->
-<<tabs "[all[tiddlers+shadows]tag[$:/tags/ITKG/ProjectsOverview]]" "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/PriorityTaskDynamicTable" >>
+<<tabs "[all[tiddlers+shadows]tag[$:/tags/ITKG/ProjectsOverview]]" "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AllProjectsFlowChart" >>

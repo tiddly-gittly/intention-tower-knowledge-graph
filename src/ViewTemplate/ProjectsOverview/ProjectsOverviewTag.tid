@@ -1,4 +1,4 @@
 title: $:/tags/ITKG/ProjectsOverview
-list: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/PriorityTaskDynamicTable $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AllProjectsFlowChart
+list: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/PriorityTaskDynamicTable $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AllProjectsFlowChart $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/IntentionDynamicTable
 
 Tiddler with this tag will show in the section under sidebar IntentionTower tab, become one of the tabs on the bottom of this tab.

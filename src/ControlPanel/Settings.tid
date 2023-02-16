@@ -14,6 +14,8 @@ These settings let you customise the behaviour of intention-tower-knowledge-grap
 
 不要加多于一个标签
 
+意义：<$let currentTiddler="$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag"><$macrocall $name="edit-tags-template" tagField="text"/></$let>
+
 项目：<$let currentTiddler="$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag"><$macrocall $name="edit-tags-template" tagField="text"/></$let>
 
 任务：<$let currentTiddler="$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag"><$macrocall $name="edit-tags-template" tagField="text"/></$let>
