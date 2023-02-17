@@ -1,0 +1,7 @@
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/ProjectsUnderThisIntentionFlowChart
+caption: {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Project}} 此意义的意义之塔
+tags: $:/tags/ITKG/UnderIntention
+
+\define echarts-with-subfilter() <$echarts $tiddler="$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AllTaskFlowChartEchartsAddon" currentTiddler=<<currentTiddler>> tiddlerSource="[[$(currentTiddler)$]] [[$(currentTiddler)$]taggingtree[]]" />
+
+<<echarts-with-subfilter>>

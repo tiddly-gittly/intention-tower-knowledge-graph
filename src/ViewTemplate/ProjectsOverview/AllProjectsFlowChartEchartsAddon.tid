@@ -1,6 +1,7 @@
 title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AllTaskFlowChartEchartsAddon
 type: text/vnd.tiddlywiki
 
+<$set name="tiddlerSourceFilter" value=<<tiddlerSource>> emptyValue="[all[tiddlers]]">
 `{
   "title": {
     "text": "意义之塔"
@@ -18,21 +19,21 @@ type: text/vnd.tiddlywiki
       "edgeSymbol": ["circle", "arrow"],
       "edgeSymbolSize": [4, 10],
       "data": [`
-        <$list filter="[all[tiddlers]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}] [all[tiddlers]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}]" variable="projectName" counter="counter1">
-        `        {
+        <$list filter="[subfilter<tiddlerSourceFilter>tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}] [subfilter<tiddlerSourceFilter>tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}]" variable="projectName" counter="counter1">
+        `       {
                   "name": "`<<projectName>>`"
-                }`<$list filter="[<counter1-last>match[no]]">`,`</$list>`
+                },
         `
         </$list>
       `],
       "links": [`
-        <$list filter="[all[tiddlers]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}] [all[tiddlers]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}]" variable="projectNameTo" counter="projectNameToCounter">
+        <$list filter="[subfilter<tiddlerSourceFilter>tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}] [subfilter<tiddlerSourceFilter>tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}]" variable="projectNameTo" counter="projectNameToCounter">
           <$list filter="[<projectNameTo>taggingtree[]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}]" variable="projectNameFrom" counter="projectNameFromCounter">
           `       {
                     "source": "`<<projectNameFrom>>`",
                     "target": "`<<projectNameTo>>`"
                     
-                  }` <$list filter="[<projectNameFromCounter-last>match[yes]] =[<projectNameToCounter-last>match[yes]] +[count[yes]!compare:number:eq[2]]">`,`</$list> `
+                  },
           `
           </$list>
         </$list>
@@ -40,3 +41,4 @@ type: text/vnd.tiddlywiki
     }
   ]
 }`
+</$set>

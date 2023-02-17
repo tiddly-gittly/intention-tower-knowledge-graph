@@ -1,0 +1,5 @@
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/ProjectDynamicTable
+caption: {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Table}} 项目列表
+tags: $:/tags/ITKG/UnderIntention
+
+<$macrocall $name=table-dynamic caption="项目列表" filter="[all[current]taggingtree[]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}] -[has:field[completedDate]]" fields="title tags" class="w-100"/>

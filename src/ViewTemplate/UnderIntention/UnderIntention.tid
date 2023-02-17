@@ -1,0 +1,17 @@
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/UnderIntention
+tags: $:/tags/ViewTemplate
+
+<$let graphRootTiddler=<<currentTiddler>> >
+  <$list filter="[all[current]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}then<graphRootTiddler>]">
+
+  <$button>
+    <$action-createtiddler $basetitle={{$:/state/Calendar/PageLayout/create-tiddler-title}} tags={{{ [{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}addsuffix[ ]addsuffix{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}addsuffix[ ]addsuffix<currentTiddler>] }}} >
+      <<after-create>>
+    </$action-createtiddler>
+    {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Project}} 新项目
+  </$button>
+
+  <<tabs "[all[tiddlers+shadows]tag[$:/tags/ITKG/UnderIntention]]" "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/ProjectsUnderThisIntentionFlowChart" >>
+
+  </$list>
+</$let>
