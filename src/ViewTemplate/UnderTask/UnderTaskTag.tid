@@ -1,0 +1,4 @@
+title: $:/tags/ITKG/UnderTask
+list: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/TaskContext $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/TaskIntentionTowerFlowChart
+
+Tiddler with this tag will show in the section under task tiddler, become one of the tabs.

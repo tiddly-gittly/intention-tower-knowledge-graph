@@ -1,0 +1,10 @@
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/UnderTask
+tags: $:/tags/ViewTemplate
+
+<$let graphRootTiddler=<<currentTiddler>> >
+  <$list filter="[all[current]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}then<graphRootTiddler>]">
+
+  <<tabs "[all[tiddlers+shadows]tag[$:/tags/ITKG/UnderTask]]" "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/TaskContext" >>
+
+  </$list>
+</$let>

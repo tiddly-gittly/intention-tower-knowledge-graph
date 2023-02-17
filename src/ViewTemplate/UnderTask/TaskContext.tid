@@ -1,0 +1,8 @@
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/TaskContext
+caption: {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Map}} 任务上下文
+tags: $:/tags/ITKG/UnderTask
+
+<$list filter="[all[current]tagstree[]] -[{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}] -[{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}] -[{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}]" counter="counter1">
+  <$link><<currentTiddler>></$link>
+  <$list filter="[<counter1-last>match[no]]"> / </$list>
+</$list>

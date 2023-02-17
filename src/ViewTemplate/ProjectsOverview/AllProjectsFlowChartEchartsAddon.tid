@@ -19,7 +19,7 @@ type: text/vnd.tiddlywiki
       "edgeSymbol": ["circle", "arrow"],
       "edgeSymbolSize": [4, 10],
       "data": [`
-        <$list filter="[subfilter<tiddlerSourceFilter>tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}] [subfilter<tiddlerSourceFilter>tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}]" variable="projectName" counter="counter1">
+        <$list filter="[subfilter<tiddlerSourceFilter>tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}] [subfilter<tiddlerSourceFilter>tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}]" variable="projectName">
         `       {
                   "name": "`<<projectName>>`"
                 },
@@ -27,8 +27,8 @@ type: text/vnd.tiddlywiki
         </$list>
       `],
       "links": [`
-        <$list filter="[subfilter<tiddlerSourceFilter>tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}] [subfilter<tiddlerSourceFilter>tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}]" variable="projectNameTo" counter="projectNameToCounter">
-          <$list filter="[<projectNameTo>taggingtree[]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}]" variable="projectNameFrom" counter="projectNameFromCounter">
+        <$list filter="[subfilter<tiddlerSourceFilter>tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}] [subfilter<tiddlerSourceFilter>tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}]" variable="projectNameTo">
+          <$list filter="[<projectNameTo>taggingtree[]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}]" variable="projectNameFrom">
           `       {
                     "source": "`<<projectNameFrom>>`",
                     "target": "`<<projectNameTo>>`"
