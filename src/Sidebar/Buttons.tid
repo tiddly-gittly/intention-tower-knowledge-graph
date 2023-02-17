@@ -9,20 +9,20 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/Sidebar/Buttons
   <$action-sendmessage $message="tm-auto-save-wiki" />
 </$let>
 <$action-setfield
-  $tiddler="$:/state/Calendar/PageLayout/create-tiddler-title"
+  $tiddler="$:/state/ITKG/PageLayout/create-tiddler-title"
   text=""
 />
 \end
 
 <div class="itkg-sidebar-create-task">
 
-  <<simple-title-edit "$:/state/Calendar/PageLayout/create-tiddler-title" >>
+  <<simple-title-edit "$:/state/ITKG/PageLayout/create-tiddler-title" >>
 
 </div>
 
 <div class="itkg-sidebar-buttons">
   <$button>
-    <$action-createtiddler $basetitle={{$:/state/Calendar/PageLayout/create-tiddler-title}} tags={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}} >
+    <$action-createtiddler $basetitle={{$:/state/ITKG/PageLayout/create-tiddler-title}} tags={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}} >
       <<after-create>>
     </$action-createtiddler>
 
@@ -30,14 +30,14 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/Sidebar/Buttons
   </$button>
 
   <$button>
-    <$action-createtiddler $basetitle={{$:/state/Calendar/PageLayout/create-tiddler-title}} tags={{{ [{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}addsuffix[ ]addsuffix{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}] }}} >
+    <$action-createtiddler $basetitle={{$:/state/ITKG/PageLayout/create-tiddler-title}} tags={{{ [{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}addsuffix[ ]addsuffix{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}] }}} >
       <<after-create>>
     </$action-createtiddler>
     {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Project}} 新项目
   </$button>
 
   <$button>
-    <$action-createtiddler $basetitle={{$:/state/Calendar/PageLayout/create-tiddler-title}} tags={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}} >
+    <$action-createtiddler $basetitle={{$:/state/ITKG/PageLayout/create-tiddler-title}} tags={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}} >
       <<after-create>>
     </$action-createtiddler>
     {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Motivation}} 新意义

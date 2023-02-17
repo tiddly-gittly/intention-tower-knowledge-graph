@@ -1,12 +1,14 @@
 title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/UnderIntention
 tags: $:/tags/ViewTemplate
 
+\import [[$:/plugins/linonetwo/intention-tower-knowledge-graph/Sidebar/Buttons]]
+
 <$let graphRootTiddler=<<currentTiddler>> >
   <$list filter="[all[current]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}then<graphRootTiddler>]">
 
   <$button>
-    <$action-createtiddler $basetitle={{$:/state/Calendar/PageLayout/create-tiddler-title}} tags={{{ [{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}addsuffix[ ]addsuffix{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}addsuffix[ ]addsuffix<currentTiddler>] }}} >
-      <<after-create>>
+    <$action-createtiddler tags={{{ [{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}addsuffix[ ]addsuffix{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}addsuffix[ ]addsuffix<currentTiddler>] }}}>
+      <$action-sendmessage $message="tm-edit-tiddler" $param=<<createTiddler-title>>/>
     </$action-createtiddler>
     {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Project}} 新项目
   </$button>
