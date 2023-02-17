@@ -2,7 +2,29 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ControlPanel/Setting
 caption: ITKG
 tags: $:/tags/ControlPanel/SettingsTab
 
-\import $:/core/ui/EditTemplate/tags
+\define single-text-tag-editor(typeName)
+\whitespace trim
+<div class="itkg-setting-tags-item">
+  <$let
+    currentTiddler="$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/$typeName$-tag"
+    palette={{$:/palette}}
+    tempTitle=<<qualify "edit-$typeName$">>
+    tabIndex={{$:/config/EditTabIndex}}
+    cancelPopups="yes"
+  >
+    <$macrocall $name="tag" tag={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/$typeName$-tag}} />
+
+    <$edit-text tiddler=<<tempTitle>> tag="input" field="text" placeholder={{$:/language/EditTemplate/Tags/Add/Placeholder}} />
+
+    <$button>
+      <$action-setfield tiddler=<<currentTiddler>> text={{{ [<tempTitle>get[text]] }}} />
+      <$action-setfield tiddler=<<tempTitle>> text="" />
+      {{$:/language/EditTemplate/Tags/Add/Button}}
+    </$button>
+    
+  </$let> 
+</div>
+\end
 
 These settings let you customise the behaviour of intention-tower-knowledge-graph plugin.
 
@@ -12,10 +34,9 @@ These settings let you customise the behaviour of intention-tower-knowledge-grap
 
 !!! 标注项目关键节点的标签
 
-不要加多于一个标签
 
-意义：<$let currentTiddler="$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag"><$macrocall $name="edit-tags-template" tagField="text"/></$let>
+意义：<<single-text-tag-editor intention>>
 
-项目：<$let currentTiddler="$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag"><$macrocall $name="edit-tags-template" tagField="text"/></$let>
+项目：<<single-text-tag-editor project>>
 
-任务：<$let currentTiddler="$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag"><$macrocall $name="edit-tags-template" tagField="text"/></$let>
+任务：<<single-text-tag-editor task>>
