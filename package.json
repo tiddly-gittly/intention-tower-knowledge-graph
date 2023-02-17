@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "npm run clean && zx scripts/dev/development.mjs",
+    "doc": "NODE_ENV=DOCUMENT zx scripts/dev/development.mjs",
     "make": "npm run clean && npm run build",
     "dev-html": "npm run make && npm run run-action && zx ./scripts/build-demo-html.mjs && cd ./dist/output && serve .",
     "clean": "rimraf dist",
