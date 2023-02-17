@@ -72,7 +72,7 @@ const refresh = async () => {
   if (twServer) twServer.close();
   $tw2 = tw.TiddlyWiki();
   if (process.env.NODE_ENV === 'DOCUMENT') {
-    $tw2.boot.argv = ['+plugins/tiddlywiki/filesystem', '+plugins/tiddlywiki/tiddlyweb', 'demo', '--listen'];
+    $tw2.boot.argv = ['+plugins/tiddlywiki/filesystem', '+plugins/tiddlywiki/tiddlyweb', 'dist', '--listen'];
   } else {
     $tw2.boot.argv = ['dist', '--listen'];
   }
