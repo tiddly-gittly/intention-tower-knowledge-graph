@@ -1,8 +1,12 @@
 title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/UnderTask
 tags: $:/tags/ViewTemplate
 
+\import [[$:/plugins/linonetwo/intention-tower-knowledge-graph/Components/Buttons]]
+
 <$let graphRootTiddler=<<currentTiddler>> >
   <$list filter="[all[current]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}then<graphRootTiddler>]">
+
+  <<create-task-under-current-tiddler>>
 
   <<tabs "[all[tiddlers+shadows]tag[$:/tags/ITKG/UnderTask]]" "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/TaskContext" >>
 

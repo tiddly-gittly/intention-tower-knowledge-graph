@@ -1,0 +1,76 @@
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/Components/Buttons
+
+\define create-task-under-current-tiddler()
+  <$button>
+    <$action-createtiddler
+      tags={{{ [{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}addsuffix[ ]addsuffix<currentTiddler>] }}}
+      tmo_taskState="New"
+    >
+      <$action-sendmessage $message="tm-edit-tiddler" $param=<<createTiddler-title>>/>
+    </$action-createtiddler>
+    {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Task}} 新任务
+  </$button>
+\end
+
+\define create-project-under-current-tiddler()
+  <$button>
+    <$action-createtiddler
+      tags={{{ [{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}addsuffix[ ]addsuffix{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}addsuffix[ ]addsuffix<currentTiddler>] }}}
+      tmo_taskState="New"
+    >
+      <$action-sendmessage $message="tm-edit-tiddler" $param=<<createTiddler-title>>/>
+    </$action-createtiddler>
+    {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Project}} 新项目
+  </$button>
+\end
+
+\define after-create-tiddler-without-parent()
+<$action-navigate $to=<<createTiddler-title>>/>
+<$let currentTiddler=<<createTiddler-title>> >
+  <$action-sendmessage $message="tm-save-tiddler" $param=<<currentTiddler>> />
+  <$action-sendmessage $message="tm-auto-save-wiki" />
+</$let>
+<$action-setfield
+  $tiddler="$:/state/ITKG/PageLayout/create-tiddler-title"
+  text=""
+/>
+\end
+
+\define create-task-without-parent()
+  <$button>
+    <$action-createtiddler
+      $basetitle={{$:/state/ITKG/PageLayout/create-tiddler-title}}
+      tags={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}}
+      tmo_taskState="New"
+    >
+      <<after-create-tiddler-without-parent>>
+    </$action-createtiddler>
+
+    {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Task}} 新任务
+  </$button>
+\end
+
+\define create-project-without-parent()
+  <$button>
+    <$action-createtiddler
+      $basetitle={{$:/state/ITKG/PageLayout/create-tiddler-title}}
+      tags={{{ [{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}addsuffix[ ]addsuffix{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}] }}}
+      tmo_taskState="New"
+    >
+      <<after-create-tiddler-without-parent>>
+    </$action-createtiddler>
+    {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Project}} 新项目
+  </$button>
+\end
+
+\define create-intention-without-parent()
+  <$button>
+    <$action-createtiddler
+      $basetitle={{$:/state/ITKG/PageLayout/create-tiddler-title}}
+      tags={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}}
+    >
+      <<after-create-tiddler-without-parent>>
+    </$action-createtiddler>
+    {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Motivation}} 新意义
+  </$button>
+\end

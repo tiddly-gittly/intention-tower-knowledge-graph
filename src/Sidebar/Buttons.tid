@@ -1,18 +1,6 @@
 title: $:/plugins/linonetwo/intention-tower-knowledge-graph/Sidebar/Buttons
 
-\import [[$:/plugins/linonetwo/intention-tower-knowledge-graph/EditTemplate/title]]
-
-\define after-create()
-<$action-navigate $to=<<createTiddler-title>>/>
-<$let currentTiddler=<<createTiddler-title>> >
-  <$action-sendmessage $message="tm-save-tiddler" $param=<<currentTiddler>> />
-  <$action-sendmessage $message="tm-auto-save-wiki" />
-</$let>
-<$action-setfield
-  $tiddler="$:/state/ITKG/PageLayout/create-tiddler-title"
-  text=""
-/>
-\end
+\import [[$:/plugins/linonetwo/intention-tower-knowledge-graph/EditTemplate/title]] [[$:/plugins/linonetwo/intention-tower-knowledge-graph/Components/Buttons]]
 
 <div class="itkg-sidebar-create-task">
 
@@ -21,25 +9,7 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/Sidebar/Buttons
 </div>
 
 <div class="itkg-sidebar-buttons">
-  <$button>
-    <$action-createtiddler $basetitle={{$:/state/ITKG/PageLayout/create-tiddler-title}} tags={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}} >
-      <<after-create>>
-    </$action-createtiddler>
-
-    {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Task}} 新任务
-  </$button>
-
-  <$button>
-    <$action-createtiddler $basetitle={{$:/state/ITKG/PageLayout/create-tiddler-title}} tags={{{ [{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}addsuffix[ ]addsuffix{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}] }}} >
-      <<after-create>>
-    </$action-createtiddler>
-    {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Project}} 新项目
-  </$button>
-
-  <$button>
-    <$action-createtiddler $basetitle={{$:/state/ITKG/PageLayout/create-tiddler-title}} tags={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}} >
-      <<after-create>>
-    </$action-createtiddler>
-    {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Motivation}} 新意义
-  </$button>
+  <<create-task-without-parent>>
+  <<create-project-without-parent>>
+  <<create-intention-without-parent>>
 </div>
