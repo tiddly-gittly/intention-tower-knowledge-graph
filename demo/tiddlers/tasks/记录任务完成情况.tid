@@ -3,5 +3,6 @@ modified: 20230215160309525
 tags: 任务 写意义之塔插件
 title: 记录任务完成情况
 type: text/vnd.tiddlywiki
+tmo_taskState: New
 
 可以用完成计数字段来作为标记，这个字段不用布尔值，而是用数量来记录完成次数，以应对可以重复完成的任务

@@ -7,3 +7,4 @@ modifier: 林一二
 tags: 任务 DemoTask
 title: DoneTask1
 type: text/vnd.tiddlywiki
+tmo_taskState: New

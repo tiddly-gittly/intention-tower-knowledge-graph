@@ -3,5 +3,6 @@ modified: 20230215160041120
 tags: 任务 聚合当前待办 项目
 title: 摸鱼时展示待办的userscript
 type: text/vnd.tiddlywiki
+tmo_taskState: New
 
 写一个 userscript，作用范围是任意网站，然后从配置的端口和太微条目里读取本地配置的网站列表，来在工作时间（日历上配置了，现在是解决问题的时间）打开这些网站的时候，弹出当前待办的任务树，提醒自己不要摸鱼

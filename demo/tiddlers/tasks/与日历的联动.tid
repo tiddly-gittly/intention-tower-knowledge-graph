@@ -3,5 +3,6 @@ modified: 20230215160413977
 tags: 任务 写意义之塔插件
 title: 与日历的联动
 type: text/vnd.tiddlywiki
+tmo_taskState: New
 
 日历允许加字段，通过一个标准化的task字段来标注当前安排的事项要结合到哪一个任务上

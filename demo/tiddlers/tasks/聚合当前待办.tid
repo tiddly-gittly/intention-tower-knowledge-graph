@@ -3,6 +3,7 @@ modified: 20230215161054479
 tags: 任务 写意义之塔插件
 title: 聚合当前待办
 type: text/vnd.tiddlywiki
+tmo_taskState: New
 
 然后聚合所有项目的叶子节点，形成一个优先待办列表，聚合整个项目森林的叶子。
 

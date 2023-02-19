@@ -3,5 +3,6 @@ modified: 20230215155838680
 tags: 任务 提供对意义的可视化
 title: 仅展示意义的意义之塔条目
 type: text/vnd.tiddlywiki
+tmo_taskState: New
 
 一个意义之塔条目，会展示从根意义节点出发的所有项目，不展示非项目的任务，可以从一个比较抽象的视角看自己的意义树。

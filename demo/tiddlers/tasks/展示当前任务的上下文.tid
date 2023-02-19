@@ -3,6 +3,7 @@ modified: 20230215160834735
 tags: 任务 提供对意义的可视化
 title: 展示当前任务的上下文
 type: text/vnd.tiddlywiki
+tmo_taskState: New
 
 用书和表格展示任务的子任务，在底部用一个脑图展示他的父级任务，也就是意义。
 
