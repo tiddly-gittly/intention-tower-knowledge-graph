@@ -2,7 +2,7 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/Priorit
 caption: {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Table}} 优先任务列表
 tags: $:/tags/ITKG/ProjectsOverview
 
-<!-- Not use cal:completed as suggested in https://github.com/NoelDeMartin/solid-focus/blob/5db6787fcd9823b14b8062923dcfb9805a56a463/src/models/soukai/Task.ts#L35 , but use custom completedDate -->
-<$vars filter-is-leaf="[all[current]tagging[]]" >
-<$macrocall $name=table-dynamic caption="优先待办列表" filter="[all[tiddlers]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}taggingtree[]!filter<filter-is-leaf>] -[has:field[completedDate]]" fields="title tags" class="w-100"/>
-</$vars>
+\import [[$:/plugins/linonetwo/intention-tower-knowledge-graph/filters/leaf-task]]
+
+<$count filter=<<filter-all-non-completed-leaf-tasks>> />
+<$macrocall $name=table-dynamic caption="优先待办列表" filter=<<filter-all-non-completed-leaf-tasks>> fields="title tags" class="w-100"/>
