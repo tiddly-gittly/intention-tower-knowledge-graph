@@ -4,7 +4,7 @@ tags: $:/tags/ViewTemplate
 \import [[$:/plugins/linonetwo/intention-tower-knowledge-graph/Components/Buttons]]
 
 <$let graphRootTiddler=<<currentTiddler>> >
-  <$list filter="[all[current]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}then<graphRootTiddler>]">
+  <$list filter="[all[current]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}!tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}then<graphRootTiddler>]">
 
   <<create-task-under-current-tiddler>>
 
