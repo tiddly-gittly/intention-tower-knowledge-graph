@@ -1,4 +1,4 @@
-title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AllProjectsFlowChart
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AllProjectsFlowChartEcharts
 caption: {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Project}} 意义之塔
 tags: $:/tags/ITKG/ProjectsOverview
 
