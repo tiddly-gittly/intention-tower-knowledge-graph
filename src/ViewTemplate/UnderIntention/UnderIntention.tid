@@ -8,7 +8,7 @@ tags: $:/tags/ViewTemplate
 
   <<create-project-under-current-tiddler>>
 
-  <<tabs "[all[tiddlers+shadows]tag[$:/tags/ITKG/UnderIntention]]" "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/ProjectsUnderThisIntentionFlowChart" >>
+  <<tabs "[all[tiddlers+shadows]tag[$:/tags/ITKG/UnderIntention]]" "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/ProjectsUnderThisIntentionFlowChartEcharts" >>
 
   </$list>
 </$let>

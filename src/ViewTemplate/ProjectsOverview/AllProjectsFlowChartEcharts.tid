@@ -2,4 +2,4 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AllProj
 caption: {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Project}} 意义之塔
 tags: $:/tags/ITKG/ProjectsOverview
 
-<$echarts $tiddler="$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AllTaskFlowChartEchartsAddon" />
+<$echarts $tiddler="$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AllTaskFlowChartEchartsAddon" dblclick="(params, parentWidget) => { parentWidget.dispatchEvent({ type: 'tm-navigate', navigateTo: params.data.name }) }" />
