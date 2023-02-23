@@ -100,3 +100,13 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
+
+      - uses: jsmrcaga/action-netlify-deploy@v2.0.0
+        with:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_PERSONAL_ACCESS_TOKEN }}
+          NETLIFY_DEPLOY_TO_PROD: true
+          NETLIFY_SITE_ID: 1e7ee811-e6ff-43de-9bb3-3fa107d4fa23
+          build_directory: ./dist/output
+          NETLIFY_DEPLOY_MESSAGE: "Deployed from GitHub action"
+          install_command: "echo Skipping installing the dependencies"
+          build_command: "echo Skipping building the web files"
