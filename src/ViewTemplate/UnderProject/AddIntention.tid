@@ -1,0 +1,5 @@
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AddIntention
+caption: {{$:/core/images/tag-button}} 添加意义
+tags: $:/tags/ITKG/UnderProject $:/tags/ITKG/UnderIntention
+
+{{||$:/core/ui/EditTemplate/tags}}
