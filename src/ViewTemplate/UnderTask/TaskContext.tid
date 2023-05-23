@@ -2,7 +2,8 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/TaskCon
 caption: {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Map}} 任务上下文
 tags: $:/tags/ITKG/UnderTask
 
-<$list filter="[all[current]tagstree[]!is[system]] -[{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}] -[{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}] -[{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}]" counter="counter1">
+<!-- Show all parent tags of current tiddler (all tiddlers that with current tiddler in the tags tree), that with Task, Intention, and Project, but exclude these meta tags themselves -->
+<$list filter="[all[current]tagstree[]!is[system]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}] :or[all[current]tagstree[]!is[system]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}] -[{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}] -[{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}] -[{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}]" counter="counter1">
   <$link><<currentTiddler>></$link>
   <$list filter="[<counter1-last>match[no]]"> / </$list>
 </$list>
