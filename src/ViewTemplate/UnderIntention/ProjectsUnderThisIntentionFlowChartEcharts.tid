@@ -6,7 +6,7 @@ tags: $:/tags/ITKG/UnderIntention
 <$echarts
   $tiddler="$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AllTaskFlowChartEchartsAddon"
   currentTiddler=<<currentTiddler>>
-  tiddlerSource="[[$(currentTiddler)$]] [[$(currentTiddler)$]taggingtree[]]"
+  tiddlerSource="[all[tiddlers]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}in-tagtree-of:inclusive[$(currentTiddler)$]] :or[[$(currentTiddler)$]tagstree[]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}]"
   dblclick="(params, parentWidget) => { parentWidget.dispatchEvent({ type: 'tm-navigate', navigateTo: params.data.name }) }"
 />
 \end

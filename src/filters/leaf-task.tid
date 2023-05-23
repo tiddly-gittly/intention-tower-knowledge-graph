@@ -7,6 +7,7 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/filters/leaf-task
 -->
 \define filter-is-not-leaf() [all[current]tagging[]filter<filter-is-new-task>] 
 
+<!-- // TODO: try replace with in-tagtree-of -->
 \define filter-non-completed-leaf-tasks() [all[current]taggingtree[]!filter<filter-is-not-leaf>filter<filter-is-new-task>]
 \define filter-non-completed-leaf-projects() [all[current]taggingtree[]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}filter<filter-is-new-task>]
 \define filter-all-non-completed-leaf-tasks() [all[tiddlers]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}filter<filter-is-new-task>taggingtree[]!filter<filter-is-not-leaf>filter<filter-is-new-task>]
