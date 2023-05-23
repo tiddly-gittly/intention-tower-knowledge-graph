@@ -1,6 +1,6 @@
 title: $:/plugins/linonetwo/intention-tower-knowledge-graph/filters/leaf-task
 
-\define filter-is-new-task() [!field:tmo_taskState[Completed]!field:tmo_taskState[Archived]!field:tmo_taskState[Terminated]!field:tmo_taskState[Suspended]]
+\define filter-is-new-task() [tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}!field:tmo_taskState[Completed]!field:tmo_taskState[Archived]!field:tmo_taskState[Terminated]!field:tmo_taskState[Suspended]]
 
 <!--
   have at least a not completed child tagging it  
