@@ -1,6 +1,8 @@
 title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AllTaskFlowChartEchartsAddon
 type: text/vnd.tiddlywiki
 
+<$set name="projectTagColor" filter="[{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}get[color]]" emptyValue="#80F2D9" >
+<$set name="intentionTagColor" filter="[{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}get[color]]" emptyValue="#EF96F5" >
 <$set name="tiddlerSourceFilter" value=<<tiddlerSource>> emptyValue="[all[tiddlers]]">
 `{
   "title": {
@@ -24,11 +26,28 @@ type: text/vnd.tiddlywiki
       "edgeSymbol": ["circle", "arrow"],
       "edgeSymbolSize": [4, 10],
       "data": [`
-        <$list filter="[subfilter<tiddlerSourceFilter>tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}] [subfilter<tiddlerSourceFilter>tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}]" variable="projectName">
+        <$list filter="[subfilter<tiddlerSourceFilter>tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}]" variable="projectName">
+          <$set name="color" filter="[<projectName>get[color]]" emptyValue=<<projectTagColor>> >
         `       {
-                  "name": "`<<projectName>>`"
+                  "name": "`<<projectName>>`",
+                  "itemStyle": {
+                    "color": "`<<color>>`"
+                  }
                 },
         `
+          </$set>
+        </$list>
+        <$list filter="[subfilter<tiddlerSourceFilter>tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}]" variable="intentionName">
+          <$set name="color" filter="[<intentionName>get[color]]" emptyValue=<<intentionTagColor>> >
+
+        `       {
+                  "name": "`<<intentionName>>`",
+                  "itemStyle": {
+                    "color": "`<<color>>`"
+                  }
+                },
+        `
+          </$set>
         </$list>
       `],
       "links": [`
@@ -45,4 +64,6 @@ type: text/vnd.tiddlywiki
     }
   ]
 }`
+</$set>
+</$set>
 </$set>
