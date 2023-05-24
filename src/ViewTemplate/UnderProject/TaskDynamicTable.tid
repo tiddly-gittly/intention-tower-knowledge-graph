@@ -4,5 +4,5 @@ tags: $:/tags/ITKG/UnderProject
 
 \import [[$:/plugins/linonetwo/intention-tower-knowledge-graph/filters/leaf-task]]
 
-\define caption() 优先待办列表 <$count filter=<<filter-non-completed-leaf-tasks>> />
-<$macrocall $name=table-dynamic caption=<<caption>> filter=<<filter-non-completed-leaf-tasks>> fields="title tags" class="w-100"/>
+\define caption() 优先待办列表 <$count filter=<<get-non-completed-leaf-tasks>> />
+<$macrocall $name=table-dynamic caption=<<caption>> filter=<<get-non-completed-leaf-tasks>> fields="title tags" class="w-100"/>
