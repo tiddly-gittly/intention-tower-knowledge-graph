@@ -4,13 +4,18 @@ type: text/vnd.tiddlywiki
 <$set name="tiddlerSourceFilter" value=<<tiddlerSource>> emptyValue="[all[tiddlers]]">
 `{
   "title": {
-    "text": "意义之塔"
+    "text": "项目概览图"
   },
   "series": [
     {
       "type": "graph",
-      "layout": "circular",
-      "name": "意义之塔",
+      "layout": "force",
+      "force": {
+        "repulsion": [150, 300],
+        "edgeLength": [10, 50]
+      },
+      "roam": true,
+      "name": "项目概览图",
       "label": {
         "show": true,
         "position": "right",
@@ -32,7 +37,6 @@ type: text/vnd.tiddlywiki
           `       {
                     "source": "`<<projectNameFrom>>`",
                     "target": "`<<projectNameTo>>`"
-                    
                   },
           `
           </$list>

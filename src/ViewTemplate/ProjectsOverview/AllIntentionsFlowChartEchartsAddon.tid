@@ -1,0 +1,44 @@
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AllIntentionsFlowChartEchartsAddon
+type: text/vnd.tiddlywiki
+
+<$set name="tiddlerSourceFilter" value=<<tiddlerSource>> emptyValue="[all[tiddlers]]">
+`{
+  "title": {
+    "text": "意义之塔"
+  },
+  "series": [
+    {
+      "type": "graph",
+      "layout": "force",
+      "roam": true,
+      "name": "意义之塔",
+      "label": {
+        "show": true,
+        "position": "right",
+        "backgroundColor": "transparent"
+      },
+      "edgeSymbol": ["circle", "arrow"],
+      "edgeSymbolSize": [4, 10],
+      "data": [`
+        <$list filter="[subfilter<tiddlerSourceFilter>tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}]" variable="intentionName">
+        `       {
+                  "name": "`<<intentionName>>`"
+                },
+        `
+        </$list>
+      `],
+      "links": [`
+        <$list filter="[subfilter<tiddlerSourceFilter>tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}]" variable="intentionNameTo">
+          <$list filter="[<intentionNameTo>taggingtree[]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}]" variable="intentionNameFrom">
+          `       {
+                    "source": "`<<intentionNameFrom>>`",
+                    "target": "`<<intentionNameTo>>`"
+                  },
+          `
+          </$list>
+        </$list>
+      `]
+    }
+  ]
+}`
+</$set>
