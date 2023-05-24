@@ -2,4 +2,4 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AllProj
 caption: {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Project}} 项目概览图
 tags: $:/tags/ITKG/ProjectsOverview
 
-<$echarts $tiddler="$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AllTaskFlowChartEchartsAddon" dblclick="(params, parentWidget) => { parentWidget.dispatchEvent({ type: 'tm-navigate', navigateTo: params.data.name }) }" />
+<$echarts $tiddler="$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AllProjectsFlowChartEchartsAddon" dblclick="(params, parentWidget) => { parentWidget.dispatchEvent({ type: 'tm-navigate', navigateTo: params.data.name }) }" />

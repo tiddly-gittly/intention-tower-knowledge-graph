@@ -1,4 +1,4 @@
-title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AllTaskFlowChartEchartsAddon
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AllProjectsFlowChartEchartsAddon
 type: text/vnd.tiddlywiki
 
 <$set name="projectTagColor" filter="[{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}get[color]]" emptyValue="#80F2D9" >
@@ -14,7 +14,7 @@ type: text/vnd.tiddlywiki
       "layout": "force",
       "force": {
         "repulsion": [150, 300],
-        "edgeLength": [10, 50]
+        "edgeLength": [30, 50]
       },
       "roam": true,
       "name": "项目概览图",

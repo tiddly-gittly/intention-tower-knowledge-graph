@@ -4,7 +4,7 @@ tags: $:/tags/ITKG/UnderTask
 
 \define echarts-with-subfilter()
 <$echarts
-  $tiddler="$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AllTaskFlowChartEchartsAddon"
+  $tiddler="$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AllProjectsFlowChartEchartsAddon"
   currentTiddler=<<currentTiddler>>
   tiddlerSource="[[$(currentTiddler)$]] [[$(currentTiddler)$]tagstree[]]"
   dblclick="(params, parentWidget) => { parentWidget.dispatchEvent({ type: 'tm-navigate', navigateTo: params.data.name }) }"

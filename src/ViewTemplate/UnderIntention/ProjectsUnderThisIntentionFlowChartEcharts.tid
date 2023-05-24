@@ -4,7 +4,7 @@ tags: $:/tags/ITKG/UnderIntention
 
 \define echarts-with-subfilter()
 <$echarts
-  $tiddler="$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AllTaskFlowChartEchartsAddon"
+  $tiddler="$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AllProjectsFlowChartEchartsAddon"
   currentTiddler=<<currentTiddler>>
   tiddlerSource="[all[tiddlers]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}in-tagtree-of:inclusive[$(currentTiddler)$]] :or[[$(currentTiddler)$]tagstree[]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}]"
   dblclick="(params, parentWidget) => { parentWidget.dispatchEvent({ type: 'tm-navigate', navigateTo: params.data.name }) }"
