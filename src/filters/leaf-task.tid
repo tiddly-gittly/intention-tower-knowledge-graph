@@ -5,7 +5,9 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/filters/leaf-task
 <!--
   have at least a not completed child tagging it  
 -->
-\define filter-is-not-leaf() [all[current]tagging[]filter<filter-is-new-task>] 
+\define filter-is-not-leaf() [all[current]tagging[]filter<filter-is-new-task>]
+
+\define compareByPriority() [get[tmo_priority]match[High]debug-log[]then[3]] :else[get[tmo_priority]match[Medium]then[2]] :else[get[tmo_priority]match[Low]then[1]] :else[[2]]
 
 <!-- // TODO: try replace with in-tagtree-of -->
 <!-- projects are tasks, so getting all projects under current (intention), then get those is in new task state  -->
@@ -13,4 +15,4 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/filters/leaf-task
 <!-- for each child (in tagtree of current tiddler), remove out all that is not leaf, and get those is in new task state -->
 \define get-non-completed-leaf-tasks() [all[current]taggingtree[]!filter<filter-is-not-leaf>filter<filter-is-new-task>]
 <!-- get all project first, and for each project, run same logic as get-non-completed-leaf-tasks. If some project is sub project of others, this may introduce duplication, so deduplicate at last. -->
-\define get-all-non-completed-leaf-tasks() [all[tiddlers]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}filter<filter-is-new-task>] :map:flat[<currentTiddler>taggingtree[]debug-log[]!filter<filter-is-not-leaf>filter<filter-is-new-task>] :and[unique[]]
+\define get-all-non-completed-leaf-tasks() [all[tiddlers]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}filter<filter-is-new-task>] :map:flat[<currentTiddler>taggingtree[]!filter<filter-is-not-leaf>filter<filter-is-new-task>] :and[unique[]sortsub:integer<compareByPriority>debug-log[]]
