@@ -1,0 +1,9 @@
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AddCalendarEntry
+caption: {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/CalendarPlus}} 日历记录
+tags: $:/tags/ITKG/UnderTask
+
+\import [[$:/plugins/linonetwo/intention-tower-knowledge-graph/Components/Buttons]]
+
+<$let defaultTaskCalendarEntryTags={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/default-calendar-entry-tag}}>
+  <<create-calendar-entry-of-current-task>>
+</$let>

@@ -17,8 +17,10 @@ tags: $:/tags/ControlPanel/SettingsTab
     <$edit-text tiddler=<<tempTitle>> tag="input" field="text" placeholder={{$:/language/EditTemplate/Tags/Add/Placeholder}} />
 
     <$button>
-      <$action-setfield tiddler=<<currentTiddler>> text={{{ [<tempTitle>get[text]] }}} />
-      <$action-setfield tiddler=<<tempTitle>> text="" />
+      <$action-setfield tiddler=<<currentTiddler>> text={{{ [<tempTitle>get[text]] }}}>
+        <$action-setfield tiddler=<<tempTitle>> text="" />
+      </$action-setfield>
+
       {{$:/language/EditTemplate/Tags/Add/Button}}
     </$button>
     
@@ -26,11 +28,13 @@ tags: $:/tags/ControlPanel/SettingsTab
 </div>
 \end
 
-These settings let you customise the behaviour of intention-tower-knowledge-graph plugin.
+<!-- These settings let you customise the behaviour of intention-tower-knowledge-graph plugin. -->
+
+这些设置让你可以自定义 ITKG 插件。
 
 ---
 
-!! Tags
+!! 标签
 
 !!! 标注项目关键节点的标签
 
@@ -40,3 +44,9 @@ These settings let you customise the behaviour of intention-tower-knowledge-grap
 项目：<<single-text-tag-editor project>>
 
 任务：<<single-text-tag-editor task>>
+
+!!! 新建日历记录时的标签
+
+在新建和一个任务相关的日历项目时，可以设置自动添加日历项目的类型标签，例如「解决问题」。
+
+日历记录额外标签：<<single-text-tag-editor default-calendar-entry>>
