@@ -28,4 +28,8 @@ type: text/vnd.tiddlywiki
 
 !! 概念
 
-<$list filter="[tag[概念]]">{{!!text}}</$list>
+<$list filter="[tag[概念]]">
+
+{{!!text}}
+
+</$list>
