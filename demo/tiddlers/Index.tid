@@ -28,8 +28,4 @@ type: text/vnd.tiddlywiki
 
 !! 概念
 
-* [[任务]]：带有「{{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}}」标签的条目
-* [[项目]]：带有「{{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}}」标签的条目。
-* 任务图：整个知识库就是一个任务网络，从图论的角度，可以说是一个连通图（Graph）。你可以在图中选择多个节点作为项目，以任务树的形式，来查看知识库的一个子图。
-* [[意义]]：父任务就是子任务存在的「意义」
-* [[意义之塔]]：任务的父子关系层层串起来，形成一棵树，看起来像是一座塔，我们称之为「意义之塔」
+<$list filter="[tag[概念]]">{{!!text}}</$list>

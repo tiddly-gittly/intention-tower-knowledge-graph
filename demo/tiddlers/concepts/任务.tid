@@ -1,6 +1,7 @@
 creator: 林一二
 title: 项目
 type: text/vnd.tiddlywiki
+tags: 概念
 
 * 项目：带有「{{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}}」标签的条目。
 ** 项目下会有多个任务，任务会有子任务，形成树状关系
