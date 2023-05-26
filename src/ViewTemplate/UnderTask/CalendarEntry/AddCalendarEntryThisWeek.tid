@@ -1,0 +1,5 @@
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AddCalendarEntryThisWeek
+caption: {{$:/plugins/linonetwo/tw-calendar/Images/CalendarWeek}} 调整本周任务
+tags: $:/tags/ITKG/CalendarEntry
+
+<$calendar defaultTags={{{ [<currentTiddler>] [{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/default-calendar-entry-tag}] +[join[ ]] }}} hideToolbar="yes" height="600px" initialView="timeGridWeek" />

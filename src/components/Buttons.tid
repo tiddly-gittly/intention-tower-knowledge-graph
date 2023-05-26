@@ -74,14 +74,3 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/Components/Buttons
     {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Motivation}} 新意义
   </$button>
 \end
-
-\define create-calendar-entry-of-current-task()
-  <$button>
-    <$action-createtiddler
-      calendarEntry="yes"
-      tags="$(currentTiddler)$ $(defaultTaskCalendarEntryTags)$"
-    >
-    </$action-createtiddler>
-    {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/CalendarPlus}} 添加日历记录
-  </$button>
-\end

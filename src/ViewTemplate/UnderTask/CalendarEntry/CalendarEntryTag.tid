@@ -1,0 +1,4 @@
+title: $:/tags/ITKG/CalendarEntry
+list: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AddCalendarEntryToday $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AddCalendarEntryThisWeek $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/CalendarEntry/CalendarThisWeek
+
+Tiddler with this tag will show in the create calendar entry, become one of the tabs.

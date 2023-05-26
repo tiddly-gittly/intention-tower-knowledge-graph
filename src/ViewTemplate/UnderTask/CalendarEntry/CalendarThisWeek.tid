@@ -1,0 +1,9 @@
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/CalendarEntry/CalendarThisWeek
+caption: {{$:/plugins/linonetwo/tw-calendar/Images/CalendarList}} 本周工作量
+tags: $:/tags/ITKG/CalendarEntry
+
+\define calendarWithCurrentTiddler(currentTag)
+<$calendar filter="[all[]tag[$currentTag$]field:calendarEntry[yes]]" readonly="yes" initialView="listWeek" hideToolbar="yes" />
+\end
+
+<$macrocall $name="calendarWithCurrentTiddler" currentTag=<<currentTiddler>>/>
