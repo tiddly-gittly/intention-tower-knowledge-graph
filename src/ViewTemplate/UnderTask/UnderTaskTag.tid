@@ -1,4 +1,4 @@
 title: $:/tags/ITKG/UnderTask
-list: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/TaskContext $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/TaskIntentionTowerFlowChartEcharts
+list: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/TaskContext $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/CalendarEntry
 
 Tiddler with this tag will show in the section under task tiddler, become one of the tabs.
