@@ -9,5 +9,5 @@ tags: $:/tags/ITKG/UnderProject $:/tags/ITKG/UnderTask
 </$list>
 
 <$list filter="[<graphRootTiddler>taggingtree[]filter<filter-is-new-task>count[]compare:number:gt[0]then[yes]]">
-  <$flowchart tiddler=<<graphRootTiddler>> height="600px" $template-tags={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}} />
+  <$flowchart tiddler=<<graphRootTiddler>> height="600px" $template-tags={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}} subfilter="[filter<filter-is-new-task>]" />
 </$list>
