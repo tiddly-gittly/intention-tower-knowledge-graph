@@ -2,6 +2,8 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/filters/leaf-task
 
 \define filter-is-new-task() [<currentTiddler>tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}!field:tmo_taskState[Completed]!field:tmo_taskState[Archived]!field:tmo_taskState[Terminated]!field:tmo_taskState[Suspended]]
 
+\define has-length() [length[]compare:integer:gt[0]debug-log[]]
+
 <!--
   have at least a not completed child tagging it  
 -->
@@ -14,5 +16,9 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/filters/leaf-task
 \define get-non-completed-leaf-projects() [all[current]taggingtree[]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}filter<filter-is-new-task>]
 <!-- for each child (in tagtree of current tiddler), remove out all that is not leaf, and get those is in new task state -->
 \define get-non-completed-leaf-tasks() [all[current]taggingtree[]!filter<filter-is-not-leaf>filter<filter-is-new-task>]
-<!-- get all project first, and for each project, run same logic as get-non-completed-leaf-tasks. If some project is sub project of others, this may introduce duplication, so deduplicate at last. -->
-\define get-all-non-completed-leaf-tasks() [all[tiddlers]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}filter<filter-is-new-task>] :map:flat[<currentTiddler>taggingtree[]!filter<filter-is-not-leaf>filter<filter-is-new-task>] :and[unique[]sortsub:integer<compareByPriority>]
+<!--
+get all project first, and for each project, run same logic as get-non-completed-leaf-tasks.
+`:map:flat` introduce some empty titles, so have to use `filter<has-length>` to exclude them.
+If some project is sub project of others, this may introduce duplication, so deduplicate by `unique[]` at last.
+-->
+\define get-all-non-completed-leaf-tasks() [all[tiddlers]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}filter<filter-is-new-task>] :map:flat[<currentTiddler>taggingtree[]!filter<filter-is-not-leaf>filter<filter-is-new-task>] :and[filter<has-length>unique[]sortsub:integer<compareByPriority>]
