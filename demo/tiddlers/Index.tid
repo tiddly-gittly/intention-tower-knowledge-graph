@@ -28,8 +28,6 @@ type: text/vnd.tiddlywiki
 
 !! 概念
 
-<$list filter="[tag[概念]]">
+[[文字版|概念]]
 
-{{!!text}}
-
-</$list>
+<<presenter tag:概念 animation:slideright>>
