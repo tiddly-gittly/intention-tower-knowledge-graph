@@ -1,5 +1,7 @@
 title: $:/plugins/linonetwo/intention-tower-knowledge-graph/Sidebar/ProjectList
 
+\import [[$:/plugins/linonetwo/intention-tower-knowledge-graph/filters/leaf-task]]
+
 \define project-list-item()
 \whitespace trim
 <div class="itkg-sidebar-project-list-item">
@@ -13,7 +15,7 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/Sidebar/ProjectList
 \whitespace trim
 <div class="itkg-sidebar-project-list">
   <$list
-    filter="[{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}] +[tagging[]]"
+    filter="[{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}] +[tagging[]debug-log[]]"
   >
     <<project-list-item>>
   </$list>

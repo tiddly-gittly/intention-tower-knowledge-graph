@@ -2,7 +2,7 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/filters/leaf-task
 
 \define filter-is-new-task() [<currentTiddler>tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}!field:tmo_taskState[Completed]!field:tmo_taskState[Archived]!field:tmo_taskState[Terminated]!field:tmo_taskState[Suspended]]
 
-\define has-length() [length[]compare:integer:gt[0]debug-log[]]
+\define has-length() [length[]compare:integer:gt[0]]
 
 <!--
   have at least a not completed child tagging it  
