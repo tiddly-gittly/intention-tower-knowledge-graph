@@ -1,0 +1,32 @@
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/Buttons/ToggleProject
+tags: $:/tags/ViewToolbar
+description: 
+
+\whitespace trim
+
+<$list filter="[<currentTiddler>tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}!tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}]" variable="ignore">
+  <$button tooltip="设为项目，并收藏到侧边栏意义之塔Tab里" aria-label="设为项目，并收藏到侧边栏意义之塔Tab里" class=<<tv-config-toolbar-class>> >
+    <$action-listops $tags={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}} />
+    <$list filter="[<tv-config-toolbar-icons>match[yes]]">
+      {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/SetAsProject}}
+    </$list>
+    <$list filter="[<tv-config-toolbar-text>match[yes]]">
+      <span class="tc-btn-text">
+        <$text text="设为项目"/>
+      </span>
+    </$list>
+  </$button>
+</$list>
+<$list filter="[<currentTiddler>tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}]" variable="ignore">
+  <$button tooltip="去掉项目标签，并从侧边栏意义之塔Tab里去掉" aria-label="去掉项目标签，并从侧边栏意义之塔Tab里去掉" class=<<tv-config-toolbar-class>> >
+    <$action-listops $tags="+[!match{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}]" />
+    <$list filter="[<tv-config-toolbar-icons>match[yes]]">
+      {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/SetAsNotProject}}
+    </$list>
+    <$list filter="[<tv-config-toolbar-text>match[yes]]">
+      <span class="tc-btn-text">
+        <$text text="去掉项目标签"/>
+      </span>
+    </$list>
+  </$button>
+</$list>
