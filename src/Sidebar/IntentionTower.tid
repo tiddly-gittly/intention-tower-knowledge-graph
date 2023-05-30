@@ -5,7 +5,7 @@ description: ITKG任务管理
 tags: $:/tags/SideBar
 type: text/vnd.tiddlywiki
 
-\import [[$:/plugins/linonetwo/intention-tower-knowledge-graph/Sidebar/ProjectList]]
+\import [[$:/plugins/linonetwo/intention-tower-knowledge-graph/Sidebar/ProjectList]] [[$:/plugins/linonetwo/intention-tower-knowledge-graph/filters/leaf-task]]
 
 <$scrollable fallthrough="none" class="itkg-sidebar-container tc-popup-keep tc-menubar-dropdown-sidebar">
 
