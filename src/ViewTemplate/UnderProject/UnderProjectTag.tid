@@ -1,4 +1,4 @@
 title: $:/tags/ITKG/UnderProject
-list: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/TaskDynamicTable $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/TaskFlowChart
+list: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/TaskDynamicTable
 
 Tiddler with this tag will show in the section under project tiddler, become one of the tabs.

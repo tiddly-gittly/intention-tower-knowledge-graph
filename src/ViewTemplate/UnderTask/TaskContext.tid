@@ -2,6 +2,8 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/TaskCon
 caption: {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Map}} 任务上下文
 tags: $:/tags/ITKG/UnderTask
 
+\import [[$:/plugins/linonetwo/intention-tower-knowledge-graph/filters/leaf-task]] [[$:/plugins/linonetwo/intention-tower-knowledge-graph/Components/Buttons]]
+
 \define echarts-with-subfilter()
 <$echarts
   $tiddler="$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AllProjectsFlowChartEchartsAddon"
@@ -18,3 +20,11 @@ tags: $:/tags/ITKG/UnderTask
 </$list>
 
 <<echarts-with-subfilter>>
+
+<$list filter="[<graphRootTiddler>taggingtree[]filter<filter-is-new-task>count[]match[0]then[yes]]">
+  暂无子任务 <<create-task-under-current-tiddler>>
+</$list>
+
+<$list filter="[<graphRootTiddler>taggingtree[]filter<filter-is-new-task>count[]compare:number:gt[0]then[yes]]">
+  <$flowchart tiddler=<<graphRootTiddler>> height="600px" $template-tags={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}} subfilter="[filter<filter-is-new-task>]" />
+</$list>
