@@ -20,5 +20,6 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/filters/leaf-task
 get all project first, and for each project, run same logic as get-non-completed-leaf-tasks.
 `:map:flat` introduce some empty titles, so have to use `filter<has-length>` to exclude them.
 If some project is sub project of others, this may introduce duplication, so deduplicate by `unique[]` at last.
+Then `!sortsub:integer` to sort by priority from 3 to 1
 -->
-\define get-all-non-completed-leaf-tasks() [all[tiddlers]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}filter<filter-is-new-task>] :map:flat[<currentTiddler>taggingtree[]!filter<filter-is-not-leaf>filter<filter-is-new-task>] :and[filter<has-length>unique[]sortsub:integer<compareByPriority>]
+\define get-all-non-completed-leaf-tasks() [all[tiddlers]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}filter<filter-is-new-task>] :map:flat[<currentTiddler>taggingtree[]!filter<filter-is-not-leaf>filter<filter-is-new-task>] :and[filter<has-length>unique[]!sortsub:integer<compareByPriority>]

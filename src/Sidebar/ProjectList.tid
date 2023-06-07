@@ -13,7 +13,7 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/Sidebar/ProjectList
 \whitespace trim
 <div class="itkg-sidebar-project-list">
   <$list
-    filter="[{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}] +[tagging[]filter<filter-is-new-task>]"
+    filter="[{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}] +[tagging[]filter<filter-is-new-task>] :and[filter<has-length>unique[]!sortsub:integer<compareByPriority>]"
   >
     <<project-list-item>>
   </$list>
