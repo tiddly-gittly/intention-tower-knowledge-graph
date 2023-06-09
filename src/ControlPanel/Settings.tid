@@ -28,6 +28,12 @@ tags: $:/tags/ControlPanel/SettingsTab
 </div>
 \end
 
+<!-- 自定义了一个宏，不然代码复制起来看着太复杂。 -->
+
+\define itkg-checkbox(name,tags)
+<$checkbox tiddler="$name$"  tag="$tags$"><$link to="$name$" >{{$name$!!caption}}</$link></$checkbox>
+\end
+
 <!-- These settings let you customise the behaviour of intention-tower-knowledge-graph plugin. -->
 
 这些设置让你可以自定义 ITKG 插件。
@@ -50,3 +56,27 @@ tags: $:/tags/ControlPanel/SettingsTab
 在新建和一个任务相关的日历项目时，可以设置自动添加日历项目的类型标签，例如「解决问题」。
 
 日历记录额外标签：<<single-text-tag-editor default-calendar-entry>>
+
+!! 可选的选项卡内容
+
+[[Task|$:/tags/ITKG/UnderTask]]
+
+* <<itkg-checkbox "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AddProject" "$:/tags/ITKG/UnderTask" >>
+* <<itkg-checkbox "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/TaskContext" "$:/tags/ITKG/UnderTask" >>
+* <<itkg-checkbox "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/CalendarEntry" "$:/tags/ITKG/UnderTask" >>
+** <<itkg-checkbox "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AddCalendarEntryThisWeek" "$:/tags/ITKG/CalendarEntry" >>
+** <<itkg-checkbox "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AddCalendarEntryToday" "$:/tags/ITKG/CalendarEntry" >>
+** <<itkg-checkbox "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AddCalendarEntryToday" "$:/tags/ITKG/CalendarEntry" >>
+
+[[Project|$:/tags/ITKG/UnderProject]]
+
+* <<itkg-checkbox "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/TaskDynamicTable" "$:/tags/ITKG/UnderProject" >>
+* <<itkg-checkbox "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AddIntention" "$:/tags/ITKG/UnderProject" >>
+* <<itkg-checkbox "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/CalendarEntry/CalendarThisYear" "$:/tags/ITKG/UnderProject" >>
+
+
+[[Intention|$:/tags/ITKG/UnderIntention]]
+
+* <<itkg-checkbox "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AddIntention" "$:/tags/ITKG/UnderIntention" >>
+* <<itkg-checkbox "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/ProjectDynamicTable" "$:/tags/ITKG/UnderIntention" >>
+* <<itkg-checkbox "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/ProjectsUnderThisIntentionFlowChartEcharts" "$:/tags/ITKG/UnderIntention" >>
