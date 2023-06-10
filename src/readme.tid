@@ -3,3 +3,10 @@ creator: LinOnetwo
 type: text/vnd.tiddlywiki
 
 ITKG is a knowledge and task management framework for tiddlywiki. ITKG short for intention tower & knowledge graph.
+
+code: https://github.com/tiddly-gittly/intention-tower-knowledge-graph
+
+demo: https://tiddly-gittly.github.io/intention-tower-knowledge-graph/
+
+依赖插件有："$:/plugins/kookma/shiraz", "$:/plugins/linonetwo/flow-chart", "$:/plugins/yaisog/taggingtree-filter", "$:/plugins/yaisog/tagstree-filter", "$:/plugins/linonetwo/in-tagtree-of", "$:/plugins/xp/aggregation",$:/plugins/Gk0Wk/echarts", "$:/plugins/linonetwo/super-tag", "$:/plugins/linonetwo/tw-calendar"，如果CPL没有自动安装，请手动安装。
+
