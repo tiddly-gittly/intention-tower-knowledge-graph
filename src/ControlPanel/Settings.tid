@@ -66,7 +66,7 @@ tags: $:/tags/ControlPanel/SettingsTab
 * <<itkg-checkbox "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/CalendarEntry" "$:/tags/ITKG/UnderTask" >>
 ** <<itkg-checkbox "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AddCalendarEntryThisWeek" "$:/tags/ITKG/CalendarEntry" >>
 ** <<itkg-checkbox "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AddCalendarEntryToday" "$:/tags/ITKG/CalendarEntry" >>
-** <<itkg-checkbox "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AddCalendarEntryToday" "$:/tags/ITKG/CalendarEntry" >>
+** <<itkg-checkbox "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/CalendarEntry/CalendarThisWeek" "$:/tags/ITKG/CalendarEntry" >>
 
 [[Project|$:/tags/ITKG/UnderProject]]
 
