@@ -17,3 +17,9 @@ ITKG is a knowledge and task management framework for tiddlywiki. ITKG short for
 之后太微将自动为你定下每日的任务，但是不做具体时间安排，不做微操作。这个系统要保证的是做任务的态度端正，将精力投入到优先级最高的任务中去。
 
 只要态度不滑坡，办法总比问题多。鼓励自己，端正自己的态度。重振精神，创造新事物。
+
+请在示例网站中把$:/aggregation/fields-smart-mode/ItemTemplate、$:/aggregation/macros/definitions和$:/aggregation/macros三个条目拖到你的wiki中，并确保安装$:/plugins/xp/aggregation插件，否则表格内容无法正常显示。
+
+也可把仓库中的fields-smart-mode/ItemTemplate、macros/definitions和macros三个文件下载并放到wiki里去。也可下载aggregation.json文件。
+
+这三个文件无法打包到插件里去，需要手动安装。具体原因暂时不知，见谅。目前itonnote主题插件会隐藏搜索按钮，请切换到其他主题。
