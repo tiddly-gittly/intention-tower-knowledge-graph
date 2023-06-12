@@ -1,7 +1,7 @@
 created: 20230402014534059
 modified: 20230402014534059
-tags: $:/tags/Macro/Aggregation $:/tags/XpPreview
-title: $:/aggregation/macros/definitions
+tags: $:/tags/Macro $:/tags/XpPreview
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/aggregation/macros/definitions
 
 \define lingo-base() $:/language/Search/
 

@@ -1,10 +1,10 @@
 created: 20230402014525104
 modified: 20230402014525104
-tags: $:/tags/Macro $:/tags/Macro/Aggregation $:/tags/XpPreview
-title: $:/aggregation/macros
+tags: $:/tags/Macro $:/tags/XpPreview
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/aggregation/macros
 
-\define aggregation(filter,state:"aggregation-state", defaultFields:"tbl-expand title",class:"w-100",paginationButton:"yes",rowsButton:"no",viewButton:"yes",tiddler, searchClass:"xp-search-aggregation", cardTemplate:"$:/aggregation-card-template", tocTemplate, promptTiddler:"$:/aggregation/prompt")
-\import $:/aggregation/macros/definitions
+\define ITKG-aggregation(filter,state:"aggregation-state", defaultFields:"tbl-expand title",class:"w-100",paginationButton:"yes",rowsButton:"no",viewButton:"yes",tiddler, searchClass:"xp-search-aggregation", cardTemplate:"$:/aggregation-card-template", tocTemplate, promptTiddler:"$:/aggregation/prompt")
+\import $:/plugins/linonetwo/intention-tower-knowledge-graph/aggregation/macros/definitions
 \whitespace trim
 <$list filter="""$filter$ +[limit[1]]""" emptyMessage="{{$promptTiddler$}}" variable="ignore">
 <span class="xp-search $searchClass$">
