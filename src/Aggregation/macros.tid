@@ -1,0 +1,621 @@
+created: 20230402014525104
+modified: 20230402014525104
+tags: $:/tags/Macro $:/tags/XpPreview
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/aggregation/macros
+
+\define ITKG-aggregation(filter,state:"aggregation-state", defaultFields:"tbl-expand title",class:"w-100",paginationButton:"yes",rowsButton:"no",viewButton:"yes",tiddler, searchClass:"xp-search-aggregation", cardTemplate:"$:/aggregation-card-template", tocTemplate, promptTiddler:"$:/aggregation/prompt")
+\import $:/plugins/linonetwo/intention-tower-knowledge-graph/aggregation/macros/definitions
+\whitespace trim
+<$list filter="""$filter$ +[limit[1]]""" emptyMessage="{{$promptTiddler$}}" variable="ignore">
+<span class="xp-search $searchClass$">
+Search &#32;
+<$select
+  tiddler="""$:/config/xp/$state$/SearchScope"""
+  default="+[search<userInput>]"
+  tooltip="Choosing the Search Scope"
+  class="xp-aggregation-select">
+  <option value="+[search:*<userInput>]"> all fields</option>
+  <option value="+[search:*:literal,casesensitive<userInput>]"> all exact match</option>
+  <option value="+[search:-text,*<userInput>]"> all except text</option>
+  <option value="+[search<userInput>]"> title text tags</option>
+  <option value="+[search:title,caption<userInput>]"> title caption</option>
+</$select>
+<i class='tc-small-gap-left'/>
+<$macrocall
+  $name="keyboard-driven-input"
+  tiddler="""$:/temp/search/$state$"""
+  type="search"
+  tag="input"
+  focus={{$:/config/xp/aggregation/SearchAutoFocus}}
+  inputCancelActions="""<$action-deletetiddler $filter="[[$:/state/filter/$state$]get[checktiddler]enlist-input[]]"/><$action-deletetiddler $filter="$:/temp/search/$state$ $:/state/filter/$state$ $:/temp/xp/$state$/Field $:/temp/xp/$state$/Date $:/temp/xp/$state$/FieldValue"/>"""
+/>
+</span>
+<i class='tc-tiny-gap-left'/>
+<$let userInput={{{ [[$:/temp/search/$state$]get[text]] }}}
+    searchRun={{{ [[$:/config/xp/$state$/SearchScope]has[text]get[text]] ~"+[search<userInput>]" }}}
+    timeRun={{{ [[$:/state/filter/$state$]get[filter]] }}}
+    sortRun={{{ [[$:/temp/xp/$state$/Sorting]is[tiddler]get[text]] }}}
+    fieldRun={{{ [[$:/temp/xp/$state$/Field]has[filter]get[filter]] }}}
+    valueRun={{{ [[$:/temp/xp/$state$/FieldValue]has[filter]get[filter]] }}}
+    resultCount="<$count filter=<<searchFilter>>/>"
+    sortState={{{ [[$:/state/dynamictables/$state$/sortby]has[title]] ~$:/temp/xp/$state$/Sorting }}}
+    tempTableSort="""$:/state/dynamictables/$state$/sortby"""
+    sortIndex={{{ [[$:/state/dynamictables/$state$/sortby]getindex[sortIndex]] }}}
+    storeTitle="""$:/temp/search/$state$"""
+    filterState="""$:/state/filter/$state$"""
+    fieldTiddler="""$:/temp/xp/$state$/Field"""
+    dateTiddler="""$:/temp/xp/$state$/Date"""
+    valueTiddler="""$:/temp/xp/$state$/FieldValue"""
+    sortTiddler="""$:/temp/xp/$state$/Sorting"""
+    defaultView="""$:/config/xp/$state$/DefaultView"""
+    readingMode="""$:/config/xp/$state$/ReadingMode"""
+    sourceMode="""$:/config/xp/$state$/SourceMode"""
+    tocSwitchTid="""$:/temp/xp/$state$/aggregation-toc"""
+    config-base="""$:/config/xp/$state$/TableFields/Visibility/"""
+    navTiddler={{{ [<__tiddler__>has[title]] ~[<currentTiddler>] }}}>
+<span class="tc-search">
+<$reveal state=<<filterState>> type="nomatch" text="yes">
+<$button set=<<filterState>> setTo="yes" class="tc-btn-invisible">
+{{$:/xp/images/filter}}
+</$button>
+</$reveal>
+<$set name="stateTiddler" filter="[<storeTitle>!is[missing]has[text]]" value=<<storeTitle>> emptyValue=<<filterState>>>
+<$reveal state=<<stateTiddler>> type="nomatch" text="">
+<$button class="tc-btn-invisible">
+<$action-deletetiddler $filter="[[$:/state/filter/$state$]get[checktiddler]enlist-input[]]"/>
+<$action-deletetiddler $filter="$:/temp/search/$state$ $:/state/filter/$state$ $:/temp/xp/$state$/Field $:/temp/xp/$state$/Date $:/temp/xp/$state$/FieldValue"/>
+<$action-sendmessage $message="tm-focus-selector" $param=""".$searchClass$ input"""/>
+{{$:/core/images/close-button}}
+</$button>
+</$reveal>
+</$set>
+<$list filter="[<__viewButton__>match[yes]]" variable="ignore">
+<$reveal state=<<readingMode>> type="nomatch" text="on">
+<<toggleViewButton>>
+</$reveal>
+</$list>
+<<sortingButton>>
+<<toggleReadingMode>>
+<<viewSource>>
+<<tocSwitch>>
+</span>
+<$wikify text=<<target-filter-code>> name="targetFilter">
+<$set name="searchFilter" filter="[<filterState>has[list]]" value=<<targetFilter>> emptyValue={{{ [<__filter__>addsuffix[ ]addsuffix<searchRun>addsuffix<timeRun>addsuffix<fieldRun>addsuffix<valueRun>addsuffix<sortRun>] }}}>
+<$set name="stateTiddler" filter="[<storeTitle>!is[missing]get[text]!is[blank]]" value=<<storeTitle>> emptyValue=<<filterState>>>
+<$reveal state=<<stateTiddler>> type="nomatch" text="">
+<$reveal state=<<filterState>> type="nomatch" text="yes" animate="yes">
+<span class="xp-search-results"><<lingo System/Matches>></span>
+</$reveal>
+</$reveal>
+<$reveal state=<<filterState>> type="nomatch" text="yes" animate="yes">
+<<unsortButton>>
+</$reveal>
+</$set>
+<$reveal state=<<filterState>> type="match" text="yes" animate="yes">
+<div class="xp-wrapper-aggrfilter">
+
+Filtered by Tag: <<deselectButton>>
+
+<div class="xp-aggrfilter-category">
+<table>
+<tbody>
+<$list filter="""$filter$ +[tags[]!is[system]limit[1]]""" variable="ignore">
+<tr>
+<td><span class="xp-aggrfilter-category-title tc-muted">Tags</span></td>
+<td>
+<span class="xp-aggrfilter-category-item">
+<$list filter="""$filter$ +[tags[]!is[system]sort[]]""" variable="currentItem">
+<$macrocall $name="aggrfilteritem" item=<<currentItem>>/>
+</$list>
+</span>
+</td>
+</tr>
+</$list>
+<$list filter="""$filter$ +[tags[]is[system]limit[1]]""" variable="ignore">
+<tr>
+<td><span class="xp-aggrfilter-category-title tc-muted">$Tags</span></td>
+<td>
+<span class="xp-aggrfilter-category-item">
+<$list filter="""$filter$ +[tags[]is[system]sort[]]""" variable="currentItem">
+<$macrocall $name="aggrfilteritem" item=<<currentItem>>/>
+</$list>
+</span>
+</td>
+</tr>
+</$list>
+</tbody>
+</table>
+</div>
+
+Filtered by Time / Field: <<resetFieldButton>>
+
+<div class="xp-aggrfilter-category">
+<table>
+<tbody>
+<tr>
+<td>
+<span class="xp-aggrfilter-category-title tc-muted">Time</span>&#32;
+<$select
+  tiddler=<<filterState>>
+  field="filter"
+  class="xp-aggregation-select"
+  actions="<$list filter='[<filterState>search:filter[regexp:created]]'><$action-setfield $tiddler=<<dateTiddler>> status='show'/></$list>">
+  <option value=""> All</option>
+  <option value="+[days:created[-1]]"> Past 24 hours</option>
+  <option value="+[days:created[-7]]"> Past week</option>
+  <option value="+[days:created[-30]]"> Past month</option>
+  <option value="+[days:created[-365]]"> Past year</option>
+  <option value="+[regexp:created[]]"> Enter a date</option>
+</$select>
+</td>
+<$list filter="[<dateTiddler>is[tiddler]]">
+<td>
+<span class="xp-aggrfilter-category-title tc-muted">Date</span>&#32;
+<$vars pt=" +[regexp:created[^" st="]]">
+<$macrocall
+  $name="keyboard-driven-input" 
+  tiddler=<<dateTiddler>>
+  type="search"
+  tag="input"
+  size=7
+  focus="no"
+  inputCancelActions=<<input-cancel-actions-date>>
+  inputAcceptActions=<<input-accept-actions-date>>
+/>
+&#32;
+<$button> Enter
+<<input-accept-actions-date>>
+</$button>
+</$vars>
+</td>
+</$list>
+<$vars
+    getField={{{ [<fieldTiddler>is[tiddler]get[text]] }}}
+    getValue={{{ [<valueTiddler>is[tiddler]get[text]] }}}
+    pt1="+[has:field["
+    pt2="+["
+    st="]]"
+    st2="["
+    >
+<td>
+<span class="xp-aggrfilter-category-title tc-muted"> Field </span>&#32;
+<$select
+  tiddler=<<fieldTiddler>>
+  tooltip="Choosing the Field"
+  class="xp-aggregation-select"
+  actions="<$action-setfield $tiddler=<<fieldTiddler>> filter={{{ [<fieldTiddler>get[text]addprefix<pt1>addsuffix<st>] }}}/><$action-deletetiddler $tiddler=<<valueTiddler>>/>">
+  <$list filter="""$filter$ +[fields:exclude{$:/config/xp/aggregation/excluded-fields/filtering-button}]""">
+  <option><$view field="title"/></option>
+  </$list>
+</$select>
+</td>
+<$list
+  filter="""$filter$ +[has<getField>limit[1]]"""
+  emptyMessage="<$list filter='[<fieldTiddler>has[text]]'><td><span class='xp-aggrfilter-category-title tc-muted'> No value for this field </span></td></$list>"
+  variable="ignore">
+<td>
+<span class="xp-aggrfilter-category-title tc-muted"> Value </span>&#32;
+<$select
+  tiddler=<<valueTiddler>>
+  tooltip="Choosing the Value"
+  class="xp-aggregation-select"
+  actions="""<$action-setfield $tiddler=<<valueTiddler>> filter={{{ [<getField>addprefix<pt2>addsuffix<st2>addsuffix{$:/temp/xp/$state$/FieldValue}addsuffix<st>] }}}/>""">
+  <$list filter="""$filter$ +[has<getField>each<getField>get<getField>!is[blank]]""">
+  <option><$view field="title"/></option>
+  </$list>
+</$select>
+</td>
+</$list>
+</$vars>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+</$reveal>
+<$reveal state=<<filterState>> type="match" text="yes" animate="yes">
+<<lingo System/Matches>>
+<<unsortButton>>
+</$reveal>
+
+<$reveal state=<<readingMode>> type="nomatch" text="on" animate="yes">
+
+<!-- Show table -->
+<$reveal state=<<defaultView>> default="table" type="match" text="table" animate="yes">
+<$wikify name="dtableFields" text="""<$list filter="[list[$:/config/xp/$state$/TableFields]]" variable="listField"><$reveal type="match" state=<<field-config-title>> text="show"> <$text text={{{ [<listField>format:titlelist[]] }}}/> </$reveal></$list>""">
+<$set name="fields" filter="[<dtableFields>is[blank]]" value=<<__defaultFields__>> emptyValue=<<dtableFields>>>
+<$macrocall 
+  $name="aggregation-dtable"
+  filter=<<searchFilter>>
+  fields=<<fields>>
+  class=<<__class__>>
+  stateTiddler=<<__state__>>
+  paginationButton=<<__paginationButton__>>
+  rowsButton=<<__rowsButton__>>
+/>
+</$set>
+</$wikify>
+</$reveal>
+
+<!-- Show card -->
+<$reveal state=<<defaultView>> default="table" type="nomatch" text="table" animate="yes">
+<div class="content" style="padding-top:10px;">
+<$list
+  filter=<<searchFilter>>
+  template=<<__cardTemplate__>>
+/>
+</div>
+</$reveal>
+
+</$reveal>
+
+<!-- Reading Mode -->
+<$reveal state=<<readingMode>> type="match" text="on" animate="yes">
+<$list filter="""$filter$ +[limit[1]]""" variable="ignore">
+<$vars selectedTiddler="$:/temp/toc/selectedTiddler/$state$" template="" exclude="">
+
+<div style="padding:10px 0;">
+<$tiddler tiddler={{{ [<selectedTiddler>get[text]] }}}>
+<div class="tc-tabbed-table-of-contents" style="">
+<$list filter="[<tocSwitchTid>!text[hide]]" variable="ignore">
+    <$linkcatcher to=<<selectedTiddler>>>
+    <div class="tc-table-of-contents xp-aggregation-toc">
+    <$set name="excluded" filter="[enlist<exclude>]">
+        <ol class="tc-toc toc-selective-expandable">
+        <$list filter="[subfilter<searchFilter>] -[enlist<exclude>]">
+<$macrocall $name="toc-linked-selective-expandable-body" itemClassFilter="[all[current]] -[<selectedTiddler>get[text]]" exclude=<<excluded>>/>
+        </$list>
+        </ol>
+    </$set>
+    </div>
+    </$linkcatcher>
+</$list>
+    <div class="tc-tabbed-table-of-contents-content">
+    <$reveal stateTitle=<<selectedTiddler>> type="nomatch" text="">
+        <$transclude mode="block" tiddler=<<template>>>
+<$reveal state=<<sourceMode>> type="nomatch" text="on">
+    <h1><$link><$transclude field="caption"><$view field="title"/></$transclude></$link>&emsp;<span class="tc-tiddler-controls" style="font-size:0.73em !important;"><$list filter="$:/core/ui/Buttons/new-here $:/core/ui/Buttons/clone $:/core/ui/Buttons/delete $:/core/ui/Buttons/edit" variable="listItem"><$set name="tv-config-toolbar-class" filter="[<tv-config-toolbar-class>] [<listItem>encodeuricomponent[]addprefix[tc-btn-]]"><$transclude tiddler=<<listItem>>/></$set></$list></span></h1>
+    ^^<i class="tc-muted"><$view field="modified" format="date" template="DDth MMM YYYY at 0hh:0mm">TBA</$view></i>^^
+    <$transclude mode="block"><p>Missing tiddler.</p></$transclude>
+</$reveal>
+<!-- Source Mode -->
+<$reveal state=<<sourceMode>> type="match" text="on">
+    <h1><$link><$view field="title"/></$link>&emsp;<span class="tc-tiddler-controls" style="font-size:0.73em !important;"><$list filter="$:/core/ui/Buttons/new-here $:/core/ui/Buttons/clone $:/core/ui/Buttons/delete $:/core/ui/Buttons/edit" variable="listItem"><$set name="tv-config-toolbar-class" filter="[<tv-config-toolbar-class>] [<listItem>encodeuricomponent[]addprefix[tc-btn-]]"><$transclude tiddler=<<listItem>>/></$set></$list></span></h1>
+    ^^<i class="tc-muted"><$view field="modified" format="date" template="DDth MMM YYYY at 0hh:0mm">TBA</$view></i>^^
+    <$codeblock code={{{ [<currentTiddler>get[text]] }}}><p>Missing tiddler.</p></$codeblock>
+</$reveal>
+        </$transclude>
+<!-- Navigation -->
+<div class="xp-aggregation-toc-navigation">
+    <$list filter="[subfilter<searchFilter>] -[enlist<exclude>] +[after<currentTiddler>]" variable="nextTiddler">
+    <$linkcatcher to=<<selectedTiddler>> actions="<$action-navigate $to=<<navTiddler>> $scroll='yes'/>">
+        ''NEXT''
+        <div><$link to=<<nextTiddler>>><$text text=<<nextTiddler>>/></$link></div>
+    </$linkcatcher>
+    </$list>
+    <$list filter="[subfilter<searchFilter>] -[enlist<exclude>] +[before<currentTiddler>]" variable="prevTiddler">
+    <$linkcatcher to=<<selectedTiddler>> actions="<$action-navigate $to=<<navTiddler>> $scroll='yes'/>">
+        <div style="padding-top:7px;">
+        ''PREVIOUS''
+        <div><$link to=<<prevTiddler>>><$text text=<<prevTiddler>>/></$link></div>
+        </div>
+    </$linkcatcher>
+    </$list>
+</div>
+    </$reveal>
+    <$reveal stateTitle=<<selectedTiddler>> type="match" text="">
+        <p>Select a topic in the table of contents. Click the arrow to expand a topic.</p>
+    </$reveal>
+    </div>
+</div>
+</$tiddler>
+</div>
+
+</$vars>
+</$list>
+</$reveal>
+
+</$set>
+</$wikify>
+</$let>
+</$list>
+\end
+
+
+\define aggregation-filtersearch(fields:"tbl-expand title", class:"w-100", state:"aggregation-general", paginationButton:"yes", rowsButton:"no", viewButton:"yes", searchClass:"xp-search-aggregation", cardTemplate:"$:/aggregation-card-template", tocTemplate, promptTiddler:"$:/aggregation/prompt")
+\import $:/aggregation/macros/general
+\whitespace trim
+<$list filter=<<aggr-has-tids>> emptyMessage="{{$promptTiddler$}}" variable="ignore">
+<span class="xp-search $searchClass$">
+Search &#32; <<selectSearchScope>> <i class='tc-small-gap-right'/> <$macrocall $name="keyboard-driven-input"
+    tiddler="""$:/temp/search/$state$"""
+    type="search"
+    tag="input"
+    focus={{$:/config/xp/aggregation/SearchAutoFocus}}
+    inputCancelActions="""<$action-deletetiddler $filter="[[$:/state/filter/$state$]get[checktiddler]enlist-input[]]"/><$action-deletetiddler $filter="$:/temp/search/$state$ $:/state/filter/$state$ $:/temp/xp/$state$/Field $:/temp/xp/$state$/Date $:/temp/xp/$state$/FieldValue"/>"""/>
+</span>
+<i class='tc-tiny-gap-left'/>
+<$vars userInput={{{ [[$:/temp/search/$state$]get[text]] }}}
+    timeRun={{{ [[$:/state/filter/$state$]get[filter]] }}}
+    sortRun={{{ [[$:/temp/xp/$state$/Sorting]is[tiddler]get[text]] }}}
+    fieldRun={{{ [[$:/temp/xp/$state$/Field]has[filter]get[filter]] }}}
+    valueRun={{{ [[$:/temp/xp/$state$/FieldValue]has[filter]get[filter]] }}}
+    resultCount="<$count filter=<<searchFilter>>/>"
+    sortState={{{ [[$:/state/dynamictables/$state$/sortby]is[tiddler]] ~$:/temp/xp/$state$/Sorting }}}
+    tempTableSort="""$:/state/dynamictables/$state$/sortby"""
+    sortIndex={{{ [[$:/state/dynamictables/$state$/sortby]getindex[sortIndex]] }}}
+    categoryPrefix="""$:/config/xp/$state$/category/"""
+    storeTitle="""$:/temp/search/$state$"""
+    filterState="""$:/state/filter/$state$"""
+    fieldTiddler="""$:/temp/xp/$state$/Field"""
+    dateTiddler="""$:/temp/xp/$state$/Date"""
+    valueTiddler="""$:/temp/xp/$state$/FieldValue"""
+    sortTiddler="""$:/temp/xp/$state$/Sorting"""
+    defaultView="""$:/config/xp/$state$/DefaultView"""
+    readingMode="""$:/config/xp/$state$/ReadingMode"""
+    sourceMode="""$:/config/xp/$state$/SourceMode"""
+    tocSwitchTid="""$:/temp/xp/$state$/aggregation-toc"""
+    config-base="""$:/config/xp/$state$/TableFields/Visibility/""">
+<span class="tc-search">
+<$reveal state=<<filterState>> type="nomatch" text="yes">
+<$button class="tc-btn-invisible">
+<$action-setfield $tiddler=<<filterState>> text="yes"/>
+{{$:/xp/images/filter}}
+</$button>
+</$reveal>
+<$set name="stateTiddler" filter="[<storeTitle>!is[missing]has[text]]" value=<<storeTitle>> emptyValue=<<filterState>>>
+<$reveal state=<<stateTiddler>> type="nomatch" text="">
+<$button class="tc-btn-invisible">
+<$action-deletetiddler $filter="[[$:/state/filter/$state$]get[checktiddler]enlist-input[]]"/><$action-deletetiddler $filter="$:/temp/search/$state$ $:/state/filter/$state$ $:/temp/xp/$state$/Field $:/temp/xp/$state$/Date $:/temp/xp/$state$/FieldValue"/>
+<$action-sendmessage $message="tm-focus-selector" $param=""".$searchClass$ input"""/>
+{{$:/core/images/close-button}}
+</$button>
+</$reveal>
+</$set>
+<$list filter="[<__viewButton__>match[yes]]" variable="ignore">
+<$reveal state=<<readingMode>> type="nomatch" text="on">
+<<toggleViewButton>>
+</$reveal>
+</$list>
+<<sortingButton>>
+<<toggleReadingMode>>
+<<viewSource>>
+<<tocSwitch>>
+</span>
+<$wikify text=<<alltagsfilter>> name="alltagsfilterwikified">
+<$set name="searchFilter" filter="[<filterState>has[list]]" value=<<alltagsfilterwikified>> emptyValue={{{ [<configTiddler>get[text]addsuffix<timeRun>addsuffix<fieldRun>addsuffix<valueRun>addsuffix<sortRun>] }}}>
+<$set name="stateTiddler" filter="[<storeTitle>!is[missing]get[text]!is[blank]]" value=<<storeTitle>> emptyValue=<<filterState>>>
+<$reveal state=<<stateTiddler>> type="nomatch" text="">
+<$reveal state=<<filterState>> type="nomatch" text="yes" animate="yes">
+<span class="xp-search-results"><<lingo System/Matches>></span>
+</$reveal>
+</$reveal>
+<$reveal state=<<filterState>> type="nomatch" text="yes" animate="yes">
+<<unsortButton>>
+</$reveal>
+</$set>
+<$reveal state=<<filterState>> type="match" text="yes" animate="yes">
+<div class="xp-wrapper-aggrfilter">
+
+<<filtered-by-tag>>
+
+Filtered by Time / Field: <<resetFieldButton>>
+
+<div class="xp-aggrfilter-category">
+<table>
+<tbody>
+<tr>
+<<filtered-by-time>>
+<$vars getField={{{ [<fieldTiddler>is[tiddler]get[text]] }}} getValue={{{ [<valueTiddler>is[tiddler]get[text]] }}}
+    pt1="+[has:field[" pt2="+[" st="]]" st2="[">
+<td>
+<span class="xp-aggrfilter-category-title tc-muted"> Field </span>&#32;
+<$select tiddler=<<fieldTiddler>> tooltip="Choosing the Field" class="xp-aggregation-select" actions="""<$action-setfield $tiddler=<<fieldTiddler>> filter={{{ [<fieldTiddler>get[text]addprefix<pt1>addsuffix<st>] }}}/><$action-deletetiddler $tiddler=<<valueTiddler>>/>""">
+<$list filter="[tag<aggregationTag>fields:exclude{$:/config/xp/aggregation/excluded-fields/filtering-button}]">
+<option><$view field="title"/></option>
+</$list>
+</$select>
+</td>
+<$list filter="[tag<aggregationTag>has{$:/temp/xp/$state$/Field}limit[1]]" emptyMessage="""<$list filter="[<fieldTiddler>has[text]]"><td><span class="xp-aggrfilter-category-title tc-muted"> No value for this field </span></td></$list>""" variable="ignore">
+<td>
+<span class="xp-aggrfilter-category-title tc-muted"> Value </span>&#32;
+<$select tiddler=<<valueTiddler>> tooltip="Choosing the Value" class="xp-aggregation-select" actions="""<$action-setfield $tiddler=<<valueTiddler>> filter={{{ [<getField>addprefix<pt2>addsuffix<st2>addsuffix{$:/temp/xp/$state$/FieldValue}addsuffix<st>] }}}/>""">
+<$list filter="[tag<aggregationTag>has<getField>each<getField>get<getField>!is[blank]]">
+<option><$view field="title"/></option>
+</$list>
+</$select>
+</td>
+</$list>
+</$vars>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+</$reveal>
+<$reveal state=<<filterState>> type="match" text="yes" animate="yes">
+<<lingo System/Matches>>
+<<unsortButton>>
+</$reveal>
+
+<$reveal state=<<readingMode>> type="nomatch" text="on" animate="yes">
+
+<!-- Show table -->
+<$reveal state=<<defaultView>> default="table" type="match" text="table" animate="yes">
+<$macrocall 
+  $name="aggr-table"
+  filter=<<searchFilter>>
+  fields=<<__fields__>>
+  class=<<__class__>>
+  stateTiddler=<<__state__>>
+  paginationButton=<<__paginationButton__>>
+  rowsButton=<<__rowsButton__>>
+/>
+</$reveal>
+
+<!-- Show card -->
+<$reveal state=<<defaultView>> default="table" type="nomatch" text="table" animate="yes">
+<div class="content" style="padding-top:10px;">
+<$list
+  filter=<<searchFilter>>
+  template=<<__cardTemplate__>>
+/>
+</div>
+</$reveal>
+
+</$reveal>
+
+<!-- Reading Mode -->
+<$reveal state=<<readingMode>> type="match" text="on" animate="yes">
+<$list filter="[subfilter<searchFilter>limit[1]]" variable="ignore">
+
+<$macrocall
+  $name="aggregation-toc"
+  filter=<<searchFilter>>
+  selectedTiddler="""$:/temp/toc/selectedTiddler/$state$"""
+  template=<<__tocTemplate__>>
+  sourceMode=<<sourceMode>>
+  tocSwitchTid=<<tocSwitchTid>>
+/>
+
+</$list>
+</$reveal>
+
+</$set>
+</$wikify>
+</$vars>
+</$list>
+\end
+
+
+\define aggregation-table-dynamic(fields:"tbl-expand title tags",class:"w-100",state:"aggregation",storeTitle:"$:/temp/search/aggregation/dtable",searchClass:"xp-search-aggregation",promptTiddler:"$:/aggregation/prompt")
+\import $:/aggregation/macros/general
+\whitespace trim
+<$list filter=<<aggr-has-tids>> emptyMessage="{{$promptTiddler$}}" variable="ignore">
+<span class="xp-search $searchClass$">
+Search &#32; <<selectSearchScope>> <i class='tc-small-gap-right'/> <$macrocall $name="keyboard-driven-input"
+    tiddler=<<__storeTitle__>>
+    type="search"
+    tag="input"
+    focus={{$:/config/xp/aggregation/SearchAutoFocus}}
+    inputCancelActions=<<__cancel-search-actions__>>/>
+<i class='tc-tiny-gap-left'/>
+<$reveal state=<<__storeTitle__>> type="nomatch" text="">
+<$button class="tc-btn-invisible">
+<<cancel-search-actions>>
+<$action-sendmessage $message="tm-focus-selector" $param=""".$searchClass$ input"""/>
+{{$:/core/images/close-button}}
+</$button>
+</$reveal>
+</span>
+<$vars userInput={{{ [<__storeTitle__>get[text]] }}}
+    aggrFilter={{{ [<configTiddler>get[text]] }}}
+    resultCount="<$count filter=<<aggrFilter>>/>">
+<$reveal state=<<__storeTitle__>> type="nomatch" text="">
+<span class="xp-search-results"><<lingo System/Matches>></span>
+</$reveal>
+
+<$macrocall
+  $name="table-dynamic"
+  filter=<<aggrFilter>>
+  fields="$fields$"
+  class="$class$"
+  stateTiddler="$state$"
+  emptyMessage=" "
+/>
+
+</$vars>
+</$list>
+\end
+
+
+\define aggregation-list-thumbnails(width:"220",height:"123",storeTitle:"$:/temp/search/aggregation/thumbnails",searchClass:"xp-search-aggregation",tagbar:"yes",promptTiddler:"$:/aggregation/prompt")
+\import $:/aggregation/macros/general
+\whitespace trim
+<$list filter=<<aggr-has-tids>> emptyMessage="{{$promptTiddler$}}" variable="ignore">
+
+<$reveal default="$tagbar$" type="nomatch" text="no">
+<<aggrTagbar>>
+</$reveal>
+
+<span class="xp-search $searchClass$">
+Search &#32; <<selectSearchScope>> <i class='tc-small-gap-right'/> <$macrocall $name="keyboard-driven-input"
+    tiddler=<<__storeTitle__>>
+    type="search"
+    tag="input"
+    focus={{$:/config/xp/aggregation/SearchAutoFocus}}
+    inputCancelActions=<<__cancel-search-actions__>>/>
+<i class='tc-tiny-gap-left'/>
+<$reveal state=<<__storeTitle__>> type="nomatch" text="">
+<$button class="tc-btn-invisible">
+<<cancel-search-actions>>
+<$action-sendmessage $message="tm-focus-selector" $param=""".$searchClass$ input"""/>
+{{$:/core/images/close-button}}
+</$button>
+</$reveal>
+</span>
+<$vars userInput={{{ [<__storeTitle__>get[text]] }}}
+    aggrFilter={{{ [<configTiddler>get[text]] }}}
+    resultCount="<$count filter=<<aggrFilter>>/>">
+<$reveal state=<<__storeTitle__>> type="nomatch" text="">
+<span class="xp-search-results"><<lingo System/Matches>></span>
+</$reveal>
+
+<div style="font-size:0.7em;text-align:left;margin-top:2em;margin-bottom:2em;">
+<$macrocall
+  $name="list-thumbnails"
+  filter=<<aggrFilter>>
+  width="$width$"
+  height="$height$"
+/>
+</div>
+
+</$vars>
+</$list>
+\end
+
+
+\define aggregation-list-links(storeTitle:"$:/temp/search/aggregation/links",searchClass:"xp-search-aggregation",tagbar:"yes",promptTiddler:"$:/aggregation/prompt")
+\import $:/aggregation/macros/general
+\whitespace trim
+<$list filter=<<aggr-has-tids>> emptyMessage="{{$promptTiddler$}}" variable="ignore">
+
+<$reveal default="$tagbar$" type="nomatch" text="no">
+<<aggrTagbar>>
+</$reveal>
+
+<span class="xp-search $searchClass$">
+Search &#32; <<selectSearchScope>><i class='tc-small-gap-right'/> <$macrocall $name="keyboard-driven-input"
+    tiddler=<<__storeTitle__>>
+    type="search"
+    tag="input"
+    focus={{$:/config/xp/aggregation/SearchAutoFocus}}
+    inputCancelActions=<<__cancel-search-actions__>>/>
+<i class='tc-tiny-gap-left'/>
+<$reveal state=<<__storeTitle__>> type="nomatch" text="">
+<$button class="tc-btn-invisible">
+<<cancel-search-actions>>
+<$action-sendmessage $message="tm-focus-selector" $param=""".$searchClass$ input"""/>
+{{$:/core/images/close-button}}
+</$button>
+</$reveal>
+</span>
+<$vars userInput={{{ [<__storeTitle__>get[text]] }}}
+    aggrFilter={{{ [<configTiddler>get[text]] }}}
+    resultCount="<$count filter=<<aggrFilter>>/>">
+<$reveal state=<<__storeTitle__>> type="nomatch" text="">
+<span class="xp-search-results"><<lingo System/Matches>></span>
+</$reveal>
+<$reveal default=<<resultCount>> type="nomatch" text="0">
+<p>{{$:/language/xp/aggregation/ClickPopup}}</p>
+</$reveal>
+
+<div class="twocolumns" style="padding:10px 28px;line-height:1.55;">
+<$list filter=<<aggrFilter>> template="$:/templates/popup-caption-view"/>
+</div>
+
+</$vars>
+</$list>
+\end

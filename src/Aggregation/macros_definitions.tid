@@ -1,0 +1,468 @@
+created: 20230402014534059
+modified: 20230402014534059
+tags: $:/tags/Macro $:/tags/XpPreview
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/aggregation/macros/definitions
+
+\define lingo-base() $:/language/Search/
+
+\define toggleViewButton()
+\whitespace trim
+<$reveal state=<<defaultView>> default="table" type="nomatch" text="card">
+<$button tooltip="Switching to card view" class="tc-btn-invisible tc-btn-mini">
+<$action-setfield $tiddler=<<defaultView>> text="card"/>
+{{$:/xp/images/switch}}
+</$button>
+</$reveal>
+<$reveal state=<<defaultView>> type="match" text="card">
+<$button tooltip="Switching to table view" class="tc-btn-invisible tc-btn-mini">
+<$action-setfield $tiddler=<<defaultView>> text="table"/>
+{{$:/xp/images/switch}}
+</$button>
+</$reveal>
+\end
+
+\define sortingButton()
+\whitespace trim
+<span class="tc-popup-keep">
+<$button popup=<<qualify "$:/state/xp/aggregation/sorting-button">> tooltip="Sorted by field" class="tc-btn-invisible">
+{{$:/xp/images/sorting}}
+</$button>
+</span>
+
+<$reveal state=<<qualify "$:/state/xp/aggregation/sorting-button">> type="popup" position="below" animate="yes">
+<$vars mainFilter={{{ [<filterTiddler>get[text]] }}} pt1="+[sort[" pt2="+[!sort[" st="]]">
+<$set name="tv-show-missing-links" value="yes">
+<$linkcatcher actions="""<$action-setfield $tiddler=<<sortTiddler>> text=<<navigateTo>>/>
+  <$list filter="[<navigateTo>prefix<pt1>]" variable="ignore">
+    <$action-setfield $tiddler=<<tempTableSort>> $index="sortIndex" $value={{{ [<navigateTo>removeprefix<pt1>removesuffix<st>] }}}/>
+    <$action-setfield $tiddler=<<tempTableSort>> $index="hasnegate" $value="false"/>
+    <$action-setfield $tiddler=<<tempTableSort>> $index="negate" $value=""/>
+  </$list>
+  <$list filter="[<navigateTo>prefix<pt2>]" variable="ignore">
+    <$action-setfield $tiddler=<<tempTableSort>> $index="sortIndex" $value={{{ [<navigateTo>removeprefix<pt2>removesuffix<st>] }}}/>
+    <$action-setfield $tiddler=<<tempTableSort>> $index="hasnegate" $value="true"/>
+    <$action-setfield $tiddler=<<tempTableSort>> $index="negate" $value="!"/>
+  </$list>""">
+<div class="tc-block-dropdown-wrapper">
+<div class="tc-block-dropdown tc-edit-type-dropdown xp-sorting-dropdown">
+  <div class="tc-dropdown-item">Common</div>
+  <$list filter="title caption modified modifier created creator" variable="listField">
+    <$link to={{{ [<listField>addprefix<pt1>addsuffix<st>] }}}><$text text=<<listField>>/></$link>
+    <$link to={{{ [<listField>addprefix<pt2>addsuffix<st>] }}}><$text text={{{ [<listField>addsuffix[↑]] }}}/></$link>
+  </$list>
+  <div class="tc-dropdown-item">Other</div>
+  <$list filter="[subfilter<__filter__>] +[fields[]sort[]] -[enlist{$:/config/xp/aggregation/excluded-fields/sorting-button}] -title -caption -modified -modifier -created -creator" variable="listField" emptyMessage="""<p class="tc-muted">&emsp;No fields</p>""">
+    <$link to={{{ [<listField>addprefix<pt1>addsuffix<st>] }}}><$text text=<<listField>>/></$link>
+    <$link to={{{ [<listField>addprefix<pt2>addsuffix<st>] }}}><$text text={{{ [<listField>addsuffix[↑]] }}}/></$link>
+  </$list>
+</div>
+</div>
+</$linkcatcher>
+</$set>
+</$vars>
+</$reveal>
+\end
+
+\define unsortButton()
+\whitespace trim
+<$vars pt1="+[sort[" pt2="+[!sort[" st="]]" btnClass="xp-aggrfilter-dynamic-btn">
+<$reveal state=<<sortState>> type="nomatch" text="" animate="yes">
+&emsp;
+<$list filter="[<sortTiddler>search:text:literal<sortIndex>]" variable="ignore">
+<$list filter="[<sortTiddler>get[text]prefix<pt1>]" variable="ignore">
+<$button tooltip="Descending order" class=<<btnClass>>>
+<$text text={{{ [<sortTiddler>get[text]removeprefix<pt1>removesuffix<st>] }}}/>&nbsp;&darr;
+<$action-setfield $tiddler=<<tempTableSort>> $index="hasnegate" $value="true"/>
+<$action-setfield $tiddler=<<tempTableSort>> $index="negate" $value="!"/>
+<$action-setfield $tiddler=<<sortTiddler>> text={{{ [<sortTiddler>get[text]search-replace[sort[],[!sort[]] }}}/>
+</$button>
+</$list>
+<$list filter="[<sortTiddler>get[text]prefix<pt2>]" variable="ignore">
+<$button tooltip="Ascending order" class=<<btnClass>>>
+<$text text={{{ [<sortTiddler>get[text]removeprefix<pt2>removesuffix<st>] }}}/>&nbsp;&uarr;
+<$action-setfield $tiddler=<<tempTableSort>> $index="hasnegate" $value="false"/>
+<$action-setfield $tiddler=<<tempTableSort>> $index="negate" $value=""/>
+<$action-setfield $tiddler=<<sortTiddler>> text={{{ [<sortTiddler>get[text]search-replace[!sort[],[sort[]] }}}/>
+</$button>
+</$list>
+</$list>
+<$button class=<<btnClass>>>
+unsort
+<$action-deletetiddler $filter="[<sortTiddler>] [<tempTableSort>]"/>
+</$button>
+</$reveal>
+</$vars>
+\end
+
+\define toggleReadingMode()
+\whitespace trim
+<$reveal state=<<readingMode>> default="off" type="nomatch" text="on">
+<$button tooltip="Turn on reading mode" class="tc-btn-invisible tc-btn-mini">
+<$action-setfield $tiddler=<<readingMode>> text="on"/>
+{{$:/xp/images/readingmode}}
+</$button>
+</$reveal>
+<$reveal state=<<readingMode>> type="match" text="on">
+<$button tooltip="Turn off reading mode" class="tc-btn-invisible tc-btn-mini">
+<$action-deletetiddler $tiddler=<<readingMode>>/>
+{{$:/xp/images/readingmode-on}}
+</$button>
+</$reveal>
+\end
+
+\define viewSource()
+\whitespace trim
+<$reveal state=<<readingMode>> type="match" text="on">
+<$reveal state=<<sourceMode>> default="off" type="nomatch" text="on">
+<$button tooltip="Display source code" class="tc-btn-invisible tc-btn-mini">
+<$action-setfield $tiddler=<<sourceMode>> text="on"/>
+{{$:/xp/images/sourcemode}}
+</$button>
+</$reveal>
+<$reveal state=<<sourceMode>> type="match" text="on">
+<$button tooltip="Turn off source mode" class="tc-btn-invisible tc-btn-mini">
+<$action-deletetiddler $tiddler=<<sourceMode>>/>
+{{$:/xp/images/sourcemode-on}}
+</$button>
+</$reveal>
+</$reveal>
+\end
+
+\define tocSwitch()
+\whitespace trim
+<$reveal state=<<readingMode>> type="match" text="on">
+<$reveal state=<<tocSwitchTid>> default="show" type="nomatch" text="hide">
+<$button tooltip="Hide toc" class="tc-btn-invisible tc-btn-mini">
+<$action-setfield $tiddler=<<tocSwitchTid>> text="hide"/>
+{{$:/core/images/preview-open}}
+</$button>
+</$reveal>
+<$reveal state=<<tocSwitchTid>> type="match" text="hide">
+<$button tooltip="Show toc" class="tc-btn-invisible tc-btn-mini">
+<$action-setfield $tiddler=<<tocSwitchTid>> text="show"/>
+{{$:/core/images/preview-closed}}
+</$button>
+</$reveal>
+</$reveal>
+\end
+
+\define target-filter-code(filter)
+<$vars L="tag[" R="]" lb=" +[">
+<$set filter="[list<filterState>addprefix<L>addsuffix<R>]+[join[]addprefix<lb>addprefix<__filter__>addsuffix<R>addsuffix<searchRun>addsuffix<timeRun>addsuffix<fieldRun>addsuffix<valueRun>addsuffix<sortRun>]" name="target" select=0>
+<$text text=<<target>>/>
+</$set>
+</$vars>
+\end
+
+\define aggrfilteritem(item:"")
+<$checkbox tiddler=<<qualify """$:/temp/$item$""">> field="status" checked="selected" checkactions=<<checkactions """$item$""">> uncheckactions=<<uncheckactions """$item$""">> default="closed"> <$text text=<<__item__>>/></$checkbox>
+\end
+
+\define checkactions(item:"")
+<$action-listops $tiddler=<<filterState>> $subfilter="[[$item$]]"/>
+<$action-listops $tiddler=<<filterState>> $field="checktiddler" $subfilter={{{ [<qualify """$:/temp/$item$""">format:titlelist[]] }}}/>
+<$list filter="[list<filterState>!is[tag]]" variable="missingItem">
+<$action-listops $tiddler=<<filterState>> $subfilter="-[<missingItem>]"/>
+</$list>
+\end
+
+\define uncheckactions(item:"")
+<$action-listops $tiddler=<<filterState>> $subfilter="-[[$item$]]"/>
+<$list filter="[list<filterState>!is[tag]]" variable="missingItem">
+<$action-listops $tiddler=<<filterState>> $subfilter="-[<missingItem>]"/>
+</$list>
+\end
+
+\define deselectButton()
+\whitespace trim
+<$reveal default={{{ [list<filterState>count[]] }}} type="gt" text="1" animate="yes">
+&emsp;<$button class="xp-aggrfilter-dynamic-btn">
+<$action-deletetiddler $filter="[<filterState>get[checktiddler]enlist-input[]]"/>
+<$action-deletefield $tiddler=<<filterState>> list/>
+deselect all
+</$button>
+</$reveal>
+\end
+
+\define resetFieldButton()
+\whitespace trim
+<$list filter="[<fieldTiddler>has[text]] [<dateTiddler>is[tiddler]] [<filterState>has[filter]] +[limit[1]]">
+&emsp;<$button class="xp-aggrfilter-dynamic-btn">
+<$action-deletetiddler $filter="[<fieldTiddler>] [<dateTiddler>] [<valueTiddler>]"/>
+<$action-deletefield $tiddler=<<filterState>> filter/>
+reset
+</$button>
+</$list>
+\end
+
+\define input-accept-actions-date() <$action-setfield $tiddler=<<filterState>> filter={{{ [<dateTiddler>get[text]addprefix<pt>addsuffix<st>] }}}/>
+
+\define input-cancel-actions-date() <$action-deletefield $tiddler=<<dateTiddler>> text/>
+
+\define resetFieldsActions()
+<$action-setfield $tiddler=<<fieldsTiddler>> text=<<__defaultFields__>> list=<<__defaultFields__>>/>
+<$list filter="[subfilter<__filter__>] +[fields[]sort[]] -[enlist{$:/config/xp/aggregation/excluded-fields/dtable}] +[format:titlelist[]]" variable="listField">
+<$action-listops $tiddler=<<fieldsTiddler>> $subfilter="+[append<listField>]"/>
+</$list>
+\end
+
+\define updateFieldsActions()
+<$action-setfield $tiddler=<<fieldsTiddler>> list={{{ [<fieldsTiddler>get[text]] }}}/>
+<$list filter="[subfilter<__filter__>] +[fields[]sort[]] -[enlist{$:/config/xp/aggregation/excluded-fields/dtable}] +[format:titlelist[]]" variable="listField">
+<$action-listops $tiddler=<<fieldsTiddler>> $subfilter="+[append<listField>]"/>
+</$list>
+\end
+
+\define fields-checkactions()
+<$action-listops $tiddler=<<targetTiddler>> $field="text" $subfilter="+[append<currentTiddler>]"/>
+<<updateFieldsActions>>
+\end
+
+\define fields-uncheckactions()
+<$action-listops $tiddler=<<targetTiddler>> $field="text" $subfilter="-[<currentTiddler>]"/>
+<<updateFieldsActions>>
+\end
+
+\define tableFieldsButton()
+\whitespace trim
+<$reveal state=<<fieldsState>> default="no" type="nomatch" text="yes">
+<$button tooltip="Select dynamic table fields" class="tc-btn-invisible tc-btn-mini">
+<$action-setfield $tiddler=<<fieldsState>> text="yes"/>
+<!-- 1st run: initialize data -->
+<$reveal state=<<fieldsTiddler>> type="match" text="">
+<<resetFieldsActions>>
+<$list filter=<<__defaultFields__>> variable="listField">
+<$action-setfield $tiddler=<<field-config-title>> text="show"/>
+</$list>
+</$reveal>
+<!-- Subsequent runs -->
+<$reveal state=<<fieldsTiddler>> type="nomatch" text="">
+<$reveal
+  default={{{ [subfilter<__filter__>] +[fields[]] -[enlist<__defaultFields__>] -[enlist{$:/config/xp/aggregation/excluded-fields/dtable}] +[count[]] }}}
+  type="nomatch"
+  text={{{ [list<fieldsTiddler>] -[enlist<__defaultFields__>] +[count[]] }}}>
+<<updateFieldsActions>>
+</$reveal></$reveal>
+{{$:/xp/images/dtable}}
+</$button>
+</$reveal>
+<$reveal state=<<fieldsState>> type="match" text="yes">
+<$button tooltip="Close selection panel" class="tc-btn-invisible tc-btn-mini">
+<$action-setfield $tiddler=<<fieldsState>> text="no"/>
+{{$:/xp/images/dtable-panel}}
+</$button>
+</$reveal>
+\end
+
+\define resetFieldsButton()
+\whitespace trim
+<$wikify name="defaultFieldsCount" text="<$count filter='[enlist<__defaultFields__>]'/>">
+<$vars
+  comparingFields={{{ [enlist<__defaultFields__>] :filter[lookup<config-base>match[show]] +[count[]!match<defaultFieldsCount>] +[then[reset]] }}}
+  otherFields={{{ [subfilter<__filter__>] +[fields[]] -[enlist<__defaultFields__>] :filter[lookup<config-base>match[show]] +[then[reset]] }}}>
+<$list filter="[<comparingFields>] [<otherFields>] +[match[reset]limit[1]]" variable="ignore">
+&emsp;<$button class="xp-aggrfilter-dynamic-btn">
+<!-- Delete config tiddlers -->
+<$action-deletetiddler $filter="[regexp[TableFields/Visibility]prefix[$:/config/]prefix<fieldsTiddler>prefix<config-base>]"/>
+<$list filter="[enlist<__defaultFields__>]" variable="listField">
+<$action-setfield $tiddler=<<field-config-title>> text="show"/>
+</$list>
+<!-- Reset fields -->
+<<resetFieldsActions>>
+reset
+</$button>
+</$list>
+</$vars>
+</$wikify>
+\end
+
+\define updateFieldsButton()
+\whitespace trim
+<$reveal
+  default={{{ [subfilter<__filter__>] +[fields[]] -[enlist<__defaultFields__>] -[enlist{$:/config/xp/aggregation/excluded-fields/dtable}] +[count[]] }}}
+  type="nomatch"
+  text={{{ [list<fieldsTiddler>] -[enlist<__defaultFields__>] +[count[]] }}}>
+&nbsp;<$button class="xp-aggrfilter-dynamic-btn">
+<<updateFieldsActions>>
+update
+</$button>
+</$reveal>
+\end
+
+\define aggregation-fields-draggable-config-title()
+$(config-base)$$(currentTiddler)$
+\end
+
+\define aggregation-fields-draggable-drop-actions()
+<$action-listops $tiddler=<<targetTiddler>> $field=<<targetField>> $subfilter="+[insertbefore<actionTiddler>,<currentTiddler>]"/>
+<$reveal state=<<aggregation-fields-draggable-config-title>> type="match" text="show">
+<$action-listops $tiddler=<<targetTiddler>> $field="text" $subfilter="+[insertbefore<actionTiddler>,<currentTiddler>]"/>
+</$reveal>
+\end
+
+\define aggregation-fields-draggable(tiddler,field:"list",exclude,emptyMessage,itemTemplate,elementTag:"div",storyview:"")
+\whitespace trim
+<$vars targetTiddler="""$tiddler$""" targetField="""$field$""">
+<$list filter="[list[$tiddler$!!$field$]] -[enlist<__exclude__>]" emptyMessage=<<__emptyMessage__>> storyview=<<__storyview__>>>
+<$droppable actions=<<aggregation-fields-draggable-drop-actions>> enable=<<tv-enable-drag-and-drop>>>
+<$elementTag$ class="tc-droppable-placeholder"/>
+<$elementTag$>
+<$transclude tiddler="""$itemTemplate$""">
+<$link to={{!!title}}>
+<$view field="title"/>
+</$link>
+</$transclude>
+</$elementTag$>
+</$droppable>
+</$list>
+<$tiddler tiddler="">
+<$droppable actions=<<aggregation-fields-draggable-drop-actions>> tag="div" enable=<<tv-enable-drag-and-drop>>>
+<$elementTag$ class="tc-droppable-placeholder"/>
+<$elementTag$ style="height:0.5em;">
+</$elementTag$>
+</$droppable>
+</$tiddler>
+</$vars>
+\end
+
+\define aggregation-dtable-controls()
+\whitespace trim
+<<toggle-edit-view-trim>>
+<span class="xp-controls" style="padding-left:.25em;">
+<<tableFieldsButton>>
+<$list filter="[<__paginationButton__>match[yes]]" variable=ignore>
+<<toggle-pagination>>
+</$list>
+<$list filter="[<__rowsButton__>match[yes]]" variable=ignore>
+<<footer-rows-button>>
+</$list>
+</span>
+\end
+
+\define aggregation-dtable(filter, fields:"tbl-expand title", indexes:"", sortOp:"sort", caption:"", class:"w-100", stateTiddler:"aggregation-state", editButton:"yes", paginationButton:"yes", rowsButton:"no", emptyMessage)
+\import [[$:/tags/Table/Macro]tagging[]]
+<!--above commands import utility macros-->
+<$let
+  fieldsTiddler="""$:/config/xp/$stateTiddler$/TableFields"""
+  fieldsState="""$:/state/xp/$stateTiddler$/ModifyTableFields"""
+  pageTiddler="""$:/config/xp/$stateTiddler$/Pagination"""
+  rowsTiddler="""$:/config/xp/$stateTiddler$/FooterRows"""
+  rowsState="""$:/state/xp/$stateTiddler$/FooterRows"""
+  footerTiddler="""$:/keepstate/dynamictables/$stateTiddler$/footer"""
+
+  inputFilter="[subfilter<__filter__>!has[draft.of]]"
+  sortType=<<__sortOp__>>
+  pagination={{{ [<pageTiddler>is[tiddler]get[text]] ~no }}}
+  footerRows={{{ [<rowsTiddler>is[tiddler]get[text]] ~0 }}}
+  >
+<$set name=currentTable value=<<__stateTiddler__>> emptyValue=<<currentTiddler>> >
+<$reveal state=<<fieldsState>> type="match" text="yes" animate="yes">
+<div class="xp-wrapper-aggrfilter">
+
+<div style="position:relative;">
+<div class="tc-tiddler-controls" style="position:absolute;right:0;">
+<$button set=<<fieldsState>> setTo="" tooltip="Close panel" aria-label="select table fields" class="tc-btn-invisible">
+{{$:/core/images/close-button}}
+</$button>
+</div>
+</div>
+
+<span class="tc-muted">Dynamic table Fields:</span> <<resetFieldsButton>><<updateFieldsButton>>
+
+<div class="xp-aggrfilter-category">
+<div class="xp-aggrfilter-category-item">
+<$macrocall
+  $name="aggregation-fields-draggable"
+  tiddler=<<fieldsTiddler>>
+  itemTemplate="$:/aggregation/fields-smart-mode/ItemTemplate"
+  exclude={{$:/config/xp/aggregation/excluded-fields/dtable}}
+/>
+</div>
+</div>
+
+</div>
+</$reveal>
+<!-- check what type of columns are sent, fileds or indexes (data tiddlers as records) -->
+<$set name=fieldOrIndex filter="[<__fields__>!is[blank]]" value="field" emptyValue="index">
+<<check_tiddlers_type_for_table_from_indexes isEditable:"$editButton$">>
+<$set name=columns filter="[<fieldOrIndex>]-index" value=<<__fields__>> emptyValue=<<__indexes__>> >
+<!--check input filter parameter-->
+<$list filter="[subfilter<inputFilter>limit[1]]" emptyMessage=<<__emptyMessage__>> variable=ignore>
+<$set name=sortneg tiddler=<<tempTableSort>> index="negate">
+<!--calculate the number of columns in edit and view mode -->
+<$set name=ncols filter="[<tempTableEdit>getindex[mode]match[edit]]" value={{{ [subfilter<columnFilter>count[]] }}} emptyValue={{{ [subfilter<columnFilter>count[]subtract[1]] }}}>
+<div class="tbl-container" style="max-width:100%;">
+<table class=<<__class__>> style="caption-side:top">
+<!-- reveal caption and edit button -------------------->
+<caption style="text-align:left;">
+<$list filter="[<__editButton__>match[yes]]" variable=ignore>
+<span style="padding-right:5px;padding-left:3px;">
+<<aggregation-dtable-controls>>
+<<select-footer-rows>>
+</span>
+</$list>
+<$reveal state=<<rowsState>> type="nomatch" text="yes" animate="yes">
+$caption$
+</$reveal></caption>
+
+<!-- create header -------------------->
+<thead>
+<<confirm-delete>>
+<tr>
+<$list filter=<<columnFilter>> variable=currentColumn>
+<$set name="headerLookup" filter="[all[tiddlers+shadows]tag[$:/tags/Table/HeaderTemplate]contains:tbl-column-list<currentColumn>limit[1]get[title]]" value=<<headerLookup>> emptyValue="$:/plugins/kookma/shiraz/templates/header/default">
+ <$transclude tiddler=<<headerLookup>> field="text" mode="inline"/>
+</$set>
+</$list>
+</tr>
+</thead>
+
+<!-- create footer -------------------->
+<$reveal type="gt" default=<<footerRows>> text="0" tag="tfoot" class="shiraz-dtable-footer">
+<tr><td colspan=<<ncols>> style="font-weight:bold;background-color:transparent;">Numerical summary</td></tr>
+<$list filter="[range<footerRows>addprefix[footer-]]" variable=footerRow>
+<tr>
+<$list filter=<<columnFilter>> variable=currentColumn>
+<$set name="footerLookup" filter="[all[tiddlers+shadows]tag[$:/tags/Table/FooterTemplate]contains:tbl-column-list<currentColumn>limit[1]get[title]]" value=<<footerLookup>> emptyValue="$:/plugins/kookma/shiraz/templates/footer/default">
+<$transclude tiddler=<<footerLookup>> field="text" mode="inline"/>
+</$set>
+</$list>
+</tr>
+</$list>
+</$reveal>
+
+<!-- reveal main body of table (generate records) -------------------->
+<tbody>
+<$set name=tableBody filter="[<fieldOrIndex>]-index" value="display_body_fields" emptyValue="display_body_indexes" >
+<!-- setup pagination variables -->
+<$vars total-entries={{{[subfilter<inputFilter>count[]] }}}
+			 page-number={{{[<pageStateTiddler>get[text]] ~[[1]]}}} 
+			 entries-per-page={{{ [<entryPerPageStateTiddler>get[text]] ~[[25]]   }}}  >
+<$vars low={{{ [<page-number>subtract[1]multiply<entries-per-page>] }}}  
+       high={{{[<page-number>multiply<entries-per-page>]            }}} >	 
+<$macrocall $name=<<tableBody>> />
+<!--on demand display the pagination row-->
+<$reveal type="match" default=<<pagination>> text="yes" tag="tr" class="shiraz-dtable-page-footer">
+<td colspan=<<ncols>> >
+<<prev-button>>
+Displaying <$text text={{{[<low>add[1]]}}}/> through <$text text={{{ [<high>compare:number:lt<total-entries>then<high>else<total-entries>] }}}/> of <<total-entries>> Results | <<limit-entries>>
+<<next-button>>
+</td>
+</$reveal><!-- end of pagination ui -->
+</$vars>
+</$vars>
+</$set>
+</tbody>
+</table>
+</div><!-- container-->
+</$set>
+</$set>
+</$list><!--check input filter parameter-->
+</$set>
+</$set>
+</$set>
+</$let>
+\end
+
+
+<pre><$view field="text"/></pre>
