@@ -13,9 +13,9 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/filters/leaf-task
 
 <!-- // TODO: try replace with in-tagtree-of -->
 <!-- projects are tasks, so getting all projects under current (intention), then get those is in new task state  -->
-\define get-non-completed-leaf-projects() [all[current]taggingtree[]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}filter<filter-is-new-task>]
+\define get-non-completed-leaf-projects() [in-tagtree-of<currentTiddler>tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}filter<filter-is-new-task>]
 <!-- for each child (in tagtree of current tiddler), remove out all that is not leaf, and get those is in new task state -->
-\define get-non-completed-leaf-tasks() [all[current]taggingtree[]!filter<filter-is-not-leaf>filter<filter-is-new-task>]
+\define get-non-completed-leaf-tasks() [in-tagtree-of<currentTiddler>!filter<filter-is-not-leaf>filter<filter-is-new-task>]
 <!--
 get all project first, and for each project, run same logic as get-non-completed-leaf-tasks.
 `:map:flat` introduce some empty titles, so have to use `filter<has-length>` to exclude them.
