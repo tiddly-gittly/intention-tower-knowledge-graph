@@ -19,3 +19,5 @@ ITKG is a knowledge and task management framework for tiddlywiki. ITKG short for
 只要态度不滑坡，办法总比问题多。鼓励自己，端正自己的态度。重振精神，创造新事物。
 
 依赖插件有："$:/plugins/kookma/shiraz", "$:/plugins/linonetwo/flow-chart", "$:/plugins/yaisog/taggingtree-filter", "$:/plugins/yaisog/tagstree-filter", "$:/plugins/linonetwo/in-tagtree-of", "$:/plugins/xp/aggregation",$:/plugins/Gk0Wk/echarts", "$:/plugins/linonetwo/super-tag", "$:/plugins/linonetwo/tw-calendar"，如果CPL没有自动安装，请手动安装。
+
+其中$:/plugins/xp/aggregation需要更新到0.5.0版本。
