@@ -5,11 +5,15 @@ div.itkg-sidebar-container {
 }
 
 .itkg-sidebar-project-list {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 .itkg-sidebar-project-list-item {
   padding: 5px 0;
+  margin: 5px;
+  word-wrap: break-word;
+	word-break: break-all;
 }
 
 .itkg-sidebar-buttons {
