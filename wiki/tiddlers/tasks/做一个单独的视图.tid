@@ -1,0 +1,8 @@
+created: 20230215155707564
+modified: 20230215155709379
+tags: 任务 写意义之塔插件
+title: 做一个单独的视图
+type: text/vnd.tiddlywiki
+tmo_taskState: New
+
+用一个单独的视图，左侧是加了project标签的条目作为列表展示。点击某个条目后，将它作为当前布局的focusedtiddler，在右侧展示以他作为父节点的子任务树或者意义之塔。在没有聚焦条目时，默认聚焦当前待办展示所有叶子节点。

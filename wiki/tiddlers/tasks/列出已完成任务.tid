@@ -1,0 +1,7 @@
+modified: 20230215155740527
+tags: 任务 写意义之塔插件
+title: 列出已完成任务
+type: text/vnd.tiddlywiki
+tmo_taskState: New
+
+并根据tmo_taskState分类，以便之后找回还有希望继续做的任务。

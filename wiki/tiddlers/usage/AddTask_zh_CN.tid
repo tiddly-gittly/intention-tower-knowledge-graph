@@ -1,0 +1,10 @@
+created: 20230215005513825
+creator: 林一二
+modified: 20230215013347270
+modifier: 林一二
+title: 添加任务
+type: text/vnd.tiddlywiki
+
+将任务从你的心中移到知识库中应该得非常快。因此，我们鼓励你先尽快输入任务标题，然后再添加其他关系。
+
+<$whiteboard tiddler="AddNewTaskUsageDiagram" readonly="yes" />

@@ -1,0 +1,18 @@
+created: 20230526165348777
+creator: 马不前
+list: 自我询问的例子 自我询问的更多例子 自我询问的更多例子2 一个项目可以有多个意义 尽量复用意义节点 尽量让意义链条长一些
+modified: 20230610031330423
+modifier: 马不前
+tags: 如何梳理自己的人生意义
+title: 从记录高层的项目开始，往下看低层
+type: text/vnd.tiddlywiki
+
+我建议先将自己正在经手的项目和任务，以及想做而未决的项目都先一一记录下来。之后看着项目列表问自己：
+
+<$macrocall
+	$name="toc-tabbed-internal-nav"
+	tag="从记录高层的项目开始，往下看低层"
+	selectedTiddler="自我询问的例子"
+	unselectedText="<p>选择目录中的一个主题，点击箭头可展开主题。</p>"
+	missingText="<p>佚失条目。</p>"
+/>

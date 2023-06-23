@@ -1,0 +1,18 @@
+created: 20230215161028629
+modified: 20230215161054479
+tags: 任务 写意义之塔插件
+title: 聚合当前待办
+type: text/vnd.tiddlywiki
+tmo_taskState: New
+
+然后聚合所有项目的叶子节点，形成一个优先待办列表，聚合整个项目森林的叶子。
+
+!! 如何判定优先级
+
+叶子最优先，同为叶子的话看一个 urgency 字段吧，谁大谁优先。
+
+在优先待办列表里，安装优先级排序，取前 10 列出来（或者直接分页），排序需要等 [ext[https://github.com/kookma/TW-Shiraz/discussions/36#discussioncomment-6017739]] 修复
+
+!! 为何不用supermemo的价值/时间
+
+价值和时间估计起来费力

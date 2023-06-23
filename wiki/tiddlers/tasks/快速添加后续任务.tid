@@ -1,0 +1,13 @@
+created: 20230410161028629
+tags: 任务 写意义之塔插件
+title: 快速添加后续任务
+type: text/vnd.tiddlywiki
+tmo_taskState: New
+
+添加同级（甚至不同项目）但顺序后置的任务
+
+根据[[区分子任务和后续任务]]，在添加后续任务时，首先要在父级任务上创建一个子任务，然后再添加一个表示前后关系的东西，并把它在图上展示出来。
+
+例如在「做一个日历和任务副屏」任务条目中，想添加「做个视频展示我是如何用太微做副屏的」，设为关联（要放在「任务上下文」里）且顺序后置，并之后把它的所在项目设为「做太微宣传视频」
+
+用 [[tmo:TaskDependency|https://oscaf.sourceforge.net/tmo.html#tmo:TaskDependency]] 表示前后依赖关系，和 tags 表示的 subTask 关系分开来
