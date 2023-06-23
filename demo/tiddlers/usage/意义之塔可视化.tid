@@ -1,8 +1,0 @@
-title: 意义之塔可视化
-creator: 林一二
-
-侧边栏加了一个「意义之塔」标签页，也可以[[单独打开|$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AllIntentionsFlowChartEcharts]]，内有图论可视化。
-
-其中[[箭头的含义]]是「做这个是为了什么」，例如「做义工 → 帮助更多像以前的我一样的人」意味着「对『我』来说，做义工的意义就是是为了帮助更多像以前的我一样的人」。
-
-还有一个「项目概览图」标签页，也可以[[单独打开|$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AllProjectsFlowChartEcharts]]，它的图论可视化更复杂一些，在项目较多的情况下。
