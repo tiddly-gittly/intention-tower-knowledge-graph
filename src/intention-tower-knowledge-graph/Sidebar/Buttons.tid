@@ -9,6 +9,7 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/Sidebar/Buttons
 </div>
 
 <div class="itkg-sidebar-buttons">
+  <<create-timetask-without-parent>>
   <<create-task-without-parent>>
   <<create-project-without-parent>>
   <<create-intention-without-parent>>

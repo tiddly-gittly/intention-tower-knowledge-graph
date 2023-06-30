@@ -98,3 +98,7 @@ tags: $:/tags/ControlPanel/SettingsTab
 [[任务列表|$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-TaskDynamicTable]]的值：{{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-TaskDynamicTable}}
 
 <$edit-text tiddler="$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-TaskDynamicTable" field="text" tag=input class="w-100" />
+
+[[完成次数|$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/number-of-completions]]的值：{{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/number-of-completions}}
+
+<$edit-text tiddler="$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/number-of-completions" field="text" tag=input class="w-100" />

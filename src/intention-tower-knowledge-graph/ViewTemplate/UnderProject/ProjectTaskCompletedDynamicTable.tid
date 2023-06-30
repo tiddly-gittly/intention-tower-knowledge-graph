@@ -1,0 +1,8 @@
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/ProjectTaskCompletedDynamicTable
+caption: {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Table}} 已完成列表
+tags: $:/tags/ITKG/UnderProject
+
+\define filter-projectTaskCompleted() [in-tagtree-of<currentTiddler>] -[tmo_taskState[New]] -[tmo_taskState[Running]] 
+
+\define caption() 已完成列表 <$count filter=<<filter-projectTaskCompleted>> />
+<$macrocall $name=aggregation caption=<<caption>> filter=<<filter-projectTaskCompleted>> defaultFields={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-ProjectTaskCompletedDynamicTable}} class="w-100" state="ITKG-ProjectTaskCompletedDynamicTable-state" />

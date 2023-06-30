@@ -19,6 +19,22 @@ tags: $:/tags/ITKG/UnderTask
   <$list filter="[<counter1-last>match[no]]"> / </$list>
 </$list>
 
+<!-- 前置任务和后续任务，分别列出来，但样式需要调整 -->
+ <div class="itkg-sidebar-project-list">
+ <$list filter="[enlist{!!tmo_dependency}]">
+
+ <$link><<currentTiddler>></$link>&nbsp;&nbsp;
+ 
+ </$list>
+ </div>
+ <div class="itkg-sidebar-project-list">
+ <$list filter="[tmo_dependency<currentTiddler>]">
+
+ <$link><<currentTiddler>></$link>&nbsp;&nbsp;
+
+ </$list>
+ </div>
+
 <<echarts-with-subfilter>>
 
 <$list filter="[<graphRootTiddler>taggingtree[]filter<filter-is-new-task>count[]match[0]then[yes]]">
