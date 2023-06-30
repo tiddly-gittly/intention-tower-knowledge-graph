@@ -13,5 +13,3 @@ tmo_taskState: New
 用 [[tmo:TaskDependency|https://oscaf.sourceforge.net/tmo.html#tmo:TaskDependency]] 表示前后依赖关系，和 tags 表示的 subTask 关系分开来。
 
 新的后续任务按钮，不会添加当前条目作为标签，只会添加“任务”一个标签，或自定义的标签。
-
-一个比较好的方式是在当前条目列出后续任务。但如果在任务下面再添加后续任务内容，感觉不是特别好。
