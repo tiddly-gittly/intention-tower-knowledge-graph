@@ -1,7 +1,7 @@
 title: $:/plugins/linonetwo/intention-tower-knowledge-graph/Components/Buttons
 
 \define create-task-under-current-tiddler()
-  <$button>
+  <$button tooltip="点击创建子任务">
    <$set name="tags" filter="[<currentTiddler>] [enlist{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}]">
        <$action-createtiddler $message="tm-new-tiddler" 
        tags=<<tags>> 
@@ -9,14 +9,14 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/Components/Buttons
        tmo_priority="">
        <$action-sendmessage $message="tm-edit-tiddler" $param=<<createTiddler-title>>/>
        </$action-createtiddler>
-      {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Task}} 子任务
+       {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Task}} 子任务
     </$set>
   </$button>
 \end
 
 <!-- 生成后续任务，不会把当前条目作为标签添加。前置任务好像搞不了，前置任务需要在当前条目下修改tmo_TaskDependency字段内容 -->
 \define create-next-task-under-current-tiddler()
-  <$button>
+  <$button tooltip="点击创建后续任务">
    <$set name="tags" filter="[enlist{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}]">
        <$action-createtiddler $message="tm-new-tiddler" 
        tags=<<tags>> 
@@ -31,7 +31,7 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/Components/Buttons
 \end
 
 \define create-project-under-current-tiddler()
-  <$button>
+  <$button tooltip="点击创建新项目">
     <$set name="tags" filter="[<currentTiddler>] [enlist{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}] [enlist{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}]">
       <$action-createtiddler tags=<<tags>> tmo_taskState="New">
          <$action-sendmessage $message="tm-edit-tiddler" $param=<<createTiddler-title>>/>
@@ -46,15 +46,15 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/Components/Buttons
 <$let currentTiddler=<<createTiddler-title>> >
   <$action-sendmessage $message="tm-save-tiddler" $param=<<currentTiddler>> />
   <$action-sendmessage $message="tm-auto-save-wiki" />
-</$let>
-<$action-setfield
+ </$let>
+ <$action-setfield
   $tiddler="$:/state/ITKG/PageLayout/create-tiddler-title"
   text=""
-/>
+ />
 \end
 
 \define create-task-without-parent()
-  <$button>
+  <$button tooltip="点击创建新任务">
     <$action-createtiddler
       $basetitle={{$:/state/ITKG/PageLayout/create-tiddler-title}}
       tags={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}}
@@ -62,56 +62,54 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/Components/Buttons
       tmo_priority=""
      >
       <<after-create-tiddler-without-parent>>
-    </$action-createtiddler>
-
-    {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Task}} 新任务
+     </$action-createtiddler>
+     {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Task}} 新任务
   </$button>
 \end
 
 \define create-timetask-without-parent()
-  <$button>
+  <$button tooltip="点击创建截止日期任务">
     <$action-createtiddler
       $basetitle={{$:/state/ITKG/PageLayout/create-tiddler-title}}
       tags={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}}
       tmo_taskState="New"
       tmo_dueDate=""
-    >
+     >
       <<after-create-tiddler-without-parent>>
-    </$action-createtiddler>
-
-    {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Task}} 定时任务
+     </$action-createtiddler>
+     {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Task}} 截止日期
   </$button>
 \end
 
 \define create-project-without-parent()
-  <$button>
+  <$button tooltip="点击创建新项目">
     <$action-createtiddler
       $basetitle={{$:/state/ITKG/PageLayout/create-tiddler-title}}
       tags={{{ [{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}addsuffix[ ]addsuffix{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}] }}}
       tmo_taskState="New"
-    >
+     >
       <<after-create-tiddler-without-parent>>
-    </$action-createtiddler>
-    {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Project}} 新项目
+     </$action-createtiddler>
+     {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Project}} 新项目
   </$button>
 \end
 
 \define create-intention-without-parent()
-  <$button>
+  <$button tooltip="点击创建新意义条目">
     <$action-createtiddler
       $basetitle={{$:/state/ITKG/PageLayout/create-tiddler-title}}
       tags={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}}
-    >
+     >
       <<after-create-tiddler-without-parent>>
-    </$action-createtiddler>
-    {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Motivation}} 新意义
+     </$action-createtiddler>
+     {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Motivation}} 新意义
   </$button>
 \end
 
 \define counts-number-of-completions()
-<$button>
+<$button tooltip="点击增加完成次数">
 <$action-listops $field="tmo_numberOfCompletions" $filter="[{!!tmo_numberOfCompletions}add{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/number-of-completions}]"/>
-完成次数
+完成&nbsp;
 <span class="badge badge-light">
 {{!!tmo_numberOfCompletions}}
 </span>
