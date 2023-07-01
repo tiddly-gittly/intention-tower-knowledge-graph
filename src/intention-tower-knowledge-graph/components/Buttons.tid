@@ -9,7 +9,7 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/Components/Buttons
        tmo_priority="">
        <$action-sendmessage $message="tm-edit-tiddler" $param=<<createTiddler-title>>/>
        </$action-createtiddler>
-       {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Task}} 子任务
+       {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Task}} 新子任务
     </$set>
   </$button>
 \end
@@ -25,7 +25,7 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/Components/Buttons
        tmo_dependency=<<currentTiddler>> >
        <$action-sendmessage $message="tm-edit-tiddler" $param=<<createTiddler-title>>/>
        </$action-createtiddler>
-      {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Task}} 后续任务
+       {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Task}} 新后续任务
     </$set>
   </$button>
 \end
@@ -67,20 +67,6 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/Components/Buttons
   </$button>
 \end
 
-\define create-timetask-without-parent()
-  <$button tooltip="点击创建截止日期任务">
-    <$action-createtiddler
-      $basetitle={{$:/state/ITKG/PageLayout/create-tiddler-title}}
-      tags={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}}
-      tmo_taskState="New"
-      tmo_dueDate=""
-     >
-      <<after-create-tiddler-without-parent>>
-     </$action-createtiddler>
-     {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Task}} 截止日期
-  </$button>
-\end
-
 \define create-project-without-parent()
   <$button tooltip="点击创建新项目">
     <$action-createtiddler
@@ -109,6 +95,7 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/Components/Buttons
 \define counts-number-of-completions()
 <$button tooltip="点击增加完成次数">
 <$action-listops $field="tmo_numberOfCompletions" $filter="[{!!tmo_numberOfCompletions}add{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/number-of-completions}]"/>
+<$action-setfield tmo_taskState="Repetitive"/>
 完成&nbsp;
 <span class="badge badge-light">
 {{!!tmo_numberOfCompletions}}
