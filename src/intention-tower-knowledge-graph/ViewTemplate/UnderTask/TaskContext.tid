@@ -19,7 +19,16 @@ tags: $:/tags/ITKG/UnderTask
   <$list filter="[<counter1-last>match[no]]"> / </$list>
 </$list>
 
-<!-- 前置任务和后续任务，分别列出来，但样式需要调整 -->
+<details>
+<summary>子任务、前置任务及后续任务</summary>
+<fieldset>
+ <legend>当前子任务</legend>
+ <div class="itkg-sidebar-project-list">
+ <$list filter="[tag<currentTiddler>]">
+ <$link><<currentTiddler>></$link>&nbsp;&nbsp;
+ </$list>
+ </div>
+ </fieldset>
  <fieldset>
  <legend>前置任务</legend>
  <div class="itkg-sidebar-project-list">
@@ -36,7 +45,7 @@ tags: $:/tags/ITKG/UnderTask
  </$list>
  </div>
  </fieldset>
-
+ </details>
 <<echarts-with-subfilter>>
 
 <$list filter="[<graphRootTiddler>taggingtree[]filter<filter-is-new-task>count[]match[0]then[yes]]">
