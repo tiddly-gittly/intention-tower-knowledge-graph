@@ -93,8 +93,9 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/Components/Buttons
 \end
 
 \define counts-number-of-completions()
-<$button tooltip="点击增加完成次数">
-<$action-listops $field="tmo_numberOfCompletions" $filter="[{!!tmo_numberOfCompletions}add{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/number-of-completions}]"/>
+<$button tooltip="点击增加完成次数，默认递增为1，可修改tmo_repeatInterval字段来改变间隔次数">
+<$action-listops $field="tmo_repeatInterval" $filter="[get[tmo_repeatInterval]else[1]]"/>
+<$action-listops $field="tmo_numberOfCompletions" $filter="[{!!tmo_numberOfCompletions}add{!!tmo_repeatInterval}]"/>
 <$action-setfield tmo_taskState="Repetitive"/>
 完成&nbsp;
 <span class="badge badge-light">

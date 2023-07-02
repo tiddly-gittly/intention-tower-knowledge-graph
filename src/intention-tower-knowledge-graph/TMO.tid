@@ -38,6 +38,7 @@ type: text/vnd.tiddlywiki
 ** Terminated终止任务
 ** Suspended暂停任务
 ** Repetitive重复任务
+* Repeat Interval间隔次数
 * Ability Carrier Involvement有能力且参与的人
 * Task Transmission任务交接
 ** Rejected_Transmitted拒绝但已交接
