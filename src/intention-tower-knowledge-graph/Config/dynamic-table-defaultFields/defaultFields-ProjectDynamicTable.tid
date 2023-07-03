@@ -1,0 +1,3 @@
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-ProjectDynamicTable
+
+tbl-expand title tags tmo_taskState tmo_priority

@@ -10,4 +10,6 @@ tmo_taskState: New
 
 例如在「做一个日历和任务副屏」任务条目中，想添加「做个视频展示我是如何用太微做副屏的」，设为关联（要放在「任务上下文」里）且顺序后置，并之后把它的所在项目设为「做太微宣传视频」
 
-用 [[tmo:TaskDependency|https://oscaf.sourceforge.net/tmo.html#tmo:TaskDependency]] 表示前后依赖关系，和 tags 表示的 subTask 关系分开来
+用 [[tmo:TaskDependency|https://oscaf.sourceforge.net/tmo.html#tmo:TaskDependency]] 表示前后依赖关系，和 tags 表示的 subTask 关系分开来。
+
+新的后续任务按钮，不会添加当前条目作为标签，只会添加“任务”一个标签，或自定义的标签。

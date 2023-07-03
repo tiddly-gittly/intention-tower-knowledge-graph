@@ -6,7 +6,14 @@ tags: $:/tags/ViewTemplate
 <$let graphRootTiddler=<<currentTiddler>> >
   <$list filter="[all[current]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}!tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}then<graphRootTiddler>]">
 
-  <<create-task-under-current-tiddler>>
+  <!-- 先用已有的样式，后面如果内容比较多再做样式处理 -->
+  <div class="itkg-sidebar-project-list-item">
+  <<create-task-under-current-tiddler>>&nbsp;
+  <<create-next-task-under-current-tiddler>>&nbsp;
+  <<counts-number-of-completions>>&nbsp;
+  </div>
+  
+ 
 
   <<tabs "[all[tiddlers+shadows]tag[$:/tags/ITKG/UnderTask]]" "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/TaskContext" >>
 

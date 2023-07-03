@@ -1,0 +1,7 @@
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/TaskCompletedDynamicTable
+caption: {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Table}} 所有不再执行任务
+tags: $:/tags/ITKG/ProjectsOverview
+
+\define filter-taskCompleted() [tmo_taskState[Completed]] [tmo_taskState[Archived]] [tmo_taskState[Terminated]] [tmo_taskState[Suspended]]
+
+<$macrocall $name=aggregation caption="已完成的任务" filter=<<filter-taskCompleted>>  defaultFields={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-TaskCompletedDynamicTable}} class="w-100" state="ITKG-TaskCompletedDynamicTable-state" />

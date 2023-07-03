@@ -37,6 +37,8 @@ type: text/vnd.tiddlywiki
 ** Archived归档
 ** Terminated终止任务
 ** Suspended暂停任务
+** Repetitive重复任务
+* Repeat Interval间隔次数
 * Ability Carrier Involvement有能力且参与的人
 * Task Transmission任务交接
 ** Rejected_Transmitted拒绝但已交接
@@ -65,3 +67,4 @@ type: text/vnd.tiddlywiki
 * Sub Task Ordering子任务排序
 * Task Reference任务参考
 * Task Id任务ID号
+* Number Of Completions完成次数
