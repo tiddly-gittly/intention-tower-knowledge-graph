@@ -1,6 +1,7 @@
+caption: {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/SetAsProject}} 项目转换按钮
 title: $:/plugins/linonetwo/intention-tower-knowledge-graph/Buttons/ToggleProject
 tags: $:/tags/ViewToolbar
-description: 
+description: 项目转换按钮
 
 \whitespace trim
 
