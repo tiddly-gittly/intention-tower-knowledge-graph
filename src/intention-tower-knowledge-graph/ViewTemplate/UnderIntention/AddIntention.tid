@@ -1,0 +1,7 @@
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/UnderIntention/AddIntention
+caption: {{$:/core/images/tag-button}} 添加意义
+tags: $:/tags/ITKG/UnderIntention
+
+<$reveal state="$:/config/intention-tower-knowledge-graph/ViewTemplate/UnderIntention/AddIntention" type="match" text="show">
+{{||$:/core/ui/EditTemplate/tags}}
+</$reveal>

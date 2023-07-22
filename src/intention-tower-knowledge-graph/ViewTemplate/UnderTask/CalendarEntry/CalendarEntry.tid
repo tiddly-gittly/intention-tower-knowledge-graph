@@ -2,4 +2,8 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/Calenda
 caption: {{$:/plugins/linonetwo/tw-calendar/tiddlywiki-ui/Images/GoToCalendarImage}} 日历记录
 tags: $:/tags/ITKG/UnderTask
 
+<$reveal state="$:/config/intention-tower-knowledge-graph/ViewTemplate/CalendarEntry" type="match" text="show">
+
 <<tabs "[all[tiddlers+shadows]tag[$:/tags/ITKG/CalendarEntry]]" "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AddCalendarEntryToday" >>
+
+</$reveal>

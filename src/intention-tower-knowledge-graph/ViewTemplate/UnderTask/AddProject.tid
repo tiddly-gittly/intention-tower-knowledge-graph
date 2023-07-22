@@ -2,4 +2,8 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AddProj
 caption: {{$:/core/images/tag-button}} 添加所在项目
 tags: $:/tags/ITKG/UnderTask
 
+<$reveal state="$:/config/intention-tower-knowledge-graph/ViewTemplate/AddProject" type="match" text="show">
+
 {{||$:/core/ui/EditTemplate/tags}}
+
+</$reveal>
