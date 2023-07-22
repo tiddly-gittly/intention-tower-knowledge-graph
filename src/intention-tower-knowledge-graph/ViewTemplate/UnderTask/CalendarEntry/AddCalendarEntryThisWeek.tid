@@ -2,4 +2,8 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AddCale
 caption: {{$:/plugins/linonetwo/tw-calendar/Images/CalendarWeek}} 调整本周任务
 tags: $:/tags/ITKG/CalendarEntry
 
+<$reveal state="$:/config/intention-tower-knowledge-graph/ViewTemplate/AddCalendarEntryThisWeek" type="match" text="show">
+
 <$calendar defaultTags={{{ [<currentTiddler>] [{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/default-calendar-entry-tag}] +[join[ ]] }}} hideToolbar="yes" height="600px" initialView="timeGridWeek" filter="[all[tiddlers]!is[system]field:calendarEntry[yes]]" />
+
+</$reveal>

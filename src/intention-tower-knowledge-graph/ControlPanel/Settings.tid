@@ -28,10 +28,17 @@ tags: $:/tags/ControlPanel/SettingsTab
 </div>
 \end
 
-<!-- 自定义了一个宏，不然代码复制起来看着太复杂。 -->
+<!-- 改成可config来控制，避免出现无法更新内容的情况 -->
 
-\define itkg-checkbox(name,tags)
-<$checkbox tiddler="$name$"  tag="$tags$"><$link to="$name$" >{{$name$!!caption}}</$link></$checkbox>
+\define itkg-checkbox(configname,realname)
+<$checkbox tiddler="$configname$" field="text" checked="show" unchecked="hide" >
+<$link to="$configname$" >
+config
+</$link>&nbsp;⇨&nbsp;
+<$link to="$realname$" >
+{{$realname$!!caption}}
+</$link>
+</$checkbox>
 \end
 
 <!-- These settings let you customise the behaviour of intention-tower-knowledge-graph plugin. -->
@@ -61,25 +68,49 @@ tags: $:/tags/ControlPanel/SettingsTab
 
 [[Task|$:/tags/ITKG/UnderTask]]
 
-* <<itkg-checkbox "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AddProject" "$:/tags/ITKG/UnderTask" >>
-* <<itkg-checkbox "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/TaskContext" "$:/tags/ITKG/UnderTask" >>
-* <<itkg-checkbox "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/CalendarEntry" "$:/tags/ITKG/UnderTask" >>
-** <<itkg-checkbox "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AddCalendarEntryThisWeek" "$:/tags/ITKG/CalendarEntry" >>
-** <<itkg-checkbox "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AddCalendarEntryToday" "$:/tags/ITKG/CalendarEntry" >>
-** <<itkg-checkbox "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/CalendarEntry/CalendarThisWeek" "$:/tags/ITKG/CalendarEntry" >>
+* <<itkg-checkbox  
+"$:/config/intention-tower-knowledge-graph/ViewTemplate/AddProject"
+"$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AddProject">>
+* <<itkg-checkbox 
+"$:/config/intention-tower-knowledge-graph/ViewTemplate/TaskContext"
+"$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/TaskContext"  >>
+* <<itkg-checkbox 
+"$:/config/intention-tower-knowledge-graph/ViewTemplate/CalendarEntry"
+"$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/CalendarEntry" >>
+** <<itkg-checkbox 
+"$:/config/intention-tower-knowledge-graph/ViewTemplate/AddCalendarEntryThisWeek"
+"$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AddCalendarEntryThisWeek"  >>
+** <<itkg-checkbox 
+"$:/config/intention-tower-knowledge-graph/ViewTemplate/AddCalendarEntryToday"
+"$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AddCalendarEntryToday"  >>
+** <<itkg-checkbox 
+"$:/config/intention-tower-knowledge-graph/ViewTemplate/CalendarEntry/CalendarThisWeek"
+"$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/CalendarEntry/CalendarThisWeek" >>
 
 [[Project|$:/tags/ITKG/UnderProject]]
 
-* <<itkg-checkbox "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/TaskDynamicTable" "$:/tags/ITKG/UnderProject" >>
-* <<itkg-checkbox "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AddIntention" "$:/tags/ITKG/UnderProject" >>
-* <<itkg-checkbox "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/CalendarEntry/CalendarThisYear" "$:/tags/ITKG/UnderProject" >>
+* <<itkg-checkbox 
+"$:/config/intention-tower-knowledge-graph/ViewTemplate/TaskDynamicTable"
+"$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/TaskDynamicTable" >>
+* <<itkg-checkbox 
+"$:/config/intention-tower-knowledge-graph/ViewTemplate/UnderProject/AddIntention"
+"$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/UnderProject/AddIntention" >>
+* <<itkg-checkbox 
+"$:/config/intention-tower-knowledge-graph/ViewTemplate/CalendarEntry/CalendarThisYear"
+"$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/CalendarEntry/CalendarThisYear" >>
 
 
 [[Intention|$:/tags/ITKG/UnderIntention]]
 
-* <<itkg-checkbox "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AddIntention" "$:/tags/ITKG/UnderIntention" >>
-* <<itkg-checkbox "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/ProjectDynamicTable" "$:/tags/ITKG/UnderIntention" >>
-* <<itkg-checkbox "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/ProjectsUnderThisIntentionFlowChartEcharts" "$:/tags/ITKG/UnderIntention" >>
+* <<itkg-checkbox 
+"$:/config/intention-tower-knowledge-graph/ViewTemplate/UnderIntention/AddIntention"
+"$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/UnderIntention/AddIntention" >>
+* <<itkg-checkbox 
+"$:/config/intention-tower-knowledge-graph/ViewTemplate/ProjectDynamicTable"
+"$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/ProjectDynamicTable" >>
+* <<itkg-checkbox 
+"$:/config/intention-tower-knowledge-graph/ViewTemplate/ProjectsUnderThisIntentionFlowChartEcharts"
+"$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/ProjectsUnderThisIntentionFlowChartEcharts">>
 
 !! 动态表格字段值，可在下面编辑
 
