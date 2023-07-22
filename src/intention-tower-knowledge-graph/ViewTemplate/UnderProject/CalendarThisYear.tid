@@ -8,6 +8,8 @@ tags: $:/tags/ITKG/UnderProject
 <$calendar filter="[all[]in-tagtree-of:inclusive[$currentTag$]field:calendarEntry[yes]]" readonly="yes" initialView="listYear" hideToolbar="yes" />
 \end
 
+<$reveal state="$:/config/intention-tower-knowledge-graph/ViewTemplate/CalendarEntry/CalendarThisYear" type="match" text="show">
+
 项目下共工作 {{{ 
 [all[]in-tagtree-of:inclusive<currentTiddler>field:calendarEntry[yes]]
   :map[subfilter<getTimeForEntry>]
@@ -16,3 +18,5 @@ tags: $:/tags/ITKG/UnderProject
 
 
 <$macrocall $name="calendarWithCurrentTiddler" currentTag=<<currentTiddler>>/>
+
+</$reveal>

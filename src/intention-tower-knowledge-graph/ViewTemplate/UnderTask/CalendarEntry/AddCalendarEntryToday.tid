@@ -4,6 +4,8 @@ tags: $:/tags/ITKG/CalendarEntry
 
 \import [[$:/plugins/linonetwo/intention-tower-knowledge-graph/filters/time]]
 
+<$reveal state="$:/config/intention-tower-knowledge-graph/ViewTemplate/AddCalendarEntryToday" type="match" text="show">
+
 今日仅工作 {{{ 
 [all[]tag<currentTiddler>days:startDate[0]field:calendarEntry[yes]]
   :map[subfilter<getTimeForEntry>]
@@ -11,3 +13,5 @@ tags: $:/tags/ITKG/CalendarEntry
 }}} 小时！（包含计划中未做的）
 
 <$calendar defaultTags={{{ [<currentTiddler>] [{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/default-calendar-entry-tag}] +[join[ ]] }}} hideToolbar="yes" height="600px" initialView="timeGridDay" filter="[all[tiddlers]!is[system]days:startDate[0]field:calendarEntry[yes]]" />
+
+</$reveal>
