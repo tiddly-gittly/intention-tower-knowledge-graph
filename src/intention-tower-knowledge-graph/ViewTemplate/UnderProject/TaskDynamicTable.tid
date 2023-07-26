@@ -5,8 +5,5 @@ tags: $:/tags/ITKG/UnderProject
 \import [[$:/plugins/linonetwo/intention-tower-knowledge-graph/filters/leaf-task]]
 
 \define caption() 优先待办列表 <$count filter=<<get-non-completed-leaf-tasks>> />
-<$reveal state="$:/config/intention-tower-knowledge-graph/ViewTemplate/TaskDynamicTable" type="match" text="show">
 
 <$macrocall $name=aggregation caption=<<caption>> filter=<<get-non-completed-leaf-tasks>> defaultFields={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-TaskDynamicTable}} class="w-100" state="ITKG-TaskDynamicTable-state" />
-
-</$reveal>

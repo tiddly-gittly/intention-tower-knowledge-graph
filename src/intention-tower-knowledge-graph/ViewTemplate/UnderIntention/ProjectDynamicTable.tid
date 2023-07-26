@@ -4,8 +4,4 @@ tags: $:/tags/ITKG/UnderIntention
 
 \import [[$:/plugins/linonetwo/intention-tower-knowledge-graph/filters/leaf-task]]
 
-<$reveal state="$:/config/intention-tower-knowledge-graph/ViewTemplate/ProjectDynamicTable" type="match" text="show">
-
 <$macrocall $name=aggregation caption="项目列表" filter=<<get-non-completed-leaf-projects>> defaultFields={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-ProjectDynamicTable}} class="w-100" state="ITKG-ProjectDynamicTable-state" />
-
-</$reveal>

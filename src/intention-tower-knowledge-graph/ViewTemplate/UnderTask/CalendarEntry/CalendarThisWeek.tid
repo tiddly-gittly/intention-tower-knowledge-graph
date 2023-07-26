@@ -6,6 +6,4 @@ tags: $:/tags/ITKG/CalendarEntry
 <$calendar filter="[all[]tag[$currentTag$]field:calendarEntry[yes]]" readonly="yes" initialView="listWeek" hideToolbar="yes" />
 \end
 
-<$reveal state="$:/config/intention-tower-knowledge-graph/ViewTemplate/CalendarEntry/CalendarThisWeek" type="match" text="show">
 <$macrocall $name="calendarWithCurrentTiddler" currentTag=<<currentTiddler>>/>
-</$reveal>

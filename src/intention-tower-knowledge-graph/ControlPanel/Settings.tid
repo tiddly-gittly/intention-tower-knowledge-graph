@@ -2,130 +2,14 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ControlPanel/Setting
 caption: ITKG
 tags: $:/tags/ControlPanel/SettingsTab
 
-\define single-text-tag-editor(typeName)
-\whitespace trim
-<div class="itkg-setting-tags-item">
-  <$let
-    currentTiddler="$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/$typeName$-tag"
-    palette={{$:/palette}}
-    tempTitle=<<qualify "edit-$typeName$">>
-    tabIndex={{$:/config/EditTabIndex}}
-    cancelPopups="yes"
-  >
-    <$macrocall $name="tag" tag={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/$typeName$-tag}} />
 
-    <$edit-text tiddler=<<tempTitle>> tag="input" field="text" placeholder={{$:/language/EditTemplate/Tags/Add/Placeholder}} />
-
-    <$button>
-      <$action-setfield tiddler=<<currentTiddler>> text={{{ [<tempTitle>get[text]] }}}>
-        <$action-setfield tiddler=<<tempTitle>> text="" />
-      </$action-setfield>
-
-      {{$:/language/EditTemplate/Tags/Add/Button}}
-    </$button>
-    
-  </$let> 
-</div>
-\end
 
 <!-- 改成可config来控制，避免出现无法更新内容的情况 -->
-
-\define itkg-checkbox(configname,realname)
-<$checkbox tiddler="$configname$" field="text" checked="show" unchecked="hide" >
-<$link to="$configname$" >
-config
-</$link>&nbsp;⇨&nbsp;
-<$link to="$realname$" >
-{{$realname$!!caption}}
-</$link>
-</$checkbox>
-\end
-
+<!-- 删除了原来定义的checkbox宏 -->
 <!-- These settings let you customise the behaviour of intention-tower-knowledge-graph plugin. -->
 
 这些设置让你可以自定义 ITKG 插件。
 
 ---
 
-!! 标签
-
-!!! 标注项目关键节点的标签
-
-
-意义：<<single-text-tag-editor intention>>
-
-项目：<<single-text-tag-editor project>>
-
-任务：<<single-text-tag-editor task>>
-
-!!! 新建日历记录时的标签
-
-在新建和一个任务相关的日历项目时，可以设置自动添加日历项目的类型标签，例如「解决问题」。
-
-日历记录额外标签：<<single-text-tag-editor default-calendar-entry>>
-
-!! 可选的选项卡内容
-
-[[Task|$:/tags/ITKG/UnderTask]]
-
-* <<itkg-checkbox  
-"$:/config/intention-tower-knowledge-graph/ViewTemplate/AddProject"
-"$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AddProject">>
-* <<itkg-checkbox 
-"$:/config/intention-tower-knowledge-graph/ViewTemplate/TaskContext"
-"$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/TaskContext"  >>
-* <<itkg-checkbox 
-"$:/config/intention-tower-knowledge-graph/ViewTemplate/CalendarEntry"
-"$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/CalendarEntry" >>
-** <<itkg-checkbox 
-"$:/config/intention-tower-knowledge-graph/ViewTemplate/AddCalendarEntryThisWeek"
-"$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AddCalendarEntryThisWeek"  >>
-** <<itkg-checkbox 
-"$:/config/intention-tower-knowledge-graph/ViewTemplate/AddCalendarEntryToday"
-"$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AddCalendarEntryToday"  >>
-** <<itkg-checkbox 
-"$:/config/intention-tower-knowledge-graph/ViewTemplate/CalendarEntry/CalendarThisWeek"
-"$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/CalendarEntry/CalendarThisWeek" >>
-
-[[Project|$:/tags/ITKG/UnderProject]]
-
-* <<itkg-checkbox 
-"$:/config/intention-tower-knowledge-graph/ViewTemplate/TaskDynamicTable"
-"$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/TaskDynamicTable" >>
-* <<itkg-checkbox 
-"$:/config/intention-tower-knowledge-graph/ViewTemplate/UnderProject/AddIntention"
-"$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/UnderProject/AddIntention" >>
-* <<itkg-checkbox 
-"$:/config/intention-tower-knowledge-graph/ViewTemplate/CalendarEntry/CalendarThisYear"
-"$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/CalendarEntry/CalendarThisYear" >>
-
-
-[[Intention|$:/tags/ITKG/UnderIntention]]
-
-* <<itkg-checkbox 
-"$:/config/intention-tower-knowledge-graph/ViewTemplate/UnderIntention/AddIntention"
-"$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/UnderIntention/AddIntention" >>
-* <<itkg-checkbox 
-"$:/config/intention-tower-knowledge-graph/ViewTemplate/ProjectDynamicTable"
-"$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/ProjectDynamicTable" >>
-* <<itkg-checkbox 
-"$:/config/intention-tower-knowledge-graph/ViewTemplate/ProjectsUnderThisIntentionFlowChartEcharts"
-"$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/ProjectsUnderThisIntentionFlowChartEcharts">>
-
-!! 动态表格字段值，可在下面编辑
-
-[[人生意义|$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-IntentionDynamicTable]]的值：{{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-IntentionDynamicTable}}
-
-<$edit-text tiddler="$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-IntentionDynamicTable" field="text" tag=input class="w-100" />
-
-[[优先任务列表|$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-PriorityTaskDynamicTable]]的值：{{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-PriorityTaskDynamicTable}}
-
-<$edit-text tiddler="$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-PriorityTaskDynamicTable" field="text" tag=input class="w-100" />
-
-[[项目列表|$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-ProjectDynamicTable]]的值：{{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-ProjectDynamicTable}}
-
-<$edit-text tiddler="$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-ProjectDynamicTable" field="text" tag=input class="w-100" />
-
-[[任务列表|$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-TaskDynamicTable]]的值：{{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-TaskDynamicTable}}
-
-<$edit-text tiddler="$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-TaskDynamicTable" field="text" tag=input class="w-100" />
+<<tabs "[all[shadows+tiddlers]tag[$:/tags/intention-tower-knowledge-graph/Settings]sort[order]]" "$:/plugins/linonetwo/intention-tower-knowledge-graph/Settings/Tags" "$:/state/tab/intention-tower-knowledge-graph/Settings" "tc-vertical">>

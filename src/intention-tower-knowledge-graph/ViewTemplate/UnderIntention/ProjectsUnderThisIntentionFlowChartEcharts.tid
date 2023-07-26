@@ -11,8 +11,4 @@ tags: $:/tags/ITKG/UnderIntention
 />
 \end
 
-<$reveal state="$:/config/intention-tower-knowledge-graph/ViewTemplate/ProjectsUnderThisIntentionFlowChartEcharts" type="match" text="show">
-
 <<echarts-with-subfilter>>
-
-</$reveal>

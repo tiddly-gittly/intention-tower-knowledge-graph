@@ -8,7 +8,7 @@ tags: $:/tags/ViewTemplate
 
   <<create-task-under-current-tiddler>>
 
-  <<tabs "[all[tiddlers+shadows]tag[$:/tags/ITKG/UnderProject]] [all[tiddlers+shadows]tag[$:/tags/ITKG/UnderTask]]" "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/TaskDynamicTable" >>
+  <<tabs "[all[tiddlers+shadows]tag[$:/tags/ITKG/UnderProject]] [all[tiddlers+shadows]tag[$:/tags/ITKG/UnderTask]] -[enlist{$:/config/ViewTemplate/UnderProject}] -[enlist{$:/config/ViewTemplate/UnderTask}]" "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/TaskDynamicTable" >>
 
   </$list>
 </$let>
