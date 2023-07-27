@@ -1,0 +1,22 @@
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/Settings/Fields
+caption: Fields
+tags: $:/tags/intention-tower-knowledge-graph/Settings
+order: 3
+
+!! 动态表格字段值，可在下面编辑
+
+[[人生意义|$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-IntentionDynamicTable]]的值：{{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-IntentionDynamicTable}}
+
+<$edit-text tiddler="$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-IntentionDynamicTable" field="text" tag=input class="w-100" />
+
+[[优先任务列表|$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-PriorityTaskDynamicTable]]的值：{{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-PriorityTaskDynamicTable}}
+
+<$edit-text tiddler="$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-PriorityTaskDynamicTable" field="text" tag=input class="w-100" />
+
+[[项目列表|$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-ProjectDynamicTable]]的值：{{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-ProjectDynamicTable}}
+
+<$edit-text tiddler="$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-ProjectDynamicTable" field="text" tag=input class="w-100" />
+
+[[任务列表|$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-TaskDynamicTable]]的值：{{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-TaskDynamicTable}}
+
+<$edit-text tiddler="$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-TaskDynamicTable" field="text" tag=input class="w-100" />

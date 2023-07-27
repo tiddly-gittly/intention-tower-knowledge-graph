@@ -13,8 +13,6 @@ tags: $:/tags/ITKG/UnderTask
 />
 \end
 
-<$reveal state="$:/config/intention-tower-knowledge-graph/ViewTemplate/TaskContext" type="match" text="show">
-
 <!-- Show all parent tags of current tiddler (all tiddlers that with current tiddler in the tags tree), that with Task, Intention, and Project, but exclude these meta tags themselves -->
 <$list filter="[all[current]tagstree[]!is[system]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}] :or[all[current]tagstree[]!is[system]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}] -[{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}] -[{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}] -[{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}]" counter="counter1">
   <$link><<currentTiddler>></$link>
@@ -57,5 +55,3 @@ tags: $:/tags/ITKG/UnderTask
 <$list filter="[<graphRootTiddler>taggingtree[]filter<filter-is-new-task>count[]compare:number:gt[0]then[yes]]">
   <$flowchart tiddler=<<graphRootTiddler>> height="600px" $template-tags={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}} subfilter="[filter<filter-is-new-task>]" />
 </$list>
-
-</$reveal>

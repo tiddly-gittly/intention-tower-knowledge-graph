@@ -1,0 +1,60 @@
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/Settings/Tabs
+caption: Tabs
+tags: $:/tags/intention-tower-knowledge-graph/Settings
+order: 2
+
+!! 可选的选项卡内容
+
+''如果不想要某个选项内容，点击右边的复制按钮复制条目标题然后粘贴到上面的空白框中，多个条目中间添加空格。''
+
+[[Task|$:/tags/ITKG/UnderTask]]&nbsp;&nbsp;[[config|$:/config/ViewTemplate/UnderTask]]
+
+<$edit-text tiddler="$:/config/ViewTemplate/UnderTask" field="text" tag=textarea class="w-100" />
+
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/ITKG/UnderTask]]">
+
+<$link>{{!!caption}}</$link>&nbsp;&nbsp;&nbsp;<$macrocall $name="copy-to-clipboard" src={{!!title}} />
+
+</$list>
+
+[[Project|$:/tags/ITKG/UnderProject]]&nbsp;&nbsp;[[config|$:/config/ViewTemplate/UnderProject]]
+
+<$edit-text tiddler="$:/config/ViewTemplate/UnderProject" field="text" tag=textarea class="w-100" />
+
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/ITKG/UnderProject]]">
+
+<$link>{{!!caption}}</$link>&nbsp;&nbsp;&nbsp;<$macrocall $name="copy-to-clipboard" src={{!!title}} />
+
+</$list>
+
+
+[[Intention|$:/tags/ITKG/UnderIntention]]&nbsp;&nbsp;[[config|$:/config/ViewTemplate/UnderIntention]]
+
+<$edit-text tiddler="$:/config/ViewTemplate/UnderIntention" field="text" tag=textarea class="w-100" />
+
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/ITKG/UnderIntention]]">
+
+<$link>{{!!caption}}</$link>&nbsp;&nbsp;&nbsp;<$macrocall $name="copy-to-clipboard" src={{!!title}} />
+
+</$list>
+
+[[CalendarEntry|$:/tags/ITKG/CalendarEntry]]&nbsp;&nbsp;[[config|$:/config/ViewTemplate/CalendarEntry]]
+
+<$edit-text tiddler="$:/config/ViewTemplate/CalendarEntry" field="text" tag=textarea class="w-100" />
+
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/ITKG/CalendarEntry]]">
+
+<$link>{{!!caption}}</$link>&nbsp;&nbsp;&nbsp;<$macrocall $name="copy-to-clipboard" src={{!!title}} />
+
+</$list>
+
+[[ProjectsOverview|$:/tags/ITKG/ProjectsOverview]]&nbsp;&nbsp;[[config|$:/config/ViewTemplate/ProjectsOverview]]
+
+<$edit-text tiddler="$:/config/ViewTemplate/ProjectsOverview" field="text" tag=textarea class="w-100" />
+
+<$list filter="[all[tiddlers+shadows]tag[$:/tags/ITKG/ProjectsOverview]]">
+
+<$link>{{!!caption}}</$link>&nbsp;&nbsp;&nbsp;<$macrocall $name="copy-to-clipboard" src={{!!title}} />
+
+</$list>
+

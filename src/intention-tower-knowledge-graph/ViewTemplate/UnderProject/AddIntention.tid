@@ -2,6 +2,4 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/UnderPr
 caption: {{$:/core/images/tag-button}} 添加意义
 tags: $:/tags/ITKG/UnderProject
 
-<$reveal state="$:/config/intention-tower-knowledge-graph/ViewTemplate/UnderProject/AddIntention" type="match" text="show">
 {{||$:/core/ui/EditTemplate/tags}}
-</$reveal>
