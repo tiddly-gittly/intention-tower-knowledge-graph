@@ -41,7 +41,12 @@ order: 1
 
 任务：<<single-text-tag-editor task>>
 
-''修改了任务标签后，原先带有`任务`标签的条目并不会自动修改过来，需要手动修改处理。''
+''修改了任务标签后，原先带有`任务`标签的条目并不会自动修改过来，需要手动修改处理。并点击下面按钮完成超级标签转换。''
+
+<$button>
+<$action-setfield $tiddler="任务" title={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}} />
+修改任务的超级标签
+</$button>
 
 !!! 新建日历记录时的标签
 
