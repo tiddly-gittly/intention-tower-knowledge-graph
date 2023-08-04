@@ -20,38 +20,44 @@ tags: $:/tags/ITKG/UnderTask
 </$list>
 
 <details>
-<summary>子任务、前置任务及后续任务</summary>
-<fieldset>
- <legend>当前子任务</legend>
- <div class="itkg-sidebar-project-list">
- <$list filter="[tag<currentTiddler>]">
- <$link><<currentTiddler>></$link>&nbsp;&nbsp;
- </$list>
- </div>
- </fieldset>
- <fieldset>
- <legend>前置任务</legend>
- <div class="itkg-sidebar-project-list">
- <$list filter="[enlist{!!tmo_dependency}]">
- <$link><<currentTiddler>></$link>&nbsp;&nbsp;
- </$list>
- </div>
- </fieldset>
- <fieldset>
- <legend>后续任务</legend>
- <div class="itkg-sidebar-project-list">
- <$list filter="[tmo_dependency<currentTiddler>]">
- <$link><<currentTiddler>></$link>&nbsp;&nbsp;
- </$list>
- </div>
- </fieldset>
- </details>
+  <summary>子任务、前置任务及后续任务</summary>
+  <fieldset>
+    <legend>当前子任务</legend>
+    <div class="itkg-sidebar-project-list">
+      <$list filter="[tag<currentTiddler>]">
+        <$link><<currentTiddler>></$link>&nbsp;&nbsp;
+      </$list>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>前置任务</legend>
+    <div class="itkg-sidebar-project-list">
+      <$list filter="[enlist{!!tmo_dependency}]">
+        <$link><<currentTiddler>></$link>&nbsp;&nbsp;
+      </$list>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>后续任务</legend>
+    <div class="itkg-sidebar-project-list">
+      <$list filter="[tmo_dependency<currentTiddler>]">
+        <$link><<currentTiddler>></$link>&nbsp;&nbsp;
+      </$list>
+    </div>
+  </fieldset>
+</details>
 <<echarts-with-subfilter>>
 
-<$list filter="[<graphRootTiddler>taggingtree[]filter<filter-is-new-task>count[]match[0]then[yes]]">
-  暂无子任务 <<create-task-under-current-tiddler>>
-</$list>
+<$let graphRootTiddler=<<currentTiddler>> >
+  <$list filter="[all[]in-tagtree-of:inclusive<currentTiddler>filter<filter-is-new-task>count[]match[0]then[yes]]">
+    <$let currentTiddler=<<graphRootTiddler>> >
+    暂无子任务 <<create-task-under-current-tiddler>>
+    </$let>
+  </$list>
 
-<$list filter="[<graphRootTiddler>taggingtree[]filter<filter-is-new-task>count[]compare:number:gt[0]then[yes]]">
-  <$flowchart tiddler=<<graphRootTiddler>> height="600px" $template-tags={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}} subfilter="[filter<filter-is-new-task>]" />
-</$list>
+  <$list filter="[all[]in-tagtree-of:inclusive<currentTiddler>filter<filter-is-new-task>count[]compare:number:gt[0]then[yes]]">
+    <$flowchart tiddler=<<graphRootTiddler>> height="600px" $template-tags={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}} subfilter="[filter<filter-is-new-task>]" />
+  </$list>
+</$let>
