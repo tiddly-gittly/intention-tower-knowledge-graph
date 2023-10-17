@@ -7,9 +7,6 @@ type: text/vnd.tiddlywiki
 
 {{$:/snippets/minilanguageswitcher}}
 
-* 作者：[[林一二|https://wiki.onetwo.ren/%E6%9E%97%E4%B8%80%E4%BA%8C]]
-* Github：[[https://github.com/tiddly-gittly/intention-tower-knowledge-graph]]
-
 目前itonnote主题插件会隐藏搜索按钮，请切换到其他主题显示。
 
 <<tabs "设计思路 概念 如何梳理自己的人生意义" "设计思路"  "$:/state/tab/ITKG-beginner" "tc-vertical" >>
@@ -20,6 +17,11 @@ type: text/vnd.tiddlywiki
 
 ! 如何安装
 
-依赖插件有："$:/plugins/kookma/shiraz", "$:/plugins/linonetwo/flow-chart", "$:/plugins/yaisog/taggingtree-filter", "$:/plugins/yaisog/tagstree-filter", "$:/plugins/linonetwo/in-tagtree-of", "$:/plugins/xp/aggregation",$:/plugins/Gk0Wk/echarts", "$:/plugins/linonetwo/super-tag", "$:/plugins/linonetwo/tw-calendar","$:/plugins/kixam/datepicker","$:/plugins/kixam/moment"。如果CPL没有自动安装，请手动安装。
+推荐在通过[ext[太记|https://tidgi.fun/]]启动笔记系统后，[ext[通过 CPL 社区插件源一键安装|https://tw-cpl.netlify.app/#Plugin_202302144321335]]。
 
-其中$:/plugins/xp/aggregation需要更新到0.5.0版本或更高的版本。其中"$:/plugins/linonetwo/tw-calendar","$:/plugins/kixam/datepicker","$:/plugins/kixam/moment"，三个插件可能会安装不上，安装不了的话在太记里可能会报错，建议先安装这三个插件再安装本插件。具体可追踪[[issue|https://github.com/tiddly-gittly/intention-tower-knowledge-graph/issues/32]]。
+参考资源：
+
+# 太记官网：[ext[https://tidgi.fun/]] （开源免费的 Notion 和 Obsidian 替代产品，注意 Notion 不支持存为本地文件，Obsidian 不开源）
+# CPL 社区插件源：[ext[https://tw-cpl.netlify.app/]] （在里面搜索 `intention-tower-knowledge-graph` ）
+# 作者：[[林一二|https://wiki.onetwo.ren/%E6%9E%97%E4%B8%80%E4%BA%8C]]
+# Github 开源地址：[[https://github.com/tiddly-gittly/intention-tower-knowledge-graph]]
