@@ -1,0 +1,26 @@
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/language/zh-Hans/Usage
+type: text/vnd.tiddlywiki
+
+\procedure lingo-base() $:/plugins/linonetwo/intention-tower-knowledge-graph/language/
+
+!!基本用法
+
+# 提供<<lingo ShortName>>布局，使用 `ctrl+shift+L` 切换到该视图
+## 或使用侧边栏上的<<lingo ShortName $:/plugins/linonetwo/simple-layout-launcher/language/>>等布局启动器打开它
+# 打开布局后，顶部有一些按钮
+## 左边是一系列添加按钮，点击后会跳转回默认布局，并添加新的条目
+## 右边是直接跳转回默认布局的按钮
+# 等你添加了一些条目后，布局底部会显示一个数据表格，列出你添加的条目
+## 点击表格里的条目标题，会跳转回默认布局，并打开该条目
+
+!! 标签
+
+以下是本条目里用到的，用于表明条目记录了症状或健康情况的标签，添加按钮其实就是创建了带有这些标签的条目：
+
+<$list filter="[[$:/plugins/linonetwo/intention-tower-knowledge-graph/tags/debuff]] [[$:/plugins/linonetwo/intention-tower-knowledge-graph/tags/buff]] [[$:/plugins/linonetwo/intention-tower-knowledge-graph/tags/medicine]] [[$:/plugins/linonetwo/intention-tower-knowledge-graph/tags/condition]]">
+
+  <$macrocall $name="tag" tag={{!!text}} /> {{!!caption}} - {{!!description}}
+
+</$list>
+
+你可以通过给任意条目添加 [[$:/TraitTag/OPMI/Status]] 标签来制作你自己的[ext[超级标签|https://github.com/tiddly-gittly/super-tag/]]。

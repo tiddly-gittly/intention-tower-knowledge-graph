@@ -1,0 +1,19 @@
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/language/en-GB/
+
+Name: Health Buff Debuff Tracker
+ShortName: Health Tracker
+Description: Record health issues, medication usage, and process of recovery. Your personal health archive.
+Configs/Description: These settings let you customise the behaviour of "Health Buff Debuff Tracker" plugin.
+SetEnded: Set Ended
+Medicine: Medicine
+Medicine/Description: Medicines you are taking, related to one of your buff/debuff/condition. Can be associated by adding a wiki link in the body of the buff tiddler etc.
+BodyCondition: Body Condition
+BodyCondition/Description: Normal medical examination data such as "blood pressure" or "weight"
+AddNewItem: Add New Item
+Buff: Buff
+Buff/Description: Good things that added to your body or health, like "Regular exercise", "Cyborg legs", "laser myopia surgery" or "encouraged by friends"
+DeBuff: DeBuff
+DeBuff/Description: Bad things like "flu", "hair loss", "broken leg", etc.
+HealthRecordSummary: Health Record Summary
+BackToDefaultLayout: Back To Default Layout
+Navigation: Navigation

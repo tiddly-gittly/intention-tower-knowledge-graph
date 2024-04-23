@@ -1,0 +1,26 @@
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/language/en-GB/Usage
+type: text/vnd.tiddlywiki
+
+\procedure lingo-base() $:/plugins/linonetwo/intention-tower-knowledge-graph/language/
+
+!! Basic Usage
+
+# Provide a <<lingo ShortName>> layout, use `ctrl+shift+L` to switch to this view
+## or open it using a layout launcher like <<lingo ShortName $:/plugins/linonetwo/simple-layout-launcher/language/>> on the sidebar
+# When the layout opens, there are a few buttons at the top
+## On the left is a series of add buttons that, when clicked, jump back to the default layout and add new tiddlers
+## On the right are buttons that jump directly back to the default layout
+# Once you've added a few tiddlers, a table of data is displayed at the bottom of the layout, listing the tiddlers you've added.
+## Clicking on the title of a tiddler in the table will jump back to the default layout and open that entry
+
+!! Tags
+
+The following tags are used in this entry to indicate that the entry records a symptom or health condition, the add button actually creates the entry with these tags:
+
+<$list filter="[[$:/plugins/linonetwo/intention-tower-knowledge-graph/tags/debuff]] [[$:/plugins/linonetwo/intention-tower-knowledge-graph/tags/buff]] [[$:/plugins/linonetwo/intention-tower-knowledge-graph/tags/medicine]] [[$:/plugins/linonetwo/intention-tower-knowledge-graph/tags/condition]]">
+
+  <$macrocall $name="tag" tag={{!!text}} /> {{!!caption}} - {{!!description}}
+
+</$list>
+
+You can make your own [ext[SuperTag|https://github.com/tiddly-gittly/super-tag/]] by adding [[$:/TraitTag/OPMI/Status]] tags to any tiddler.
