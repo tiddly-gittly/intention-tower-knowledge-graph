@@ -1,19 +1,6 @@
 title: $:/plugins/linonetwo/intention-tower-knowledge-graph/language/zh-Hans/
 
-Name: 健康增益和减益追踪器
-ShortName: 健康记录
-Description: 记录各种健康问题、药物使用情况和恢复过程。你的个人健康存档。
-Configs/Description: 通过这些设置，您可以自定义「健康增益和减益追踪器」插件的行为。
-SetEnded: 设为结束
-Medicine: 药物
-Medicine/Description: 您正在服用的，与某个增益、减益、身体状态相关的药物。可以通过在增益条目等的正文添加链接的形式关联起来。
-BodyCondition: 身体状态
-BodyCondition/Description: 「血压」或「体重」等正常情况
-AddNewItem: 添加新项目
-Buff: 增益
-Buff/Description: 对你的身体或健康有益的事情，如「经常锻炼」、「机械腿」、「激光近视手术」或「朋友的鼓励」。
-DeBuff: 减益
-DeBuff/Description: 诸如「感冒」、「脱发」、「断腿」等不好的事情。
-HealthRecordSummary: 健康记录摘要
-BackToDefaultLayout: 返回默认布局
-Navigation: 导航
+Name: 意义之塔与知识图谱
+ShortName: 意义之塔
+Description: 这是一个提供上下文的太微任务管理插件，鼓励自己干活，在今日摸鱼过多的时候，提醒自己还有多少有趣的事情没做。同时它也可以帮你梳理自己的人生意义。
+Configs/Description: 通过这些设置，您可以自定义「意义之塔与知识图谱」插件的行为。

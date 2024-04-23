@@ -6,6 +6,10 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/language/en-GB/Readm
 
 <<lingo Description>>
 
-This Health Status Recording App aims to provide a simple and convenient tool for users to document various health issues, medication usage, and the process of recovery, addressing the growing demand for personal health monitoring.
+Open source repository: https://github.com/tiddly-gittly/intention-tower-knowledge-graph
 
-User data will be saved in the local-first way for privacy, the interface will be user-friendly, and potential future additions include data analysis features to further enhance users' understanding of their health conditions.
+Online documentation site: https://tiddly-gittly.github.io/intention-tower-knowledge-graph/
+
+!! Cautions
+
+Dependent plugins are: "$:/plugins/kookma/shiraz", "$:/plugins/linonetwo/flow-chart", "$:/plugins/yaisog/taggingtree-filter", "$:/plugins/yaisog/tagstree-filter", "$:/plugins/linonetwo/in-tagtree-of", "$:/plugins/xp/aggregation",$:/plugins/Gk0Wk/echarts", "$:/plugins/linonetwo/super-tag", "$:/plugins/linonetwo/tw-calendar","$:/plugins/kixam/datepicker","$:/plugins/kixam/moment", please install them manually if you are not install them automatically using CPL.

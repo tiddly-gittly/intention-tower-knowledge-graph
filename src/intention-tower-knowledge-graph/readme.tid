@@ -2,12 +2,6 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/readme
 creator: LinOnetwo
 type: text/vnd.tiddlywiki
 
-ITKG is a knowledge and task management framework for tiddlywiki. ITKG short for intention tower & knowledge graph.
+\procedure lingo-base() $:/plugins/linonetwo/intention-tower-knowledge-graph/language/
 
-code: https://github.com/tiddly-gittly/intention-tower-knowledge-graph
-
-demo: https://tiddly-gittly.github.io/intention-tower-knowledge-graph/
-
-依赖插件有："$:/plugins/kookma/shiraz", "$:/plugins/linonetwo/flow-chart", "$:/plugins/yaisog/taggingtree-filter", "$:/plugins/yaisog/tagstree-filter", "$:/plugins/linonetwo/in-tagtree-of", "$:/plugins/xp/aggregation",$:/plugins/Gk0Wk/echarts", "$:/plugins/linonetwo/super-tag", "$:/plugins/linonetwo/tw-calendar","$:/plugins/kixam/datepicker","$:/plugins/kixam/moment"，如果CPL没有自动安装，请手动安装。
-
-其中$:/plugins/xp/aggregation需要更新到0.5.0版本。其中"$:/plugins/linonetwo/tw-calendar","$:/plugins/kixam/datepicker","$:/plugins/kixam/moment"，三个插件可能会安装不上，安装不了的话在太记里可能会报错，建议先安装这三个插件再安装本插件。具体可追踪[[issue|https://github.com/tiddly-gittly/intention-tower-knowledge-graph/issues/32]]。
+<<lingo Readme>>
