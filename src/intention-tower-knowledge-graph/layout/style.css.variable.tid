@@ -1,0 +1,6 @@
+title: $:/themes/linonetwo/intention-tower-knowledge-graph/layout/style.css.variable
+tags: $:/tags/Stylesheet
+
+div.itkg-IntentionTower-top-container {
+  border-bottom: 1px solid <<colour table-border>>;
+}

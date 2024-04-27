@@ -23,7 +23,7 @@ tags: $:/tags/ITKG/UnderTask
   <summary>子任务、前置任务及后续任务</summary>
   <fieldset>
     <legend>当前子任务</legend>
-    <div class="itkg-sidebar-project-list">
+    <div class="itkg-project-list">
       <$list filter="[tag<currentTiddler>]">
         <$link><<currentTiddler>></$link>&nbsp;&nbsp;
       </$list>
@@ -32,7 +32,7 @@ tags: $:/tags/ITKG/UnderTask
 
   <fieldset>
     <legend>前置任务</legend>
-    <div class="itkg-sidebar-project-list">
+    <div class="itkg-project-list">
       <$list filter="[enlist{!!tmo_dependency}]">
         <$link><<currentTiddler>></$link>&nbsp;&nbsp;
       </$list>
@@ -41,7 +41,7 @@ tags: $:/tags/ITKG/UnderTask
 
   <fieldset>
     <legend>后续任务</legend>
-    <div class="itkg-sidebar-project-list">
+    <div class="itkg-project-list">
       <$list filter="[tmo_dependency<currentTiddler>]">
         <$link><<currentTiddler>></$link>&nbsp;&nbsp;
       </$list>

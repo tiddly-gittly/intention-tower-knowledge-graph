@@ -1,0 +1,44 @@
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/layout/IntentionTower
+
+\import [[$:/plugins/linonetwo/intention-tower-knowledge-graph/filters/leaf-task]] [[$:/plugins/linonetwo/intention-tower-knowledge-graph/EditTemplate/title]] [[$:/plugins/linonetwo/intention-tower-knowledge-graph/Components/Buttons]]
+
+\define project-list-item()
+\whitespace trim
+<div class="itkg-project-list-item">
+  <$link to=<<currentTiddler>> tooltip=<<currentTiddler>>>
+    <<currentTiddler>>
+  </$link>
+</div>
+\end
+
+\define project-list()
+\whitespace trim
+<div class="itkg-project-list">
+  <$list
+    filter="[{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}] +[tagging[]filter<filter-is-new-task>] :and[filter<has-length>unique[]!sortsub:integer<compareByPriority>]"
+  >
+    <<project-list-item>>
+  </$list>
+</div>
+\end
+
+
+<$scrollable fallthrough="none" class="itkg-IntentionTower-top-container tc-popup-keep tc-menubar-dropdown-sidebar">
+
+  <div class="itkg-create-task">
+
+    <<simple-title-edit "$:/state/ITKG/PageLayout/create-tiddler-title" >>
+
+  </div>
+
+  <div class="itkg-buttons">
+    <<create-task-without-parent>>
+    <<create-project-without-parent>>
+    <<create-intention-without-parent>>
+  </div>
+
+  <<project-list>>
+
+</$scrollable>
+
+{{$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/ProjectsOverview}}

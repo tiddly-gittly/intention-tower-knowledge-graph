@@ -1,0 +1,19 @@
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/layout/layout
+name: <<lingo ShortName $:/plugins/linonetwo/intention-tower-knowledge-graph/language/>>
+icon: $:/plugins/linonetwo/intention-tower-knowledge-graph/icons/tower
+description: <<lingo Description $:/plugins/linonetwo/intention-tower-knowledge-graph/language/>>
+tags: $:/tags/Layout
+
+\whitespace trim
+\import [subfilter{$:/core/config/GlobalImportFilter}]
+\define containerClasses()
+tc-page-container tc-language-$(languageTitle)$ intention-tower-knowledge-graph-container
+\end
+
+<$navigator story="$:/StoryList" history="$:/HistoryList" openLinkFromInsideRiver={{$:/config/Navigation/openLinkFromInsideRiver}} openLinkFromOutsideRiver={{$:/config/Navigation/openLinkFromOutsideRiver}} relinkOnRename={{$:/config/RelinkOnRename}}>
+	<div class=<<containerClasses>>>
+		
+		{{$:/plugins/linonetwo/intention-tower-knowledge-graph/layout/IntentionTower}}
+
+	</div>
+</$navigator>

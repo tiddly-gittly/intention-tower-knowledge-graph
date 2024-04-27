@@ -1,7 +1,7 @@
 title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/UnderProject
 tags: $:/tags/ViewTemplate
 
-\import [[$:/plugins/linonetwo/intention-tower-knowledge-graph/Sidebar/Buttons]] [[$:/plugins/linonetwo/intention-tower-knowledge-graph/Components/Buttons]]
+\import [[$:/plugins/linonetwo/intention-tower-knowledge-graph/Components/Buttons]]
 
 <$let graphRootTiddler=<<currentTiddler>> >
   <$list filter="[all[current]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}then<graphRootTiddler>]">

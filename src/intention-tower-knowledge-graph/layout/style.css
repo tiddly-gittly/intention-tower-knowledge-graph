@@ -1,30 +1,31 @@
 /* can't use css variable in tid file, because it will become -— , maybe triggers --- syntax?
 Have to move them into a css file like this */
-div.itkg-sidebar-container {
+div.intention-tower-knowledge-graph-container {
   height: 100%;
+  padding: 1em;
 }
 
-.itkg-sidebar-project-list {
+.itkg-project-list {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
-.itkg-sidebar-project-list-item {
+.itkg-project-list-item {
   padding: 5px 0;
   margin: 5px;
   word-wrap: break-word;
 	word-break: break-all;
 }
 
-.itkg-sidebar-buttons {
+.itkg-buttons {
   padding: 10px 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.itkg-sidebar-buttons button {
+.itkg-buttons button {
   padding: 15px 20px;
 }
-.itkg-sidebar-create-task .tc-edit-texteditor {
+.itkg-create-task .tc-edit-texteditor {
   width: 100%;
 }
