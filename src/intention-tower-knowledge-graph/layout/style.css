@@ -17,13 +17,13 @@ div.intention-tower-knowledge-graph-container {
 	word-break: break-all;
 }
 
-.itkg-buttons {
+.itkg-intention-tower-buttons {
   padding: 10px 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.itkg-buttons button {
+.itkg-intention-tower-buttons button {
   padding: 15px 20px;
 }
 .itkg-create-task .tc-edit-texteditor {

@@ -1,5 +1,7 @@
 title: $:/plugins/linonetwo/intention-tower-knowledge-graph/Components/Buttons
 
+\procedure lingo-base() $:/plugins/linonetwo/intention-tower-knowledge-graph/language/
+
 \define create-task-under-current-tiddler()
   <$button tooltip="点击创建子任务">
    <$set name="tags" filter="[<currentTiddler>] [enlist{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}]">
@@ -89,6 +91,18 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/Components/Buttons
       <<after-create-tiddler-without-parent>>
      </$action-createtiddler>
      {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Motivation}} 新意义
+  </$button>
+\end
+
+\define back-to-default-layout-button()
+  <$button>
+    <$action-setfield
+      $tiddler="$:/layout"
+      text=""
+      $timestamp="no"
+    />
+    {{$:/core/images/default-layout}}
+    <<lingo BackToDefaultLayout>>
   </$button>
 \end
 
