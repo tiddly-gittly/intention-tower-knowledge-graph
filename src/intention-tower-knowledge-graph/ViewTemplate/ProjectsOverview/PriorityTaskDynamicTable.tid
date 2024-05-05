@@ -1,8 +1,10 @@
 title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/PriorityTaskDynamicTable
-caption: {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Table}} 优先任务列表
+caption: {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Table}} <<lingo Tabs/PriorityTaskList $:/plugins/linonetwo/intention-tower-knowledge-graph/language/>>
 tags: $:/tags/ITKG/ProjectsOverview
 
 \import [[$:/plugins/linonetwo/intention-tower-knowledge-graph/filters/leaf-task]]
+\procedure lingo-base() $:/plugins/linonetwo/intention-tower-knowledge-graph/language/
 
-\define caption() 优先待办列表 <$count filter=<<get-all-non-completed-leaf-tasks>> />
-<$macrocall $name=aggregation caption=<<caption>> filter=<<get-all-non-completed-leaf-tasks>> defaultFields={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-PriorityTaskDynamicTable}} class="w-100" state="ITKG-PriorityTaskDynamicTable-state" />
+!! <<lingo Table/PriorityToDoList>> <$count filter=<<get-all-non-completed-leaf-tasks>> />
+
+<$macrocall $name=aggregation filter=<<get-all-non-completed-leaf-tasks>> defaultFields={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-PriorityTaskDynamicTable}} class="w-100" state="ITKG-PriorityTaskDynamicTable-state" />

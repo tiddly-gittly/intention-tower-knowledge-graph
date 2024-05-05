@@ -3,5 +3,12 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/language/en-GB/
 Name: Intention Tower Knowledge Graph
 ShortName: ITKG
 Description: ITKG is a knowledge and task management framework for tiddlywiki. ITKG short for intention tower & knowledge graph.
+IntentionTower: Intention Tower
 BackToDefaultLayout: Back To Default Layout
 Configs/Description: These settings let you customise the behaviour of "Intention Tower Knowledge Graph" plugin.
+Tabs/TaskArchive: Task Archive
+Tabs/PriorityTaskList: Priority Task List
+Tabs/MeaningOfLife: Meaning Of Life
+Tabs/ProjectOverviewMap: Project Overview Map
+Table/FinishedTask: Finished Task
+Table/PriorityToDoList: Priority To-Do List

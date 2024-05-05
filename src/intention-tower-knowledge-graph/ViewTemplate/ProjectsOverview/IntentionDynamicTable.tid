@@ -1,5 +1,5 @@
 title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/IntentionDynamicTable
-caption: {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Table}} 人生意义
+caption: {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Table}} <<lingo Tabs/MeaningOfLife $:/plugins/linonetwo/intention-tower-knowledge-graph/language/>>
 tags: $:/tags/ITKG/ProjectsOverview
 
-<$macrocall $name=aggregation caption="人生意义" filter="[all[tiddlers]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}]"  defaultFields={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-IntentionDynamicTable}} class="w-100" state="ITKG-IntentionDynamicTable-state" />
+<$macrocall $name=aggregation filter="[all[tiddlers]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}]"  defaultFields={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-IntentionDynamicTable}} class="w-100" state="ITKG-IntentionDynamicTable-state" />

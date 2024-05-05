@@ -1,7 +1,10 @@
 title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/TaskCompletedDynamicTable
-caption: {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Table}} 任务归档
+caption: {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Table}} <<lingo Tabs/TaskArchive $:/plugins/linonetwo/intention-tower-knowledge-graph/language/>>
 tags: $:/tags/ITKG/ProjectsOverview
 
 \define filter-taskCompleted() [tmo_taskState[Completed]] [tmo_taskState[Archived]] [tmo_taskState[Terminated]] [tmo_taskState[Suspended]]
+\procedure lingo-base() $:/plugins/linonetwo/intention-tower-knowledge-graph/language/
 
-<$macrocall $name=aggregation caption="已完成的任务" filter=<<filter-taskCompleted>>  defaultFields={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-TaskCompletedDynamicTable}} class="w-100" state="ITKG-TaskCompletedDynamicTable-state" />
+!! <<lingo Table/FinishedTask>>
+
+<$macrocall $name=aggregation filter=<<filter-taskCompleted>>  defaultFields={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-TaskCompletedDynamicTable}} class="w-100" state="ITKG-TaskCompletedDynamicTable-state" />
