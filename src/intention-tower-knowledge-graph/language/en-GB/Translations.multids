@@ -12,3 +12,9 @@ Tabs/MeaningOfLife: Meaning Of Life
 Tabs/ProjectOverviewMap: Project Overview Map
 Table/FinishedTask: Finished Task
 Table/PriorityToDoList: Priority To-Do List
+List/SubTasksPredecessorsSuccessors/Caption: SubTasks Predecessors Successors
+List/SubTasksPredecessorsSuccessors/Description: Task context
+List/SubTasksPredecessorsSuccessors/CurrentSubTask: Current Subtask
+List/SubTasksPredecessorsSuccessors/PreTask: Pre Task
+List/SubTasksPredecessorsSuccessors/FollowUps: Follow Ups
+List/SubTasksPredecessorsSuccessors/NoSubTasks: No Subtasks
