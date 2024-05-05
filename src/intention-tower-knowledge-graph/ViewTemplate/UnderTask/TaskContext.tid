@@ -25,7 +25,7 @@ tags: $:/tags/ITKG/UnderTask
   <fieldset>
     <legend><<lingo List/SubTasksPredecessorsSuccessors/CurrentSubTask>></legend>
     <div class="itkg-project-list">
-      <$list filter="[tag<currentTiddler>]">
+      <$list filter="[tag<currentTiddler>tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}]">
         <$link><<currentTiddler>></$link>&nbsp;&nbsp;
       </$list>
     </div>
