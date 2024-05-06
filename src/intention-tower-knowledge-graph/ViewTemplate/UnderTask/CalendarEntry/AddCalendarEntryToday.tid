@@ -11,4 +11,4 @@ tags: $:/tags/ITKG/CalendarEntry
   :and[sum[]divide[1000]divide[3600]]
 }}} 小时！（包含计划中未做的）
 
-<$calendar defaultTags={{{ [<currentTiddler>] [{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/default-calendar-entry-tag}] +[join[ ]] }}} hideToolbar="yes" height="600px" initialView="timeGridDay" filter="[all[tiddlers]!is[system]days:startDate[0]field:calendarEntry[yes]]" />
+<$calendar defaultTags={{{ [<currentTiddler>] [{!!calendar_tag}else{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/default-calendar-entry-tag}] +[join[ ]] }}} hideToolbar="yes" height="600px" initialView="timeGridDay" filter="[all[tiddlers]!is[system]days:startDate[0]field:calendarEntry[yes]]" />

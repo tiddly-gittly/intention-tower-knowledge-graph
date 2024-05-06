@@ -1,0 +1,12 @@
+[
+    {
+        "created": "20240506135550521",
+        "text": "用于给日历相关条目提供默认元信息，例如创建的相关的日历条目默认带上的标签等。",
+        "tags": "$:/SuperTag/TraitTag",
+        "title": "$:/TraitTag/Calendar/DefaultMetadata",
+        "modified": "20240506154739391",
+        "type": "text/vnd.tiddlywiki",
+        "schema": "{\n    \"type\": \"object\",\n    \"lingo-base\": \"$:/plugins/linonetwo/intention-tower-knowledge-graph/language/\",\n    \"properties\": {\n        \"calendar_tag\": {\n            \"type\": \"string\",\n            \"title\": \"TraitTag/DefaultTagWhenAdd/Caption\",\n            \"description\": \"TraitTag/DefaultTagWhenAdd/Description\"\n        }\n    }\n}",
+        "wl-field-name-text": "schema"
+    }
+]

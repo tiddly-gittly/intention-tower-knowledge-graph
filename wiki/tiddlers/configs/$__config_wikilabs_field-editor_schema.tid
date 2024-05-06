@@ -1,0 +1,9 @@
+created: 20240506135823548
+description: Schema of super-tag
+icon: {{$:/core/images/spiral}}
+modified: 20240506135853618
+tags: $:/tags/wikilabs/fieldswitcher
+title: $:/config/wikilabs/field-editor/schema
+type: text/vnd.tiddlywiki
+
+schema
