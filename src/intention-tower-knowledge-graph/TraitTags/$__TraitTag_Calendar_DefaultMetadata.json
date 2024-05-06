@@ -6,7 +6,7 @@
         "title": "$:/TraitTag/Calendar/DefaultMetadata",
         "modified": "20240506154739391",
         "type": "text/vnd.tiddlywiki",
-        "schema": "{\n    \"type\": \"object\",\n    \"lingo-base\": \"$:/plugins/linonetwo/intention-tower-knowledge-graph/language/\",\n    \"properties\": {\n        \"calendar_tag\": {\n            \"type\": \"string\",\n            \"title\": \"TraitTag/DefaultTagWhenAdd/Caption\",\n            \"description\": \"TraitTag/DefaultTagWhenAdd/Description\"\n        }\n    }\n}",
+        "schema": "{\n    \"type\": \"object\",\n    \"lingo-base\": \"$:/plugins/linonetwo/intention-tower-knowledge-graph/language/\",\n    \"properties\": {\n        \"calendar_tag\": {\n            \"type\": \"string\",\n            \"title\": \"TraitTag/CalendarDefaultTag/Title\",\n            \"description\": \"TraitTag/CalendarDefaultTag/Description\"\n        }\n    }\n}",
         "wl-field-name-text": "schema"
     }
 ]

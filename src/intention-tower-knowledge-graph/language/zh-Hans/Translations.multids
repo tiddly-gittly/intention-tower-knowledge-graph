@@ -18,3 +18,5 @@ List/SubTasksPredecessorsSuccessors/CurrentSubTask: 当前子任务
 List/SubTasksPredecessorsSuccessors/PreTask: 前置任务
 List/SubTasksPredecessorsSuccessors/FollowUps: 后续任务
 List/SubTasksPredecessorsSuccessors/NoSubTasks: 暂无子任务
+TraitTag/CalendarDefaultTag/Title: 日历默认标签
+TraitTag/CalendarDefaultTag/Description: 添加任务相关的日历条目时，自动添加的标签，会覆盖全局设置。
