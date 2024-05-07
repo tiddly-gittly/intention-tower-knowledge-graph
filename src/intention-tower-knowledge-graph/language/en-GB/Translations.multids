@@ -20,3 +20,5 @@ List/SubTasksPredecessorsSuccessors/FollowUps: Follow Ups
 List/SubTasksPredecessorsSuccessors/NoSubTasks: No Subtasks
 TraitTag/CalendarDefaultTag/Title: Calendar default tag
 TraitTag/CalendarDefaultTag/Description: Auto added tag when adding task-related calendar entry. This overrides the global setting.
+Deck/KnowledgeGraph/Caption: Knowledge Graph
+Deck/KnowledgeGraph/Description: Review the notes hanging on the Intention Tower, which shape a Knowledge Graph related to the topic you are interested in, i.e., a graph expanded from a tree representing the knowledge you care about that should be permanently memorized.

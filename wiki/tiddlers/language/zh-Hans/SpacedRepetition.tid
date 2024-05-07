@@ -1,0 +1,21 @@
+title: language/zh-Hans/SpacedRepetition
+
+\procedure lingo-base() language/
+
+!! 安装
+
+首先使用 CPL 搜索 `tidme core` 安装墨鱼插件核心，它可以像 Anki 一样查看和编辑牌组。然后搜索 `tidme zh-Hans` 安装它的中文翻译。
+
+安装后刷新页面重新载入，就会看到页面工具栏（Page Control）上出现了一个新的墨鱼按钮，点击它就可以打开墨鱼插件。
+
+!! 使用预置牌组复习
+
+安装意义之塔插件后，可以在墨鱼插件中打开意义之塔的预置牌组，进行复习。预置牌组包含：
+
+<$list filter="[all[shadows]prefix[$:/plugins/linonetwo/intention-tower-knowledge-graph/]tag[$:/tags/TidmeDeck]]">
+
+# <$link to=<<currentTiddler>>>{{!!caption}}</$link>
+#* 筛选器：{{!!card}}
+#* 说明：{{!!description}}
+
+</$list>
