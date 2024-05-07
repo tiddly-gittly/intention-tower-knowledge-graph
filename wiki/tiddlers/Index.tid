@@ -1,27 +1,7 @@
-created: 20230215005449858
-creator: 林一二
-modified: 20230610030026810
-modifier: 马不前
 title: Index
-type: text/vnd.tiddlywiki
+
+\procedure lingo-base() language/
 
 {{$:/snippets/minilanguageswitcher}}
 
-目前itonnote主题插件会隐藏搜索按钮，请切换到其他主题显示。
-
-<<tabs "设计思路 概念 如何梳理自己的人生意义" "设计思路"  "$:/state/tab/ITKG-beginner" "tc-vertical" >>
-
-[[设计思路文字版]] [[设计思路PPT]]
-
-[[概念文字版]] [[概念PPT]]
-
-! 如何安装
-
-推荐在通过[ext[太记|https://tidgi.fun/]]启动笔记系统后，[ext[通过 CPL 社区插件源一键安装|https://tw-cpl.netlify.app/#Plugin_202302144321335]]。
-
-参考资源：
-
-# 太记官网：[ext[https://tidgi.fun/]] （开源免费的 Notion 和 Obsidian 替代产品，注意 Notion 不支持存为本地文件，Obsidian 不开源）
-# CPL 社区插件源：[ext[https://tw-cpl.netlify.app/]] （在里面搜索 `intention-tower-knowledge-graph` ）
-# 作者：[[林一二|https://wiki.onetwo.ren/%E6%9E%97%E4%B8%80%E4%BA%8C]]
-# Github 开源地址：[[https://github.com/tiddly-gittly/intention-tower-knowledge-graph]]
+<<lingo Index>>

@@ -1,0 +1,20 @@
+title: language/en-GB/Index
+
+\procedure lingo-base() language/
+
+<<tabs "Design Thinking Concepts How to sort out the meaning of your life" "Design Thinking" "$:/state/tab/ITKG-beginner" "tc-vertical" >>
+
+[[Design Thinking Text Version]] [[Design Thinking PPT]]
+
+[[Concept text version]] [[Concept PPT]] [[Spaced Repetition of KG|SpacedRepetition]]
+
+! How to install
+
+It is recommended to [ext[one-click install via CPL Community Plugin Source|https://tw-cpl.netlify.app/#Plugin_202302144321335]] after launching the note-taking system via [ext[TidGi|https://tidgi.fun/]].
+
+Refer to the resources:
+
+# TidGi official website: [ext[https://tidgi.fun/]] (open source and free alternatives to Notion and Obsidian, note that Notion does not support saving to local files, Obsidian is not open source)
+# CPL Community Plugin Source: [ext[https://tw-cpl.netlify.app/]] (search for `intention-tower-knowledge-graph`)
+# Author: [[LinOnetwo|https://github.com/linonetwo/]]
+# Github open source address: [[https://github.com/tiddly-gittly/intention-tower-knowledge-graph]]

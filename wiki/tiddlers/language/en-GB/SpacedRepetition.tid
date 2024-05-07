@@ -1,3 +1,27 @@
 title: language/en-GB/SpacedRepetition
 
 \procedure lingo-base() language/
+
+!! Installation
+
+First use the CPL to search for `tidme core` to install the tidme plugin core, which allows you to view and edit decks just like Anki. Then search for `tidme translation` to install its i18n plugin, if you are not an English native speaker.
+
+After installing it and refreshing the page to reload it, you will see a new Cuttlefish button on the Page Control, click on it to open the Cuttlefish (tidme) plugin.
+
+!! Review with preset decks
+
+After installing the <<lingo Name $:/plugins/linonetwo/intention-tower-knowledge-graph/language/>> plugin, you can open the pre-configured decks in the Tidme plugin to review. These preset deck contains:
+
+<$list filter="[all[shadows]prefix[$:/plugins/linonetwo/intention-tower-knowledge-graph/]tag[$:/tags/TidmeDeck]]">
+
+# <$link to=<<currentTiddler>>>{{!!caption}}</$link>
+#* Filter: {{!!card}}
+#* Description: {{!!description}}
+
+</$list>
+
+!! Why review
+
+You can search for "spaced repetition" on Quora to learn why this allows you to always remember what you're interested in and doesn't take up too much review time.
+
+Then search for "FSRS" to learn how this algorithm used by Tiddlywiki's Tidme plugin automatically optimizes the number of times to review, allowing you to further save time spent on reviewing.
