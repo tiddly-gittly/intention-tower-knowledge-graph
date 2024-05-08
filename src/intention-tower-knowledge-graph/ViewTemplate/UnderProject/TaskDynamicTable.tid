@@ -7,7 +7,6 @@ tags: $:/tags/ITKG/UnderProject
 !!! <<lingo Table/TaskList $:/plugins/linonetwo/intention-tower-knowledge-graph/language/>> <$count filter=<<get-non-completed-leaf-tasks>> />
 
 <$basic-table
-  height="800px"
   filter=<<get-non-completed-leaf-tasks>>
   columns="""
     [

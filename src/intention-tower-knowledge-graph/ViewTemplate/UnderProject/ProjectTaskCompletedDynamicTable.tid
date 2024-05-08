@@ -8,7 +8,6 @@ tags: $:/tags/ITKG/UnderProject
 !!! <<lingo Tabs/TaskArchive>> <$count filter=<<filter-projectTaskCompleted>> />
 
 <$basic-table
-  height="800px"
   filter=<<filter-projectTaskCompleted>>
   columns="""
     [
