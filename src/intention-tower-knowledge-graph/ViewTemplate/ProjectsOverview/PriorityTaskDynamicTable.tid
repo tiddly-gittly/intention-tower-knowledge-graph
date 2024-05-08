@@ -14,12 +14,17 @@ tags: $:/tags/ITKG/ProjectsOverview
     [
       {
         field: 'title',
-        title: 'Caption',
-        fieldFormat: ({ caption }) => $tw.wiki.renderText('text/plain', 'text/vnd.tiddlywiki', caption),
+        title: 'Title',
         width: 'auto',
       },
+      {
+        field: 'tags',
+        title: 'Tags',
+        width: 200,
+        fieldFormat: (record) => record.tags.filter(tag => !([$tw.wiki.getTiddlerText('$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag', '')].includes(tag))).join(', '),
+      },
       ...$tw.wiki.getTiddlerText('$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-PriorityTaskDynamicTable', '')
-        .split(' ').filter(field => !(['title'].includes(field)))
+        .split(' ').filter(field => !(['title', 'tags'].includes(field)))
         .map(field => ({
           field,
           title: field,

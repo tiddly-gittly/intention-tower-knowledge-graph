@@ -12,11 +12,16 @@ tags: $:/tags/ITKG/UnderIntention
       {
         field: 'title',
         title: 'Caption',
-        fieldFormat: ({ caption }) => $tw.wiki.renderText('text/plain', 'text/vnd.tiddlywiki', caption),
         width: 'auto',
       },
+      {
+        field: 'tags',
+        title: 'Tags',
+        width: 200,
+        fieldFormat: (record) => record.tags.filter(tag => !([$tw.wiki.getTiddlerText('$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag', '')].includes(tag))).join(', '),
+      },
       ...$tw.wiki.getTiddlerText('$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-ProjectDynamicTable', '')
-        .split(' ').filter(field => !(['title'].includes(field)))
+        .split(' ').filter(field => !(['title', 'tags'].includes(field)))
         .map(field => ({
           field,
           title: field,
