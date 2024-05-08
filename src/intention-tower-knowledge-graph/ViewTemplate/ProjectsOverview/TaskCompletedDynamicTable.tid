@@ -7,4 +7,24 @@ tags: $:/tags/ITKG/ProjectsOverview
 
 !! <<lingo Table/FinishedTask>>
 
-<$macrocall $name=aggregation filter=<<filter-taskCompleted>>  defaultFields={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-TaskCompletedDynamicTable}} class="w-100" state="ITKG-TaskCompletedDynamicTable-state" />
+<$basic-table
+  height="800px"
+  filter=<<filter-taskCompleted>>
+  columns="""
+    [
+      {
+        field: 'title',
+        title: 'Caption',
+        fieldFormat: ({ caption }) => $tw.wiki.renderText('text/plain', 'text/vnd.tiddlywiki', caption),
+        width: 'auto',
+      },
+      ...$tw.wiki.getTiddlerText('$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-TaskCompletedDynamicTable', '')
+        .split(' ').filter(field => !(['title'].includes(field)))
+        .map(field => ({
+          field,
+          title: field,
+          width: 'auto',
+        })),
+    ]
+  """
+/>

@@ -1,9 +1,29 @@
 title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/TaskDynamicTable
-caption: {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Table}} 任务列表
+caption: {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Table}} <<lingo Table/TaskList $:/plugins/linonetwo/intention-tower-knowledge-graph/language/>>
 tags: $:/tags/ITKG/UnderProject
 
 \import [[$:/plugins/linonetwo/intention-tower-knowledge-graph/filters/leaf-task]]
 
-\define caption() 优先待办列表 <$count filter=<<get-non-completed-leaf-tasks>> />
+!!! <<lingo Table/TaskList $:/plugins/linonetwo/intention-tower-knowledge-graph/language/>> <$count filter=<<get-non-completed-leaf-tasks>> />
 
-<$macrocall $name=aggregation caption=<<caption>> filter=<<get-non-completed-leaf-tasks>> defaultFields={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-TaskDynamicTable}} class="w-100" state="ITKG-TaskDynamicTable-state" />
+<$basic-table
+  height="800px"
+  filter=<<get-non-completed-leaf-tasks>>
+  columns="""
+    [
+      {
+        field: 'title',
+        title: 'Caption',
+        fieldFormat: ({ caption }) => $tw.wiki.renderText('text/plain', 'text/vnd.tiddlywiki', caption),
+        width: 'auto',
+      },
+      ...$tw.wiki.getTiddlerText('$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-TaskDynamicTable', '')
+        .split(' ').filter(field => !(['title'].includes(field)))
+        .map(field => ({
+          field,
+          title: field,
+          width: 'auto',
+        })),
+    ]
+  """
+/>

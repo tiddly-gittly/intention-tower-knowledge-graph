@@ -1,8 +1,30 @@
 title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/ProjectTaskCompletedDynamicTable
-caption: {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Table}} 已完成列表
+caption: {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Table}} <<lingo Tabs/TaskArchive $:/plugins/linonetwo/intention-tower-knowledge-graph/language/>>
 tags: $:/tags/ITKG/UnderProject
 
+\procedure lingo-base() $:/plugins/linonetwo/intention-tower-knowledge-graph/language/
 \define filter-projectTaskCompleted() [in-tagtree-of<currentTiddler>] -[tmo_taskState[New]] -[tmo_taskState[Running]] 
 
-\define caption() 已完成列表 <$count filter=<<filter-projectTaskCompleted>> />
-<$macrocall $name=aggregation caption=<<caption>> filter=<<filter-projectTaskCompleted>> defaultFields={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-ProjectTaskCompletedDynamicTable}} class="w-100" state="ITKG-ProjectTaskCompletedDynamicTable-state" />
+!!! <<lingo Tabs/TaskArchive>> <$count filter=<<filter-projectTaskCompleted>> />
+
+<$basic-table
+  height="800px"
+  filter=<<filter-projectTaskCompleted>>
+  columns="""
+    [
+      {
+        field: 'title',
+        title: 'Caption',
+        fieldFormat: ({ caption }) => $tw.wiki.renderText('text/plain', 'text/vnd.tiddlywiki', caption),
+        width: 'auto',
+      },
+      ...$tw.wiki.getTiddlerText('$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-ProjectTaskCompletedDynamicTable', '')
+        .split(' ').filter(field => !(['title'].includes(field)))
+        .map(field => ({
+          field,
+          title: field,
+          width: 'auto',
+        })),
+    ]
+  """
+/>
