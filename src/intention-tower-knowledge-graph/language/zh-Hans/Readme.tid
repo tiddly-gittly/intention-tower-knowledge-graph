@@ -12,4 +12,4 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/language/zh-Hans/Rea
 
 !! 注意事项
 
-依赖插件有："$:/plugins/kookma/shiraz", "$:/plugins/linonetwo/flow-chart", "$:/plugins/yaisog/taggingtree-filter", "$:/plugins/yaisog/tagstree-filter", "$:/plugins/linonetwo/in-tagtree-of", "$:/plugins/xp/aggregation",$:/plugins/Gk0Wk/echarts", "$:/plugins/linonetwo/super-tag", "$:/plugins/linonetwo/tw-calendar","$:/plugins/kixam/datepicker","$:/plugins/kixam/moment"，如果没有使用 CPL 实现自动安装，请手动安装。
+依赖插件有很多"，如果没有使用 CPL 实现自动安装，请手动安装。

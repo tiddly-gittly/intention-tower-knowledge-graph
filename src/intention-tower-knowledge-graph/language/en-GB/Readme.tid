@@ -12,4 +12,4 @@ Online documentation site: https://tiddly-gittly.github.io/intention-tower-knowl
 
 !! Cautions
 
-Dependent plugins are: "$:/plugins/kookma/shiraz", "$:/plugins/linonetwo/flow-chart", "$:/plugins/yaisog/taggingtree-filter", "$:/plugins/yaisog/tagstree-filter", "$:/plugins/linonetwo/in-tagtree-of", "$:/plugins/xp/aggregation",$:/plugins/Gk0Wk/echarts", "$:/plugins/linonetwo/super-tag", "$:/plugins/linonetwo/tw-calendar","$:/plugins/kixam/datepicker","$:/plugins/kixam/moment", please install them manually if you are not install them automatically using CPL.
+Dependent plugins are many, please install them manually if you are not install them automatically using CPL.

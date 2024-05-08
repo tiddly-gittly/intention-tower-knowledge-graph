@@ -17,7 +17,3 @@ ITKG is a knowledge and task management framework for tiddlywiki. ITKG short for
 之后太微将自动为你定下每日的任务，但是不做具体时间安排，不做微操作。这个系统要保证的是做任务的态度端正，将精力投入到优先级最高的任务中去。
 
 只要态度不滑坡，办法总比问题多。鼓励自己，端正自己的态度。重振精神，创造新事物。
-
-依赖插件有："$:/plugins/kookma/shiraz", "$:/plugins/linonetwo/flow-chart", "$:/plugins/yaisog/taggingtree-filter", "$:/plugins/yaisog/tagstree-filter", "$:/plugins/linonetwo/in-tagtree-of", "$:/plugins/xp/aggregation",$:/plugins/Gk0Wk/echarts", "$:/plugins/linonetwo/super-tag", "$:/plugins/linonetwo/tw-calendar","$:/plugins/kixam/datepicker","$:/plugins/kixam/moment"，如果CPL没有自动安装，请手动安装。
-
-其中$:/plugins/xp/aggregation需要更新到0.5.0版本。
