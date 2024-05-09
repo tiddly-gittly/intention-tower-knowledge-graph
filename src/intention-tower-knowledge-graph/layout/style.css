@@ -21,10 +21,12 @@ div.intention-tower-knowledge-graph-container {
   padding: 10px 0;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 .itkg-intention-tower-buttons button {
   padding: 15px 20px;
+  margin-bottom: 10px;
 }
 .itkg-create-task .tc-edit-texteditor {
   width: 100%;
