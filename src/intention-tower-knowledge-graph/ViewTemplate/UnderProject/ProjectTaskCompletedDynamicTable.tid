@@ -3,7 +3,7 @@ caption: {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Table}} <
 tags: $:/tags/ITKG/UnderProject
 
 \procedure lingo-base() $:/plugins/linonetwo/intention-tower-knowledge-graph/language/
-\define filter-projectTaskCompleted() [in-tagtree-of<currentTiddler>] -[tmo_taskState[New]] -[tmo_taskState[Running]] 
+\define filter-projectTaskCompleted() [tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}in-tagtree-of<currentTiddler>] -[tmo_taskState[New]] -[tmo_taskState[Running]] 
 
 !!! <<lingo Tabs/TaskArchive>> <$count filter=<<filter-projectTaskCompleted>> />
 
