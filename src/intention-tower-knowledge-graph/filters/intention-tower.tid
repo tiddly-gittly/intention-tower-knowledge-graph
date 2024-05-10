@@ -1,0 +1,6 @@
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/filters/intention-tower
+tags: $:/tags/Global
+
+\function linonetwo.intention-tower() [all[tiddlers]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}] [all[tiddlers]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}] [all[tiddlers]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}]
+
+\function linonetwo.intention-tower-without-task() [all[tiddlers]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}] [all[tiddlers]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}]
