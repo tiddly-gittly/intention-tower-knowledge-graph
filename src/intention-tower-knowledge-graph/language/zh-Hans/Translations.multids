@@ -24,3 +24,5 @@ TraitTag/CalendarDefaultTag/Title: 日历默认标签
 TraitTag/CalendarDefaultTag/Description: 添加任务相关的日历条目时，自动添加的标签，会覆盖全局设置。
 Deck/KnowledgeGraph/Caption: 知识图谱
 Deck/KnowledgeGraph/Description: 复习挂在意义之塔上的笔记，它们形成了与你感兴趣的主题相关的知识图谱，也就是由树扩展出的一个图，表示你感兴趣的应该被永久记住的知识。
+Deck/IntentionTower/Caption: 意义之塔
+Deck/IntentionTower/Description: 回顾你所有的意义和任务，看看要不要归档他们或者是调整优先级。也会复习被归档起来的任务，看看如今是否有兴趣复苏它们？
