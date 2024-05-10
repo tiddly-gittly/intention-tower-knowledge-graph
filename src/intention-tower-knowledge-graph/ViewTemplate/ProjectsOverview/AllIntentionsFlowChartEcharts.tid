@@ -2,4 +2,8 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AllInte
 caption: {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Project}} <<lingo IntentionTower $:/plugins/linonetwo/intention-tower-knowledge-graph/language/>>
 tags: $:/tags/ITKG/ProjectsOverview
 
-<$echarts $tiddler="$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AllIntentionsFlowChartEchartsAddon" dblclick="(params, parentWidget) => { parentWidget.dispatchEvent({ type: 'tm-navigate', navigateTo: params.data.name }) }" />
+<$echarts
+  $height="600px"
+  $tiddler="$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AllIntentionsFlowChartEchartsAddon"
+  dblclick="(params, parentWidget) => { parentWidget.dispatchEvent({ type: 'tm-navigate', navigateTo: params.data.name }) }"
+/>

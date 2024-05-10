@@ -14,6 +14,7 @@ Table/FinishedTask: 已完成的任务
 Table/PriorityToDoList: 优先待办列表
 Table/TaskList: 任务列表
 Table/ProjectList: 项目列表
+Chart/IntentionTowerOfThisIntention: 此意义的意义之塔
 List/SubTasksPredecessorsSuccessors/Caption: 子任务、前置任务及后续任务
 List/SubTasksPredecessorsSuccessors/Description: 任务上下文
 List/SubTasksPredecessorsSuccessors/CurrentSubTask: 当前子任务

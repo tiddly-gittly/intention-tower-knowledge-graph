@@ -1,8 +1,9 @@
 title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/ProjectsUnderThisIntentionFlowChartEcharts
-caption: {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Project}} 此意义的意义之塔
+caption: {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Project}} <<lingo Chart/IntentionTowerOfThisIntention $:/plugins/linonetwo/intention-tower-knowledge-graph/language/>> 
 tags: $:/tags/ITKG/UnderIntention
 
 <$echarts
+  $height="500px"
   $tiddler="$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AllProjectsFlowChartEchartsAddon"
   currentTiddler=<<currentTiddler>>
   tiddlerSource="[all[tiddlers]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}in-tagtree-of:inclusive<currentTiddler>] :or[<currentTiddler>tagstree[]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}]"
