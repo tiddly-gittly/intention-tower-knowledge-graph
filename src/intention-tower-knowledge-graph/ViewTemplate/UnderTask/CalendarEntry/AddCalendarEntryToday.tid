@@ -1,14 +1,10 @@
 title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AddCalendarEntryToday
-caption: {{$:/plugins/linonetwo/tw-calendar/Images/CalendarEdit}} 添加今日任务
+caption: {{$:/plugins/linonetwo/tw-calendar/Images/CalendarEdit}} <<lingo Tabs/AddTaskToday $:/plugins/linonetwo/intention-tower-knowledge-graph/language/>>
 tags: $:/tags/ITKG/CalendarEntry
 
 \import [[$:/plugins/linonetwo/intention-tower-knowledge-graph/filters/time]]
+\procedure lingo-base() $:/plugins/linonetwo/intention-tower-knowledge-graph/language/
 
-
-今日仅工作 {{{ 
-[all[]tag<currentTiddler>days:startDate[0]field:calendarEntry[yes]]
-  :map[subfilter<getTimeForEntry>]
-  :and[sum[]divide[1000]divide[3600]]
-}}} 小时！（包含计划中未做的）
+<<lingo WorkloadForTheDay>>
 
 <$calendar defaultTags={{{ [<currentTiddler>] [{!!calendar_tag}!is[blank]else{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/default-calendar-entry-tag}] +[join[ ]] }}} hideToolbar="yes" height="600px" initialView="timeGridDay" filter="[all[tiddlers]!is[system]days:startDate[0]field:calendarEntry[yes]]" />

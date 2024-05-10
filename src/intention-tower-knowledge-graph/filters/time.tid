@@ -1,3 +1,15 @@
 title: $:/plugins/linonetwo/intention-tower-knowledge-graph/filters/time
 
 \define getTimeForEntry() [{!!startDate}format:date[TIMESTAMP]] :map[<..currentTiddler>get[endDate]format:date[TIMESTAMP]subtract<currentTiddler>]
+
+\function workload-for-the-year()
+[all[]in-tagtree-of:inclusive<currentTiddler>field:calendarEntry[yes]]
+  :map[subfilter<getTimeForEntry>]
+  :and[sum[]divide[1000]divide[3600]]
+\end
+
+\function workload-for-the-day()
+[all[]tag<currentTiddler>days:startDate[0]field:calendarEntry[yes]]
+  :map[subfilter<getTimeForEntry>]
+  :and[sum[]divide[1000]divide[3600]]
+\end

@@ -9,6 +9,12 @@ Configs/Description: 通过这些设置，您可以自定义「意义之塔与�
 Tabs/TaskArchive: 任务归档
 Tabs/PriorityTaskList: 优先任务列表
 Tabs/MeaningOfLife: 人生意义
+Tabs/AddIntention: 添加意义
+Tabs/CalendarRecord: 日历记录
+Tabs/AddTaskToday: 添加今日任务
+Tabs/WorkloadForTheYear: 本年工作量
+WorkloadForTheDay: 今日共工作 <<workload-for-the-day>> 小时！（包含计划中未做的）
+WorkloadForTheYear: 项目下共工作 <<workload-for-the-year>> 小时！（包含计划中未做的）
 Tabs/ProjectOverviewMap: 项目概览图
 Table/FinishedTask: 已完成的任务
 Table/PriorityToDoList: 优先待办列表

@@ -10,6 +10,12 @@ Tabs/TaskArchive: Task Archive
 Tabs/PriorityTaskList: Priority Task List
 Tabs/MeaningOfLife: Meaning Of Life
 Tabs/ProjectOverviewMap: Project Overview Map
+Tabs/AddIntention: Add Intention
+Tabs/CalendarRecord: Calendar Record
+Tabs/AddTaskToday: Add task today
+Tabs/WorkloadForTheYear: Workload this year
+WorkloadForTheDay: A total of <<workload-for-the-day>> hours were worked today under the project! (including planning but not done)
+WorkloadForTheYear: A total of <<workload-for-the-year>> hours were worked this year under the project! (including planning but not done)
 Table/FinishedTask: Finished Task
 Table/PriorityToDoList: Priority To-Do List
 Table/TaskList: Task List

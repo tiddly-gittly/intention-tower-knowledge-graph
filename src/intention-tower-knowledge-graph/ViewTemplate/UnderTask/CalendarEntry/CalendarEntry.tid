@@ -1,5 +1,5 @@
 title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/CalendarEntry
-caption: {{$:/plugins/linonetwo/tw-calendar/tiddlywiki-ui/Images/GoToCalendarImage}} 日历记录
+caption: {{$:/plugins/linonetwo/tw-calendar/tiddlywiki-ui/Images/GoToCalendarImage}} <<lingo Tabs/CalendarRecord $:/plugins/linonetwo/intention-tower-knowledge-graph/language/>>
 tags: $:/tags/ITKG/UnderTask
 
 <<tabs "[all[tiddlers+shadows]tag[$:/tags/ITKG/CalendarEntry]] -[enlist{$:/config/ViewTemplate/CalendarEntry}]" "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AddCalendarEntryToday" >>

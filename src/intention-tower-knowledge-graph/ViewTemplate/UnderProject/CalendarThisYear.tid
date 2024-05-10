@@ -1,18 +1,14 @@
 title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/CalendarEntry/CalendarThisYear
-caption: {{$:/plugins/linonetwo/tw-calendar/Images/CalendarList}} 本年工作量
+caption: {{$:/plugins/linonetwo/tw-calendar/Images/CalendarList}} <<lingo Tabs/WorkloadForTheYear $:/plugins/linonetwo/intention-tower-knowledge-graph/language/>>
 tags: $:/tags/ITKG/UnderProject
 
 \import [[$:/plugins/linonetwo/intention-tower-knowledge-graph/filters/time]]
-
+\procedure lingo-base() $:/plugins/linonetwo/intention-tower-knowledge-graph/language/
+\procedure projectTagTiddler() <<currentTiddler>>
 \define calendarWithCurrentTiddler(currentTag)
-<$calendar filter="[all[]in-tagtree-of:inclusive[$currentTag$]field:calendarEntry[yes]]" readonly="yes" initialView="listYear" hideToolbar="yes" />
+<$calendar filter="[all[]field:calendarEntry[yes]in-tagtree-of:inclusive[$currentTag$]]" readonly="yes" initialView="listYear" hideToolbar="yes" />
 \end
 
-项目下共工作 {{{ 
-[all[]in-tagtree-of:inclusive<currentTiddler>field:calendarEntry[yes]]
-  :map[subfilter<getTimeForEntry>]
-  :and[sum[]divide[1000]divide[3600]]
-}}} 小时！（包含计划中未做的）
-
+<<lingo WorkloadForTheYear>>
 
 <$macrocall $name="calendarWithCurrentTiddler" currentTag=<<currentTiddler>>/>
