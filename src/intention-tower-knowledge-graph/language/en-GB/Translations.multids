@@ -4,6 +4,10 @@ Name: Intention Tower Knowledge Graph
 ShortName: ITKG
 Description: ITKG is a knowledge and task management framework for tiddlywiki. ITKG short for intention tower & knowledge graph.
 IntentionTower: Intention Tower
+Intention: Intention
+Project: Project
+Task: Task
+Tags: Tags
 BackToDefaultLayout: Back To Default Layout
 Configs/Description: These settings let you customise the behaviour of "Intention Tower Knowledge Graph" plugin.
 Tabs/TaskArchive: Task Archive
@@ -33,3 +37,5 @@ Deck/KnowledgeGraph/Caption: Knowledge Graph
 Deck/KnowledgeGraph/Description: Review the notes hanging on the Intention Tower, which shape a Knowledge Graph related to the topic you are interested in, i.e., a graph expanded from a tree representing the knowledge you care about that should be permanently memorized.
 Deck/IntentionTower/Caption: Tower of Meaning
 Deck/IntentionTower/Description: Review all your implications and tasks to see if you want to archive them or reprioritize them. Also reviews the tasks that were archived to see if there is interest in resuscitating them today?
+Configs/AfterModifyTaskTag: After modifying tags such as tasks, the original tiddlers with `task` tags will not be modified automatically, they need to be modified manually or modified in bulk using the TiddlerCommander plugin.
+Configs/DefaultTagForCalendar: Tags to add when creating a new calendar entry
