@@ -46,6 +46,13 @@ TraitTag/TMO/Task/ActualCompletion/Title: Actual Completion
 TraitTag/TMO/Task/ActualCompletion/Description: Describes the extent to which the task has been completed.
 TraitTag/TMO/Task/TaskState/Title: Task State
 TraitTag/TMO/Task/TaskState/Description: The current phase or status of the task within its lifecycle.
+TraitTag/TMO/Task/TaskState/New: New
+TraitTag/TMO/Task/TaskState/Running: Running
+TraitTag/TMO/Task/TaskState/Completed: Completed
+TraitTag/TMO/Task/TaskState/Archived: Archived
+TraitTag/TMO/Task/TaskState/Terminated: Terminated
+TraitTag/TMO/Task/TaskState/Suspended: Suspended
+TraitTag/TMO/Task/TaskState/Repetitive: Repetitive
 TraitTag/TMO/Task/LastReviewDate/Title: Last Review Date
 TraitTag/TMO/Task/LastReviewDate/Description: The most recent date on which the task was reviewed or assessed.
 TraitTag/TMO/Task/SubTaskOrdering/Title: Sub Task Ordering
@@ -66,7 +73,16 @@ TraitTag/TMO/Task/ActualEndTime/Title: Actual End Time
 TraitTag/TMO/Task/ActualEndTime/Description: The actual time the task was completed or ended.
 TraitTag/TMO/Task/Priority/Title: Priority
 TraitTag/TMO/Task/Priority/Description: The relative importance of the task compared to others, affecting its urgency and resource allocation.
+TraitTag/TMO/Task/Priority/High: High
+TraitTag/TMO/Task/Priority/Medium: Medium
+TraitTag/TMO/Task/Priority/Low: Low
 TraitTag/TMO/Task/TaskTransmission/Title: Task Transmission
 TraitTag/TMO/Task/TaskTransmission/Description: Describes the process of transferring or sharing the task between individuals or groups, including aspects of delegation and collaboration.
+TraitTag/TMO/Task/TaskTransmission/Rejected_Transmitted: Rejected Transmitted
+TraitTag/TMO/Task/TaskTransmission/Accepted_NotTransmitted: Accepted NotTransmitted
+TraitTag/TMO/Task/TaskTransmission/Accepted_Transmitted: Accepted Transmitted
+TraitTag/TMO/Task/TaskTransmission/Rejected_NotTransmitted: Rejected NotTransmitted
+TraitTag/TMO/Task/TaskTransmission/NotTransmitted: NotTransmitted
+TraitTag/TMO/Task/TaskTransmission/Transmitted: Transmitted
 TraitTag/TMO/Task/Importance/Title: Importance
 TraitTag/TMO/Task/Importance/Description: Measures the significance of the task in relation to organizational goals or project outcomes.
