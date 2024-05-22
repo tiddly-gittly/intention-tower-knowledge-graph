@@ -16,11 +16,10 @@ tc-page-container tc-language-$(languageTitle)$ intention-tower-knowledge-graph-
 \end
 
 <$navigator story="$:/StoryList" history="$:/HistoryList" openLinkFromInsideRiver={{$:/config/Navigation/openLinkFromInsideRiver}} openLinkFromOutsideRiver={{$:/config/Navigation/openLinkFromOutsideRiver}} relinkOnRename={{$:/config/RelinkOnRename}}>
+	{{$:/core/ui/CommandPaletteTemplate}}
 	<$messagecatcher $tm-navigate=<<redirected-navigate-actions>>>
 		<div class=<<containerClasses>>>
-			
 			{{$:/plugins/linonetwo/intention-tower-knowledge-graph/layout/IntentionTower}}
-
 		</div>
 	</$messagecatcher>
 </$navigator>

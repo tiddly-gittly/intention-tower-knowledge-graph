@@ -2,7 +2,7 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/language/zh-Hans/
 
 Name: 意义之塔与知识图谱
 ShortName: 意义之塔
-Description: 这是一个提供上下文的太微任务管理插件，鼓励自己干活，在今日摸鱼过多的时候，提醒自己还有多少有趣的事情没做。同时它也可以帮你梳理自己的人生意义。
+Description: ITKG是一个提供上下文的太微任务管理插件，鼓励自己干活，在今日摸鱼过多的时候，提醒自己还有多少有趣的事情没做。同时它也可以帮你梳理自己的人生意义。
 IntentionTower: 意义之塔
 Intention: 意义
 Project: 项目
