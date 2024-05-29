@@ -1,0 +1,10 @@
+created: 20230526165615633
+modified: 20230526165625841
+tags: ProjectTopDown
+title: language/en-GB/尽量复用意义节点
+caption: Try reuse intention nodes
+type: text/vnd.tiddlywiki
+
+Try to make it possible for multiple items to connect to the same meaning node, so that it is easier to observe your meaning network and summarize the key nodes where your life runs. When a meaning node is no longer relevant (e.g. the industry has been replaced by AI), it is also possible to delete (or archive/hide) all the related items with a single click.
+
+But you don't have to stress about it, you can enter as many items as you want and organize them later.

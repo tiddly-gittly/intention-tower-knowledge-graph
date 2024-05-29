@@ -1,0 +1,19 @@
+created: 20230526170608240
+creator: 马不前
+list: language/en-GB/生き甲斐（生存意义） language/en-GB/成功万花筒
+modified: 20230610030834547
+modifier: 马不前
+tags: SortOutMeaning
+title: language/en-GB/用一些模板分析自己的意义之塔的地基
+caption: Analyze the foundations of your own Intention Tower with some templates
+type: text/vnd.tiddlywiki
+
+While it may be inefficient to analyze one's Intention Tower through the painstaking thought of the Gestalt, the following templates allow for the mechanization of the thinking process, thus drastically reducing the intensity of the mental work involved in this process.
+
+<$macrocall
+	$name="toc-tabbed-internal-nav"
+	tag="TemplatesForAnalyzeIntentionTower"
+	selectedTiddler="$:/temp/toc/生き甲斐（生存意义）"
+	unselectedText="<p>Select a topic in the catalog and click the arrow to expand the topic.</p>"
+	missingText="<p>Missing tiddler.</p>"
+/>

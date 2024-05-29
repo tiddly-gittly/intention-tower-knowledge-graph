@@ -1,0 +1,18 @@
+created: 20230526165348777
+creator: 马不前
+modified: 20230610031330423
+modifier: 马不前
+tags: SortOutMeaning
+title: language/en-GB/从记录高层的项目开始，往下看低层
+caption: Starting with upper level projects and working down to the lower level
+type: text/vnd.tiddlywiki
+
+I recommend starting by keeping a list of projects and tasks you are working on, as well as projects you want to work on but have not yet decided. After that look at the list of projects and ask yourself:
+
+<$macrocall
+	$name="toc-tabbed-internal-nav"
+	tag="ProjectTopDown"
+	selectedTiddler="$:/temp/toc/自我询问的例子"
+	unselectedText="<p>Select a topic in the catalog and click the arrow to expand the topic.</p>"
+	missingText="<p>Missing tiddler.</p>"
+/>

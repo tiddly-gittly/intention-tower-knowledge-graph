@@ -7,4 +7,4 @@ title: language/en-GB/设计思路PPT
 caption: Design Ideas PPT Version
 type: text/vnd.tiddlywiki
 
-<<presenter tag:DesignIdeas animation:slideright state:"$:/state/presenter/DesignIdeas" >>
+<<presenter template:simple tag:DesignIdeas animation:slideright state:"$:/state/presenter/DesignIdeas" >>

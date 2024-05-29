@@ -7,4 +7,4 @@ title: language/en-GB/概念PPT
 caption: Concept PPT
 type: text/vnd.tiddlywiki
 
-<<presenter tag:Concept animation:slideright state:"$:/state/presenter/概念" >>
+<<presenter template:simple tag:Concept animation:slideright state:"$:/state/presenter/概念" >>

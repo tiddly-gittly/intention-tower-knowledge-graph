@@ -6,4 +6,4 @@ tags: Index
 title: language/zh-Hans/概念PPT
 type: text/vnd.tiddlywiki
 
-<<presenter tag:概念 animation:slideright state:"$:/state/presenter/概念" >>
+<<presenter template:simple tag:概念 animation:slideright state:"$:/state/presenter/概念" >>

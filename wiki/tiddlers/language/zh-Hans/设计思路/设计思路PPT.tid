@@ -7,4 +7,4 @@ title: language/zh-Hans/设计思路PPT
 caption: 设计思路PPT
 type: text/vnd.tiddlywiki
 
-<<presenter tag:设计思路 animation:slideright state:"$:/state/presenter/设计思路" >>
+<<presenter template:simple tag:设计思路 animation:slideright state:"$:/state/presenter/设计思路" >>
