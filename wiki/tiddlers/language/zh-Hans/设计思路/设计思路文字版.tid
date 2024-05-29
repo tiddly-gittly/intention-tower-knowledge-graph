@@ -3,7 +3,8 @@ creator: 马不前
 modified: 20230610024957852
 modifier: 马不前
 tags: Index
-title: 设计思路文字版
+title: language/zh-Hans/设计思路文字版
+caption: 设计思路文字版
 type: text/vnd.tiddlywiki
 
 <$list filter="[tag[设计思路]]">

@@ -2,11 +2,11 @@ title: language/zh-Hans/Index
 
 \procedure lingo-base() language/
 
-<<tabs "设计思路 概念 如何梳理自己的人生意义" "设计思路"  "$:/state/tab/ITKG-beginner" "tc-vertical" >>
+<<tabs "language/zh-Hans/设计思路 language/zh-Hans/概念 language/zh-Hans/如何梳理自己的人生意义" "language/zh-Hans/设计思路"  "$:/state/tab/ITKG-beginner" "tc-vertical" >>
 
-[[设计思路文字版]] [[设计思路PPT]]
+[[设计思路文字版|language/zh-Hans/设计思路文字版]] [[设计思路PPT|language/zh-Hans/设计思路PPT]]
 
-[[概念文字版]] [[概念PPT]] [[知识图谱间隔重复|SpacedRepetition]]
+[[概念文字版|language/zh-Hans/概念文字版]] [[概念PPT|language/zh-Hans/概念PPT]] [[知识图谱间隔重复|SpacedRepetition]]
 
 ! 如何安装
 

@@ -1,9 +1,10 @@
 creator: 林一二
-title: 项目
+title: language/zh-Hans/任务
+caption: 任务
 type: text/vnd.tiddlywiki
 tags: 概念
 
-* 项目：带有「{{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}}」标签的条目。
+* 任务：带有「{{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}}」标签的条目。
 ** 项目下会有多个任务，任务会有子任务，形成树状关系
 ** ''使用方法''：[[添加子任务和后续任务|区分子任务和后续任务]]
 ** 其实每个「项目」同时也是一个「任务」，所以也会带「{{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}}」标签

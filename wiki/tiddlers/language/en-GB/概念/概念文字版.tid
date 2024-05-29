@@ -3,10 +3,11 @@ creator: 马不前
 modified: 20230610025343350
 modifier: 马不前
 tags: Index
-title: 概念文字版
+title: language/en-GB/概念文字版
+caption: Concept text version
 type: text/vnd.tiddlywiki
 
-<$list filter="[tag[概念]]">
+<$list filter="[tag[Concept]]">
 
 {{!!text}}
 

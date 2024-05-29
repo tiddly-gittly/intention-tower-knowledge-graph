@@ -2,11 +2,11 @@ title: language/en-GB/Index
 
 \procedure lingo-base() language/
 
-<<tabs "Design Thinking Concepts How to sort out the meaning of your life" "Design Thinking" "$:/state/tab/ITKG-beginner" "tc-vertical" >>
+<<tabs "language/en-GB/设计思路 language/en-GB/概念 language/en-GB/如何梳理自己的人生意义" "language/en-GB/设计思路" "$:/state/tab/ITKG-beginner" "tc-vertical" >>
 
-[[Design Thinking Text Version]] [[Design Thinking PPT]]
+[[Design Ideas Text Version|language/en-GB/设计思路文字版]] [[Design Ideas PPT|language/en-GB/设计思路PPT]]
 
-[[Concept text version]] [[Concept PPT]] [[Spaced Repetition of KG|SpacedRepetition]]
+[[Concept text version|language/en-GB/概念文字版]] [[Concept PPT|language/en-GB/概念PPT]] [[Spaced Repetition of KG|SpacedRepetition]]
 
 ! How to install
 

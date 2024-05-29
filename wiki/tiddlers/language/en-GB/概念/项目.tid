@@ -1,0 +1,13 @@
+creator: 林一二
+title: language/en-GB/项目
+caption: Project
+type: text/vnd.tiddlywiki
+tags: Concept
+
+** Project: a tiddler with the tag "{{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}}".
+** There will be multiple [[tasks|language/en-GB/任务]] under the project, and tasks will have subtasks, forming a tree relationship
+** The project interface allows you to [[add subtasks and follow-on tasks|zone subtasks and follow-on tasks]]
+** In fact, each "project" is also a "task", so it will also have the tag "{{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}}".
+* Projects are bookmarked in the list in the sidebar as the root node of a task tree. So "project" refers to some "task" that is bookmarked as a focus node
+** You can view a subgraph of the wiki in the form of a task tree by selecting multiple nodes as projects in the [[task graph|language/en-GB/任务图]]
+** Graph theory says that a tree is also a kind of graph, and a tree is clearer than a graph, so our daily project management should be more confronted with the tree in the project than our own whole [[task graph|language/en-GB/任务图]]

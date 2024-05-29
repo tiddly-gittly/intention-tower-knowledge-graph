@@ -1,0 +1,14 @@
+created: 20230610024916545
+creator: 马不前
+modified: 20230610024957852
+modifier: 马不前
+tags: Index
+title: language/en-GB/设计思路文字版
+caption: Design Ideas Text Version
+type: text/vnd.tiddlywiki
+
+<$list filter="[tag[DesignIdeas]]">
+
+{{!!text}}
+
+</$list>

@@ -1,0 +1,12 @@
+created: 20230527075658546
+modified: 20230527075749320
+tags: DesignIdeas
+title: language/en-GB/自动化的管理方法减少手动执行
+caption: Automated management methods reduce manual execution
+type: text/vnd.tiddlywiki
+
+In contrast to the old-fashioned methods such as PARA, which relied entirely on human categorization, I automated the routine parts of the knowledge management method through Tiddlywiki's low-code platform and made them into clickable buttons, avoiding putting too much organizing cost on human beings, as excessive duplication of work will increase the cost and resistance to implementing the program. This is the "mechanization of mental work", the devaluation of repetitive mental work.
+
+However, there are still some information that involves oneself that requires the user to use their brain to dig out from their own memories and then fill in the form.
+
+After that Tiddlywiki will automatically set your daily tasks for you, but without specific scheduling or micromanipulation. What this system ensures is a proper attitude towards doing the tasks and devoting energy to the highest priority tasks.
