@@ -4,14 +4,14 @@ caption: 任务图
 type: text/vnd.tiddlywiki
 tags: Concept
 
-* 整个知识库就是一个任务网络
-** 从图论的角度，可以说你的[[任务]]、[[项目]]、[[意义]]都是一个图（Graph）中的节点，它们之间的[[箭头|箭头的含义]]是图中的有向边。
-* 你的心灵越复杂，这个图也就越复杂
-** 你可以为心中的很多[[任务]]都找到共同的[[意义]]
-** 也可以为心中的很多[[意义]]找到一石二鸟的[[任务]]
-** 节点之间会产生很多连接，粗看之下就像一个网络
-* 你的心灵越简单，这个图也就越简单
-** 你处于待办状态的[[任务]]和[[意义]]越少，你的任务图也就越清晰
-** 删去无意义的任务、完成有意义的任务，图上的节点就好减少，可以给人生做减法，给心灵减负
-* 形成的图可以进行量化分析，让你全面客观地了解自己。
-** 可以[[测算整体意义水平]]
+** The entire wiki is a network of tasks
+** From a graph-theoretic perspective, it can be said that your [[tasks|language/en-GB/任务]], [[projects|language/en-GB/项目]], and [[meanings|language/en-GB/意义]] are all nodes in a graph (Graph), and the [[arrows|meaning of arrows]] between them are directed edges in the graph.
+** The more complex your mind, the more complex the graph will be.
+** You can find common [[meaning]] for many [[tasks|language/en-GB/任务]] in your mind
+** Or you can find a [[task|language/en-GB/任务]] that kills two birds with one stone for many [[meanings|language/en-GB/意义]] in the mind
+** Many connections are made between nodes, and at a cursory glance it looks like a network
+** The simpler your mind is, the simpler this diagram will be **
+** The fewer [[tasks|language/en-GB/任务]] and [[meanings|language/en-GB/意义]] you have on your to-do list, the clearer your task graph will be
+** By deleting meaningless tasks and completing meaningful ones, the nodes on the graph are well reduced, which can subtract from life and lighten the load on the mind
+** The graph formed can be quantitatively analyzed, allowing you to understand yourself comprehensively and objectively.
+** It is possible to [[measure the overall level of significance]]
