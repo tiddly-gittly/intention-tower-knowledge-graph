@@ -1,4 +1,4 @@
-title: $:/plugins/linonetwo/intention-tower-knowledge-graph/language/en-GB/
+title: $:/plugins/linonetwo/tmo/language/en-GB/
 
 TraitTag/CalendarDefaultTag/Title: Calendar default tag
 TraitTag/CalendarDefaultTag/Description: Auto added tag when adding task-related calendar entry. This overrides the global setting.
@@ -6,8 +6,6 @@ TraitTag/TMO/Task/DueDate/Title: Due Date
 TraitTag/TMO/Task/DueDate/Description: The date by which the task should be completed.
 TraitTag/TMO/Task/AbilityCarrierInvolvement/Title: Ability Carrier Involvement
 TraitTag/TMO/Task/AbilityCarrierInvolvement/Description: Associates entities capable of action or involvement in tasks, modeled as 'AbilityCarriers.'
-TraitTag/TMO/Task/SuperTask/Title: Super Task
-TraitTag/TMO/Task/SuperTask/Description: The overarching task that encompasses sub-tasks.
 TraitTag/TMO/Task/TaskGoal/Title: Task Goal
 TraitTag/TMO/Task/TaskGoal/Description: The primary objective that the task aims to achieve.
 TraitTag/TMO/Task/TaskDescription/Title: Task Description
@@ -72,7 +70,7 @@ TraitTag/TMO/Task/TargetStartTime/Description: The planned time to begin work on
 TraitTag/TMO/Task/ActualEndTime/Title: Actual End Time
 TraitTag/TMO/Task/ActualEndTime/Description: The actual time the task was completed or ended.
 TraitTag/TMO/Task/Priority/Title: Priority
-TraitTag/TMO/Task/Priority/Description: The relative importance of the task compared to others, affecting its urgency and resource allocation.
+TraitTag/TMO/Task/Priority/Description: The relative importance of the task compared to others, affecting its urgency and resource allocation. is a simplified version of 'urgency' field.
 TraitTag/TMO/Task/Priority/High: High
 TraitTag/TMO/Task/Priority/Medium: Medium
 TraitTag/TMO/Task/Priority/Low: Low
@@ -85,4 +83,4 @@ TraitTag/TMO/Task/TaskTransmission/Rejected_NotTransmitted: Rejected NotTransmit
 TraitTag/TMO/Task/TaskTransmission/NotTransmitted: NotTransmitted
 TraitTag/TMO/Task/TaskTransmission/Transmitted: Transmitted
 TraitTag/TMO/Task/Importance/Title: Importance
-TraitTag/TMO/Task/Importance/Description: Measures the significance of the task in relation to organizational goals or project outcomes.
+TraitTag/TMO/Task/Importance/Description: Measures the significance of tasks based on goals or project outcomes. 1 is the most important, 7 and above are unimportant items in the entertainment category.

@@ -13,3 +13,7 @@ Online documentation site: https://tiddly-gittly.github.io/intention-tower-knowl
 !! Cautions
 
 Dependent plugins are many, please install them manually if you are not install them automatically using CPL.
+
+!! TMO
+
+{{$:/plugins/linonetwo/tmo/readme}}

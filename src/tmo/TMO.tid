@@ -1,0 +1,6 @@
+title: $:/plugins/linonetwo/tmo/TMO
+creator: LinOnetwo
+
+\procedure lingo-base() $:/plugins/linonetwo/tmo/language/
+
+<<lingo TMO>>

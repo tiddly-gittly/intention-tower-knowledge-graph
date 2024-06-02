@@ -12,4 +12,8 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/language/zh-Hans/Rea
 
 !! 注意事项
 
-依赖插件有很多"，如果没有使用 CPL 实现自动安装，请手动安装。
+依赖插件有很多，如果没有使用 CPL 实现自动安装，请手动安装。
+
+!! TMO
+
+{{$:/plugins/linonetwo/tmo/readme}}

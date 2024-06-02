@@ -1,4 +1,4 @@
-title: $:/plugins/linonetwo/intention-tower-knowledge-graph/language/zh-Hans/
+title: $:/plugins/linonetwo/tmo/language/zh-Hans/
 
 TraitTag/CalendarDefaultTag/Title: 日历默认标签
 TraitTag/CalendarDefaultTag/Description: 添加任务相关的日历条目时，自动添加的标签，会覆盖全局设置。
@@ -6,8 +6,6 @@ TraitTag/TMO/Task/DueDate/Title: 截止日期
 TraitTag/TMO/Task/DueDate/Description: 任务应完成的日期。
 TraitTag/TMO/Task/AbilityCarrierInvolvement/Title: 能力载体参与
 TraitTag/TMO/Task/AbilityCarrierInvolvement/Description: 关联能够行动或参与任务的实体，以“能力载体”模型表示。
-TraitTag/TMO/Task/SuperTask/Title: 超级任务
-TraitTag/TMO/Task/SuperTask/Description: 包含子任务的更大任务。
 TraitTag/TMO/Task/TaskGoal/Title: 任务目标
 TraitTag/TMO/Task/TaskGoal/Description: 任务旨在实现的主要目标。
 TraitTag/TMO/Task/TaskDescription/Title: 任务描述
@@ -72,7 +70,7 @@ TraitTag/TMO/Task/TargetStartTime/Description: 计划开始处理任务的时间
 TraitTag/TMO/Task/ActualEndTime/Title: 实际结束时间
 TraitTag/TMO/Task/ActualEndTime/Description: 任务完成或结束的实际时间。
 TraitTag/TMO/Task/Priority/Title: 优先级
-TraitTag/TMO/Task/Priority/Description: 与其他任务相比，任务的相对重要性，影响其紧急性和资源分配。
+TraitTag/TMO/Task/Priority/Description: 与其他任务相比，任务的相对重要性，表示其紧急性和资源分配。是简化版的「紧急程度」。
 TraitTag/TMO/Task/Priority/High: 高
 TraitTag/TMO/Task/Priority/Medium: 中
 TraitTag/TMO/Task/Priority/Low: 低
@@ -85,4 +83,4 @@ TraitTag/TMO/Task/TaskTransmission/Rejected_NotTransmitted: 拒绝且未交接
 TraitTag/TMO/Task/TaskTransmission/NotTransmitted: 未交接
 TraitTag/TMO/Task/TaskTransmission/Transmitted: 已交接
 TraitTag/TMO/Task/Importance/Title: 重要性
-TraitTag/TMO/Task/Importance/Description: 衡量任务对组织目标或项目成果的重要性。
+TraitTag/TMO/Task/Importance/Description: 衡量任务对组织目标或项目成果的重要性。1 为最重要，7 及以上为娱乐类的不重要项目

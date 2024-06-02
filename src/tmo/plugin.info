@@ -1,0 +1,9 @@
+{
+  "title": "$:/plugins/linonetwo/tmo",
+  "name": "tmo",
+  "author": "linonetwo",
+  "description": "Task Management Ontology for SuperTag. 任务管理本体，用于超级标签。",
+  "plugin-type": "plugin",
+  "version": "0.0.1",
+  "list": "readme TMO tree"
+}

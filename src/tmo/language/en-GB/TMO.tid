@@ -1,0 +1,12 @@
+title: $:/plugins/linonetwo/tmo/language/en-GB/TMO
+creator: LinOnetwo
+type: text/vnd.tiddlywiki
+
+[[TMO|https://oscaf.sourceforge.net/tmo.html#tmo:taskReference]] refers to the Task Management Ontology. In general, it allows for the detailed and clear management of individual pending tasks. The TMO Ontology can be used to describe personal tasks of individuals, also known as to-do lists. It is based on RDF and NRL, the Nepomuk Representational Language and other Semantic Web ontologies.The corresponding field names and their values are listed below. Some of the fields have duplicated functions and can be freely selected.
+
+<$json-editor-form filter="[[$:/TraitTag/TMO/Task]get[schema]]" tiddler="$:/temp/TMO-example" />
+
+Note that some fields have been removed from the original TMO for the following reasons:
+
+* SuperTask: this field was used to indicate the parent task of a task, but in TiddlyWiki this can be done by tagging the hierarchy.
+* SubTask: this field is used to indicate the subtask of a task, as above.
