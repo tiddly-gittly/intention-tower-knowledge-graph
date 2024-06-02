@@ -41,3 +41,31 @@ div.intention-tower-knowledge-graph-container {
 .itkg-week-journal-select-container button {
   margin: 0.5em 1em;
 }
+.itkg-week-arrangement-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.itkg-week-arrangement-weeks-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.itkg-week-arrangement-weeks-container .tc-tab-set {
+  width: 100%;
+}
+.itkg-week-arrangement-weeks-container .tc-tab-buttons button {
+  font-size: large;
+}
+.itkg-week-arrangement-description-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 1em 0;
+  width: 50%;
+  font-size: large;
+}

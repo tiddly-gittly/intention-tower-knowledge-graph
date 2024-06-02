@@ -1,4 +1,6 @@
-title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/ArrangeNextWeek/Tuesday
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/ArrangeNextWeek/tuesday
 order: 2
 tags: $:/tags/ITKG/ArrangeNextWeek
 caption: <<lingo Tuesday $:/plugins/linonetwo/intention-tower-knowledge-graph/language/>>
+
+{{$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/DayOverview}}

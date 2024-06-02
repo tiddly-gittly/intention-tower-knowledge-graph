@@ -44,6 +44,8 @@ Button/Start/Caption: 开始任务
 Button/Start/Description: 点击开始任务，记录开始时间
 Button/Complete/Caption: 完成任务
 Button/Complete/Description: 点击结束任务，记录结束时间
+Tabs/ArrangeNextWeek/Description: 创建下周的周记条目后，您可以在下周的周记上安排下周每天的工作。创建周记后，下方会显示一周七天和您的项目列表。在一周七天里选中其中一天后，您可以通过双击项目列表里的某个项目添加它到选中的那一天上。
+Tabs/ArrangeNextWeek/NoTasks: 这一天暂无工作安排。双击下方项目列表里的某个项目，来添加到此处。
 Monday: 星期一
 Tuesday: 星期二
 Wednesday: 星期三

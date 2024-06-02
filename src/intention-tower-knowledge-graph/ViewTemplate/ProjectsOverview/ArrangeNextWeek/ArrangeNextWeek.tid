@@ -2,38 +2,66 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/Arrange
 caption: {{$:/core/images/edit-button}} <<lingo Tabs/ArrangeNextWeek $:/plugins/linonetwo/intention-tower-knowledge-graph/language/>>
 tags: $:/tags/ITKG/ProjectsOverview
 
-\whitespace trim
 \import [[$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/WeekJournalSelect]]
+\whitespace trim
+\procedure lingo-base() $:/plugins/linonetwo/intention-tower-knowledge-graph/language/
 
-{{$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/WeekJournalSelect}}
+\function .todayFieldName()
+  [{$:/temp/ITKG/ArrangeNextWeek}match[]then[$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/ArrangeNextWeek/monday]else{$:/temp/ITKG/ArrangeNextWeek}removeprefix[$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/ArrangeNextWeek/]addprefix[projects-on-]]
+\end
+\procedure redirected-navigate-actions-to-add-project()
+  <$action-listops
+    $tiddler=<<journal-title-this-week>>
+    $field=<<.todayFieldName>>
+    $subfilter="+[toggle<event-navigateTo>]"
+  />
+\end
 
-<% if [<journal-title-this-week>!is[missing]] %>
-  <<tabs "[all[shadows]tag[$:/tags/ITKG/ArrangeNextWeek]nsort[order]]" "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/ArrangeNextWeek/Monday" "$:/temp/ITKG/ArrangeNextWeek" "tc-vertical">>
-<% endif %>
+journal-title: <<journal-title-this-week>>
 
-<$basic-table
-  height="800px"
-  filter="[all[tiddlers]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}]"
-  columns="""
-    [
-      {
-        field: 'title',
-        title: 'Caption',
-        width: 'auto',
-      },
-      {
-        field: 'tags',
-        title: 'Tags',
-        width: 200,
-        fieldFormat: (record) => record.tags.filter(tag => !([$tw.wiki.getTiddlerText('$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag', ''), $tw.wiki.getTiddlerText('$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag', '')].includes(tag))).join(', '),
-      },
-      ...$tw.wiki.getTiddlerText('$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-IntentionDynamicTable', '')
-        .split(' ').filter(field => !(['title', 'tags'].includes(field)))
-        .map(field => ({
-          field,
-          title: field,
-          width: 'auto',
-        })),
-    ]
-  """
-/>
+<<.todayFieldName>>
+
+field-name: {{{[[]function[.todayFieldName]]}}}
+
+<$log />
+
+<div class="itkg-week-arrangement-container">
+  {{$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/WeekJournalSelect}}
+  <% if [<journal-title-this-week>!is[missing]] %>
+    <div class="itkg-week-arrangement-weeks-container">
+      <<tabs "[all[shadows]tag[$:/tags/ITKG/ArrangeNextWeek]nsort[order]]" "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/ArrangeNextWeek/monday" explicitState:"$:/temp/ITKG/ArrangeNextWeek" class:"tc-vertical">>
+    </div>
+    <$messagecatcher $tm-navigate=<<redirected-navigate-actions-to-add-project>>>
+      <$basic-table
+        height="800px"
+        filter="[all[tiddlers]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}filter<filter-is-new-task>]"
+        columns="""
+          [
+            {
+              field: 'title',
+              title: 'Caption',
+              width: 'auto',
+            },
+            {
+              field: 'tags',
+              title: 'Tags',
+              width: 200,
+              fieldFormat: (record) => record.tags.filter(tag => !([$tw.wiki.getTiddlerText('$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag', ''), $tw.wiki.getTiddlerText('$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag', '')].includes(tag))).join(', '),
+            },
+            ...$tw.wiki.getTiddlerText('$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-IntentionDynamicTable', '')
+              .split(' ').filter(field => !(['title', 'tags'].includes(field)))
+              .map(field => ({
+                field,
+                title: field,
+                width: 'auto',
+              })),
+          ]
+        """
+      />
+    </$messagecatcher>
+  <% else %>
+    <div class="itkg-week-arrangement-description-container">
+      <<lingo Tabs/ArrangeNextWeek/Description>>
+    </div>
+  <% endif %>
+</div>
