@@ -1,0 +1,14 @@
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/Settings/WeekJournal
+caption: <<lingo WeekJournal $:/plugins/linonetwo/intention-tower-knowledge-graph/language/>>
+tags: $:/tags/intention-tower-knowledge-graph/Settings
+order: 4
+
+\procedure lingo-base() $:/plugins/linonetwo/intention-tower-knowledge-graph/language/
+
+!! <<lingo Configs/WeekJournalTags/Caption>>
+
+<$let tagField="text" newTagNameTiddler=<<qualify "$:/temp/NewTagName">> currentTiddler="$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/WeekJournalTags" saveTiddler="$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/WeekJournalTags">
+  {{||$:/core/ui/EditTemplate/tags}}
+</$let>
+
+<<lingo Configs/WeekJournalTags/Description>>

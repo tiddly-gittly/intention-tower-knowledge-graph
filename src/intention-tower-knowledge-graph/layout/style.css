@@ -31,3 +31,13 @@ div.intention-tower-knowledge-graph-container {
 .itkg-create-task .tc-edit-texteditor {
   width: 100%;
 }
+
+.itkg-week-journal-select-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+}
+.itkg-week-journal-select-container button {
+  margin: 0.5em 1em;
+}

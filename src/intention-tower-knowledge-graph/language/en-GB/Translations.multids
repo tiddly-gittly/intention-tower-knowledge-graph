@@ -18,6 +18,7 @@ Tabs/AddIntention: Add Intention
 Tabs/CalendarRecord: Calendar Record
 Tabs/AddTaskToday: Add task today
 Tabs/WorkloadForTheYear: Workload this year
+Tabs/ArrangeNextWeek: Arrange next week
 WorkloadForTheDay: A total of <<workload-for-the-day>> hours were worked today under the project! (including planning but not done)
 WorkloadForTheYear: A total of <<workload-for-the-year>> hours were worked this year under the project! (including planning but not done)
 Table/FinishedTask: Finished Task
@@ -37,3 +38,16 @@ Deck/IntentionTower/Caption: Tower of Meaning
 Deck/IntentionTower/Description: Review all your implications and tasks to see if you want to archive them or reprioritize them. Also reviews the tasks that were archived to see if there is interest in resuscitating them today?
 Configs/AfterModifyTaskTag: After modifying tags such as tasks, the original tiddlers with `task` tags will not be modified automatically, they need to be modified manually or modified in bulk using the TiddlerCommander plugin.
 Configs/DefaultTagForCalendar: Tags to add when creating a new calendar entry
+Monday: Monday
+Tuesday: Tuesday
+Wednesday: Wednesday
+Thursday: Thursday
+Friday: Friday
+Saturday: Saturday
+Sunday: Sunday
+PrevWeek: Previous Week
+NextWeek: Next week
+CreateWeekJournal: Create weekly journal
+WeekJournal: Weekly Journal
+Configs/WeekJournalTags/Caption: additional tags to be added to the weekly journal.
+Configs/WeekJournalTags/Description: Weekly journal will add the tags configured here in addition to the tags that will be added to the journal in the Tiddlywiki settings.

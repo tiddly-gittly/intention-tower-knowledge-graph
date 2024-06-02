@@ -1,0 +1,47 @@
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/WeekJournalSelect
+
+\whitespace trim
+\procedure lingo-base() $:/plugins/linonetwo/intention-tower-knowledge-graph/language/
+\define get-journal-tags() $(journalTextFieldTags)$ $(journalTagsFieldTags)$ $(weekJournalTags)$
+\procedure currentWeekIndexTiddler() $:/temp/ITKG/CurrentWeekIndex
+\function journal-title-this-week()
+[weekstart{$:/temp/ITKG/CurrentWeekIndex}format:date{$:/config/NewJournal/Title}]
+\end
+
+<div class="itkg-week-journal-select-container">
+  <$button>
+    <<lingo PrevWeek>>
+    <$action-createtiddler
+      $basetitle=<<currentWeekIndexTiddler>>
+      $overwrite="yes"
+      text={{{[<currentWeekIndexTiddler>get[text]else[0]add[1]]}}}
+    />
+  </$button>
+
+  <% if [<journal-title-this-week>is[missing]] %>
+    <$button>
+      <<lingo CreateWeekJournal>> <<journal-title-this-week>>
+      <$let weekJournalTags={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/WeekJournalTags}} journalTextFieldTags={{$:/config/NewJournal/Tags}} journalTagsFieldTags={{$:/config/NewJournal/Tags!!tags}}>
+        <$action-createtiddler
+          $basetitle=<<journal-title-this-week>>
+          tags=<<get-journal-tags>>
+          text={{$:/config/NewJournal/Text}}
+        />
+      </$let>
+    </$button>
+  <% else %>
+    <$button>
+      <$action-navigate $to=<<journal-title-this-week>>/>
+      <<journal-title-this-week>>
+    </$button>
+  <% endif %>
+
+  <$button>
+    <<lingo NextWeek>>
+    <$action-createtiddler
+      $basetitle=<<currentWeekIndexTiddler>>
+      $overwrite="yes"
+      text={{{[<currentWeekIndexTiddler>get[text]else[0]subtract[1]]}}}
+    />
+  </$button>
+</div>
