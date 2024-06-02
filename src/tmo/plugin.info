@@ -4,6 +4,6 @@
   "author": "linonetwo",
   "description": "Task Management Ontology for SuperTag. 任务管理本体，用于超级标签。",
   "plugin-type": "plugin",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "list": "readme TMO tree"
 }
