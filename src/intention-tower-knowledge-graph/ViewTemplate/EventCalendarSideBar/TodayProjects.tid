@@ -1,0 +1,26 @@
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/EventCalendarSideBar/TodayProjects
+tags: $:/tags/EventCalendarSideBarSegment
+
+\import [[$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/WeekJournalSelect]] [[$:/plugins/linonetwo/intention-tower-knowledge-graph/filters/leaf-task]]
+\procedure lingo-base() $:/plugins/linonetwo/intention-tower-knowledge-graph/language/
+
+\function .todayFieldName()
+  [<now dddd>lowercase[]addprefix[projects-on-]]
+\end
+\function today.projects()
+  [<journal-title-this-week>get<.todayFieldName>enlist-input[]]
+\end
+
+! <<lingo Table/TaskList>> - <<now DDD>>
+
+<% if [today.projects[]count[]match[0]then[yes]] %>
+  <<lingo Tabs/ArrangeNextWeek/NoTasks>>
+<% else %>
+  <$list filter="[today.projects[]]" variable="projectTitle">
+
+    !! <<projectTitle>>
+
+    {{{[all[]in-tagtree-of<projectTitle>filter<filter-is-new-task>]}}}
+
+  </$list>
+<% endif %>

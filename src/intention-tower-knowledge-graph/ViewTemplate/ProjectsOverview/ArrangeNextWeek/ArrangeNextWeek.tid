@@ -7,7 +7,7 @@ tags: $:/tags/ITKG/ProjectsOverview
 \procedure lingo-base() $:/plugins/linonetwo/intention-tower-knowledge-graph/language/
 
 \function .todayFieldName()
-  [{$:/temp/ITKG/ArrangeNextWeek}match[]then[$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/ArrangeNextWeek/monday]else{$:/temp/ITKG/ArrangeNextWeek}removeprefix[$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/ArrangeNextWeek/]addprefix[projects-on-]]
+  [{$:/temp/ITKG/ArrangeNextWeek}match[]then[$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/ArrangeNextWeek/1]else{$:/temp/ITKG/ArrangeNextWeek}removeprefix[$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/ArrangeNextWeek/]addprefix[projects-on-]]
 \end
 \procedure redirected-navigate-actions-to-add-project()
   <$action-listops
@@ -17,19 +17,11 @@ tags: $:/tags/ITKG/ProjectsOverview
   />
 \end
 
-journal-title: <<journal-title-this-week>>
-
-<<.todayFieldName>>
-
-field-name: {{{[[]function[.todayFieldName]]}}}
-
-<$log />
-
 <div class="itkg-week-arrangement-container">
   {{$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/WeekJournalSelect}}
   <% if [<journal-title-this-week>!is[missing]] %>
     <div class="itkg-week-arrangement-weeks-container">
-      <<tabs "[all[shadows]tag[$:/tags/ITKG/ArrangeNextWeek]nsort[order]]" "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/ArrangeNextWeek/monday" explicitState:"$:/temp/ITKG/ArrangeNextWeek" class:"tc-vertical">>
+      <<tabs "[all[shadows]tag[$:/tags/ITKG/ArrangeNextWeek]nsort[order]]" "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/ArrangeNextWeek/1" explicitState:"$:/temp/ITKG/ArrangeNextWeek" class:"tc-vertical">>
     </div>
     <$messagecatcher $tm-navigate=<<redirected-navigate-actions-to-add-project>>>
       <$basic-table
