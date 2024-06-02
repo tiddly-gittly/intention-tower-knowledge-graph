@@ -37,3 +37,9 @@ Deck/IntentionTower/Caption: 意义之塔
 Deck/IntentionTower/Description: 回顾你所有的意义和任务，看看要不要归档他们或者是调整优先级。也会复习被归档起来的任务，看看如今是否有兴趣复苏它们？
 Configs/AfterModifyTaskTag: 修改了任务等标签后，原先带有 `任务` 标签的条目并不会自动修改过来，需要手动修改处理，或使用 TiddlerCommander 插件批量修改。
 Configs/DefaultTagForCalendar: 新建日历记录时的标签
+Button/CompleteRepeat/Caption: 完成任务
+Button/CompleteRepeat/Description: 点击增加完成次数，默认递增为1，可修改tmo_repeatInterval字段来改变间隔次数
+Button/Start/Caption: 开始任务
+Button/Start/Description: 点击开始任务，记录开始时间
+Button/Complete/Caption: 完成任务
+Button/Complete/Description: 点击结束任务，记录结束时间

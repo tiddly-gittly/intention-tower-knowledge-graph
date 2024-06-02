@@ -3,19 +3,16 @@ tags: $:/tags/ViewTemplate
 
 \import [[$:/plugins/linonetwo/intention-tower-knowledge-graph/Components/Buttons]]
 
-<$let graphRootTiddler=<<currentTiddler>> >
-  <$list filter="[all[current]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}!tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}then<graphRootTiddler>]">
+<div class="itkg-project-list-item">
+  <<create-task-under-current-tiddler>>
+  <<create-next-task-under-current-tiddler>>
+  <% if [{!!tmo_taskState}match[New]] %>
+    <<start-button>>
+  <% elseif [{!!tmo_taskState}match[Repetitive]] %>
+    <<repeat-complete-button>>
+  <% elseif [{!!tmo_taskState}match[Running]] %> 
+    <<complete-button>>
+  <% endif %>
+</div>
 
-  <!-- 先用已有的样式，后面如果内容比较多再做样式处理 -->
-  <div class="itkg-project-list-item">
-  <<create-task-under-current-tiddler>>&nbsp;
-  <<create-next-task-under-current-tiddler>>&nbsp;
-  <<counts-number-of-completions>>&nbsp;
-  </div>
-  
- 
-
-  <<tabs "[all[tiddlers+shadows]tag[$:/tags/ITKG/UnderTask]] -[enlist{$:/config/ViewTemplate/UnderTask}]" "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/TaskContext" >>
-
-  </$list>
-</$let>
+<<tabs "[all[tiddlers+shadows]tag[$:/tags/ITKG/UnderTask]] -[enlist{$:/config/ViewTemplate/UnderTask}]" "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/TaskContext" >>
