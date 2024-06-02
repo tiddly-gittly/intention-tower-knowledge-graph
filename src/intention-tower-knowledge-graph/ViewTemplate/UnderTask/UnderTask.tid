@@ -3,16 +3,20 @@ tags: $:/tags/ViewTemplate
 
 \import [[$:/plugins/linonetwo/intention-tower-knowledge-graph/Components/Buttons]]
 
-<div class="itkg-project-list-item">
-  <<create-task-under-current-tiddler>>
-  <<create-next-task-under-current-tiddler>>
-  <% if [{!!tmo_taskState}match[New]] %>
-    <<start-button>>
-  <% elseif [{!!tmo_taskState}match[Repetitive]] %>
-    <<repeat-complete-button>>
-  <% elseif [{!!tmo_taskState}match[Running]] %> 
-    <<complete-button>>
-  <% endif %>
-</div>
+<% if [all[current]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}!tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}then<graphRootTiddler>] %>
 
-<<tabs "[all[tiddlers+shadows]tag[$:/tags/ITKG/UnderTask]] -[enlist{$:/config/ViewTemplate/UnderTask}]" "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/TaskContext" >>
+  <div class="itkg-project-list-item">
+    <<create-task-under-current-tiddler>>
+    <<create-next-task-under-current-tiddler>>
+    <% if [{!!tmo_taskState}match[New]] [{!!tmo_taskState}match[]then[yes]] %>
+      <<start-button>>
+    <% elseif [{!!tmo_taskState}match[Repetitive]] %>
+      <<repeat-complete-button>>
+    <% elseif [{!!tmo_taskState}match[Running]] %> 
+      <<complete-button>>
+    <% endif %>
+  </div>
+
+  <<tabs "[all[tiddlers+shadows]tag[$:/tags/ITKG/UnderTask]] -[enlist{$:/config/ViewTemplate/UnderTask}]" "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/TaskContext" >>
+
+<% endif %>

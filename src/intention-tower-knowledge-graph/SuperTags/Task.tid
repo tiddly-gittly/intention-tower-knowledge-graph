@@ -1,4 +1,4 @@
 title: Task
 tags: $:/TraitTag/TMO/Task $:/TraitTag/Calendar/DefaultMetadata
 
-This is a "[[supertag|https://tiddly-gittly.github.io/super-tag/]]" that provides "task" related form fields. If it's been modified in the ITKG settings, it's $<$link to={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}} /> instead of this tiddler.
+This is a "[[supertag|https://tiddly-gittly.github.io/super-tag/]]" that provides "task" related form fields. If it's been modified in the ITKG settings, it's <$link to={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}} /> instead of this tiddler.

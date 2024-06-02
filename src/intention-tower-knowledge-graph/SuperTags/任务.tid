@@ -1,4 +1,4 @@
 title: 任务
 tags: $:/TraitTag/TMO/Task $:/TraitTag/Calendar/DefaultMetadata
 
-这是一个提供「任务」相关表单字段的「[[超级标签|https://tiddly-gittly.github.io/super-tag/]]」。如果在ITKG的设置里修改过了，那就是$<$link to={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}} />而不是此条目了。
+这是一个提供「任务」相关表单字段的「[[超级标签|https://tiddly-gittly.github.io/super-tag/]]」。如果在ITKG的设置里修改过了，那就是 <$link to={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}} />而不是此条目了。
