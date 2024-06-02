@@ -1,0 +1,4 @@
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/language/zh-Hans/
+
+TraitTag/CalendarDefaultTag/Title: 日历默认标签
+TraitTag/CalendarDefaultTag/Description: 添加任务相关的日历条目时，自动添加的标签，会覆盖全局设置。

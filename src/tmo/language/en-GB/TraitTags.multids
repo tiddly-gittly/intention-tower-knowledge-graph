@@ -10,18 +10,10 @@ TraitTag/TMO/Task/TaskGoal/Title: Task Goal
 TraitTag/TMO/Task/TaskGoal/Description: The primary objective that the task aims to achieve.
 TraitTag/TMO/Task/TaskDescription/Title: Task Description
 TraitTag/TMO/Task/TaskDescription/Description: Detailed explanation of what the task entails and its context.
-TraitTag/TMO/Task/TaskPrivacyState/Title: Task Privacy State
-TraitTag/TMO/Task/TaskPrivacyState/Description: Specifies whether the task is private or professional, influencing visibility and access.
 TraitTag/TMO/Task/TaskSource/Title: Task Source
-TraitTag/TMO/Task/TaskSource/Description: The origin or reason the task was created, which can include other tasks or patterns.
-TraitTag/TMO/Task/InvolvedPersons/Title: Involved Persons
-TraitTag/TMO/Task/InvolvedPersons/Description: Lists all individuals who have roles or are implicated in the task.
-TraitTag/TMO/Task/Attachment/Title: Attachment
-TraitTag/TMO/Task/Attachment/Description: References to additional resources or information objects associated with the task.
+TraitTag/TMO/Task/TaskSource/Description: The origin or reason the task was created, which can include other tasks or patterns, or template task that generates this task.
 TraitTag/TMO/Task/TargetEndTime/Title: Target End Time
 TraitTag/TMO/Task/TargetEndTime/Description: The intended deadline for the task to be completed.
-TraitTag/TMO/Task/TargetCompletion/Title: Target Completion
-TraitTag/TMO/Task/TargetCompletion/Description: Whether the task is aimed to be completed by the target end time.
 TraitTag/TMO/Task/Delegability/Title: Delegability
 TraitTag/TMO/Task/Delegability/Description: Indicates whether the task can be delegated to others and under what conditions.
 TraitTag/TMO/Task/ActualStartTime/Title: Actual Start Time
@@ -30,18 +22,12 @@ TraitTag/TMO/Task/Dependency/Title: Dependency
 TraitTag/TMO/Task/Dependency/Description: Describes tasks that must be completed in relation to this one or dependencies it creates.
 TraitTag/TMO/Task/NextReviewIntervall/Title: Next Review Intervall
 TraitTag/TMO/Task/NextReviewIntervall/Description: Scheduled time interval at which the task status is evaluated or reviewed.
-TraitTag/TMO/Task/ContextThread/Title: Context Thread
-TraitTag/TMO/Task/ContextThread/Description: Represents the broader or ongoing situation to which this task is related.
-TraitTag/TMO/Task/TaskName/Title: Task Name
-TraitTag/TMO/Task/TaskName/Description: A brief, descriptive name that identifies the task in lists and discussions.
-TraitTag/TMO/Task/IndexPosition/Title: Index Position
-TraitTag/TMO/Task/IndexPosition/Description: The task's position within an ordered list, impacting its priority or sequence.
 TraitTag/TMO/Task/LogEntry/Title: Log Entry
 TraitTag/TMO/Task/LogEntry/Description: Records or notes associated with the task for tracking and historical reference.
-TraitTag/TMO/Task/SubTask/Title: Sub Task
-TraitTag/TMO/Task/SubTask/Description: A smaller, component task that is part of a larger task structure.
+TraitTag/TMO/Task/TargetCompletion/Title: Target Completion
+TraitTag/TMO/Task/TargetCompletion/Description: Estimated total amount of work that needs to be done, used to generate a progress bar in conjunction with "Actual Completion".
 TraitTag/TMO/Task/ActualCompletion/Title: Actual Completion
-TraitTag/TMO/Task/ActualCompletion/Description: Describes the extent to which the task has been completed.
+TraitTag/TMO/Task/ActualCompletion/Description: The actual amount of work that has been completed, used to generate the progress bar with "Target Completion".
 TraitTag/TMO/Task/TaskState/Title: Task State
 TraitTag/TMO/Task/TaskState/Description: The current phase or status of the task within its lifecycle.
 TraitTag/TMO/Task/TaskState/New: New
@@ -53,14 +39,8 @@ TraitTag/TMO/Task/TaskState/Suspended: Suspended
 TraitTag/TMO/Task/TaskState/Repetitive: Repetitive
 TraitTag/TMO/Task/LastReviewDate/Title: Last Review Date
 TraitTag/TMO/Task/LastReviewDate/Description: The most recent date on which the task was reviewed or assessed.
-TraitTag/TMO/Task/SubTaskOrdering/Title: Sub Task Ordering
-TraitTag/TMO/Task/SubTaskOrdering/Description: Specifies the order of sub-tasks within the main task for organizational purposes.
 TraitTag/TMO/Task/Urgency/Title: Urgency
 TraitTag/TMO/Task/Urgency/Description: Reflects how critical the timely completion of the task is.
-TraitTag/TMO/Task/TaskReference/Title: Task Reference
-TraitTag/TMO/Task/TaskReference/Description: Cites other tasks or documents that relate to or impact this task.
-TraitTag/TMO/Task/TaskId/Title: Task Id
-TraitTag/TMO/Task/TaskId/Description: A unique identifier assigned to the task for tracking and referencing.
 TraitTag/TMO/Task/RepeatInterval/Title: Repeat Interval
 TraitTag/TMO/Task/RepeatInterval/Description: The frequency at which the task recurs or is expected to be repeated.
 TraitTag/TMO/Task/NumberOfCompletions/Title: Number Of Completions
@@ -83,4 +63,4 @@ TraitTag/TMO/Task/TaskTransmission/Rejected_NotTransmitted: Rejected NotTransmit
 TraitTag/TMO/Task/TaskTransmission/NotTransmitted: NotTransmitted
 TraitTag/TMO/Task/TaskTransmission/Transmitted: Transmitted
 TraitTag/TMO/Task/Importance/Title: Importance
-TraitTag/TMO/Task/Importance/Description: Measures the significance of tasks based on goals or project outcomes. 1 is the most important, 7 and above are unimportant items in the entertainment category.
+TraitTag/TMO/Task/Importance/Description: Measures the significance of tasks based on goals or project outcomes. 1 is the most important, 7 and later are unimportant activities (i.g. entertainment).

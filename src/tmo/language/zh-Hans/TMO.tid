@@ -8,5 +8,14 @@ type: text/vnd.tiddlywiki
 
 注意，原版 TMO 中的一些字段被去掉了，原因如下：
 
-* SuperTask：这个字段是用来表示任务的父任务，但是在 TiddlyWiki 中，可以通过标签上下级关系来实现这个功能。
+* SuperTask：这个字段是用来表示任务的父任务，但是在太微中，可以通过标签上下级关系来实现这个功能。
 * SubTask：这个字段是用来表示任务的子任务，同上。
+* Attachment：这个字段是用来表示任务的附件，但是在太微中，应该通过在笔记里链接到附件条目来实现这个功能。所有内部链接都应该被视为附件。
+* TaskPrivacyState：这个字段是用来表示任务的隐私状态，但是在太微中，可以通过标签配合 FileSystemPath 来实现这个功能。
+* ContextThread：描述任务的上下文，在太微中，可以通过条目的正文来实现这个功能。
+* TaskName：描述任务的标题，在太微中，可以通过条目的标题字段来实现这个功能。
+* IndexPosition：描述任务在上级中的排序，在太微中，可以通过条目的 `list` 字段来实现这个功能。
+* SubTaskOrdering：描述子任务的排序，同上。
+* TaskId：描述任务的唯一标识符，但是在太微中，可以通过条目的 `title` 字段来实现这个功能。
+* TaskReference：描述当前任务参考的其它任务，是 tmo:superTask (direct), tmo:dependencyMemberA (direct), tmo:dependencyMemberB (direct), tmo:transmissionTask (direct), tmo:taskSource (direct) 等字段的父级概念，在太微中，暂无父级概念的用法，估去掉，仅使用它的这些子概念即可。
+* InvolvedPersons：描述任务的参与者，在太微中，可以通过将人员条目作为标签加到任务条目上，来实现这个功能。

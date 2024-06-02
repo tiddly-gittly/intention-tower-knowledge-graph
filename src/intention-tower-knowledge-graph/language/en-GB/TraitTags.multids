@@ -1,0 +1,4 @@
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/language/en-GB/
+
+TraitTag/CalendarDefaultTag/Title: Calendar default tag
+TraitTag/CalendarDefaultTag/Description: Auto added tag when adding task-related calendar entry. This overrides the global setting.

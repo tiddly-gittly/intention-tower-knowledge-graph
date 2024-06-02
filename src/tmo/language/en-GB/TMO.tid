@@ -8,5 +8,14 @@ type: text/vnd.tiddlywiki
 
 Note that some fields have been removed from the original TMO for the following reasons:
 
-* SuperTask: this field was used to indicate the parent task of a task, but in TiddlyWiki this can be done by tagging the hierarchy.
-* SubTask: this field is used to indicate the subtask of a task, as above.
+* SuperTask: this field is used to indicate the parent task of a task, but in TiddlyWiki this can be done by tagging the hierarchy.
+* SubTask: this field is used to indicate the subtasks of the task, as above.
+* Attachment: this field is used to indicate an attachment to a task, but in TiddlyWiki this should be accomplished by linking to the attachment tiddler in the note. All internal links should be treated as attachments.
+* TaskPrivacyState: this field is used to indicate the privacy state of the task, but in TiddlyWiki this should be implemented by tagging with FileSystemPath.
+* ContextThread: describes the context of the task, in TiddlyWiki this can be achieved by using the body of the tiddler.
+* TaskName: describes the title of the task, in TiddlyWiki, this can be realized by the title field of the tiddler.
+* IndexPosition: describes the ordering of the task in the hierarchy, in TiddlyWiki this can be done via the `list` field of the tiddler.
+* SubTaskOrdering: describes the ordering of subtasks, as above.
+* TaskId: describes the unique identifier of the task, but in TiddlyWiki this can be done with the `title` field of the tiddler.
+* TaskReference: describes the other tasks that the current task references, being tmo:superTask (direct), tmo:dependencyMemberA (direct), tmo:dependencyMemberB (direct), tmo: transmissionTask (direct), tmo:taskSource (direct), etc. In TiddlyWiki, there is no usage of parent concepts for the time being, so it is sufficient to estimate the deletion of them and just use these children of it.
+* InvolvedPersons: describes the participants of the task, which in Tiddlywiki can be accomplished by adding the person entry as a tag to the task entry.
