@@ -18,9 +18,29 @@ tags: $:/tags/EventCalendarSideBarSegment
 <% else %>
   <$list filter="[today.projects[]]" variable="projectTitle">
 
-    !! <<projectTitle>>
+    <h2>
+      <$set name=tags filter="[<projectTitle>get[calendar_tag]!is[blank]else{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/default-calendar-entry-tag}] [<projectTitle>]">
+        <$draggable tag=div data-event=`{ "duration": "01:00" }` data-tags=<<tags>>>
+          <<projectTitle>>
+        </$draggable>
+      </$set>
+    </h2>
 
-    {{{[all[]in-tagtree-of<projectTitle>filter<filter-is-new-task>]}}}
+    <ul>
+      <$list filter="[all[]in-tagtree-of<projectTitle>filter<filter-is-new-task>]" variable="taskTitle">
+        <$set name=tags filter="[<taskTitle>get[calendar_tag]!is[blank]else{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/default-calendar-entry-tag}] [<taskTitle>]">
+          <li>
+            <$draggable
+              tag=div
+              data-event=`{ "duration": "01:00" }`
+              data-tags=<<tags>>
+            >
+              <<taskTitle>>
+            </$draggable>
+          </li>
+        </$set>
+      </$list>
+    </ul>
 
   </$list>
 <% endif %>
