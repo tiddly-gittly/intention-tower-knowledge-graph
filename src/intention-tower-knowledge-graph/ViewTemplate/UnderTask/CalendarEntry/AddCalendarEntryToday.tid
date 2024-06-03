@@ -7,4 +7,6 @@ tags: $:/tags/ITKG/CalendarEntry
 
 <<lingo WorkloadForTheDay>>
 
-<$calendar defaultTags={{{ [<currentTiddler>] [{!!calendar_tag}!is[blank]else{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/default-calendar-entry-tag}] +[join[ ]] }}} hideToolbar="yes" height="600px" initialView="timeGridDay" filter="[all[tiddlers]!is[system]days:startDate[0]field:calendarEntry[yes]]" />
+<$set name=tags filter="[<currentTiddler>get[calendar_tag]!is[blank]else{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/default-calendar-entry-tag}] [<currentTiddler>]">
+  <$calendar defaultTags=<<tags>> hideToolbar="yes" height="600px" initialView="timeGridDay" filter="[all[tiddlers]!is[system]days:startDate[0]field:calendarEntry[yes]]" />
+</$set>
