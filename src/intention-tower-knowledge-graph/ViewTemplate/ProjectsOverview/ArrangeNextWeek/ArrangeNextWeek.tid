@@ -6,13 +6,13 @@ tags: $:/tags/ITKG/ProjectsOverview
 \whitespace trim
 \procedure lingo-base() $:/plugins/linonetwo/intention-tower-knowledge-graph/language/
 
-\function .todayFieldName()
-  [{$:/temp/ITKG/ArrangeNextWeek}match[]then[$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/ArrangeNextWeek/1]else{$:/temp/ITKG/ArrangeNextWeek}removeprefix[$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/ArrangeNextWeek/]addprefix[projects-on-]]
+\function todayFieldName()
+[{$:/temp/ITKG/ArrangeNextWeek}match[]then[$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/ArrangeNextWeek/1]else{$:/temp/ITKG/ArrangeNextWeek}removeprefix[$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/ArrangeNextWeek/]addprefix[projects-on-]]
 \end
 \procedure redirected-navigate-actions-to-add-project()
   <$action-listops
     $tiddler=<<journal-title-this-week>>
-    $field=<<.todayFieldName>>
+    $field=<<todayFieldName>>
     $subfilter="+[toggle<event-navigateTo>]"
   />
 \end

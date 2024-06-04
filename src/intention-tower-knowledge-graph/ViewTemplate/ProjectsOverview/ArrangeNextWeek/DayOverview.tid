@@ -4,7 +4,7 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/DayOver
 \procedure lingo-base() $:/plugins/linonetwo/intention-tower-knowledge-graph/language/
 
 \function today.projects()
-  [<journal-title-this-week>get<.todayFieldName>enlist-input[]]
+  [<journal-title-this-week>get<todayFieldName>enlist-input[]]
 \end
 
 <% if [today.projects[]count[]match[0]then[yes]] %>

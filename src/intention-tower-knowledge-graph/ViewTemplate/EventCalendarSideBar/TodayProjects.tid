@@ -1,17 +1,28 @@
 title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/EventCalendarSideBar/TodayProjects
 tags: $:/tags/EventCalendarSideBarSegment
 
-\import [[$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/WeekJournalSelect]] [[$:/plugins/linonetwo/intention-tower-knowledge-graph/filters/leaf-task]]
+\import [[$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/WeekJournalSelect]] [[$:/plugins/linonetwo/intention-tower-knowledge-graph/filters/leaf-task]] [[$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/EventCalendarSideBar/TodayProjectsDaySelect]]
 \procedure lingo-base() $:/plugins/linonetwo/intention-tower-knowledge-graph/language/
 
-\function .todayFieldName()
-  [<now dddd>lowercase[]addprefix[projects-on-]]
-\end
-\function today.projects()
-  [<journal-title-this-week>get<.todayFieldName>enlist-input[]]
+<!-- Use `=` to prevent deduplication -->
+\function currentDayIndex()
+=[<now dddd>] =[<currentDayIndexTiddler>get[text]else[0]] +[sum[]]
 \end
 
-! <<lingo Table/TaskList>> - <<now DDD>>
+\function todayFieldNameFromDayIndex()
+[<currentDayIndex>addprefix[projects-on-]]
+\end
+\function today.projects()
+[<journal-title-this-week>get<todayFieldNameFromDayIndex>enlist-input[]]
+\end
+\function weekDayDisplay()
+[weekstart[]addweekday<day>format:date[DDD]]
+\end
+
+<!-- Use `<$wikify>` to use return value of function `currentDayIndex` as input of `addweekday` operator. -->
+! <<lingo Table/TaskList>> - <$wikify name="day" text="<<currentDayIndex>>"><<weekDayDisplay>></$wikify>
+
+{{$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/EventCalendarSideBar/TodayProjectsDaySelect}}
 
 <% if [today.projects[]count[]match[0]then[yes]] %>
   <<lingo Tabs/ArrangeNextWeek/SidebarEmpty>>

@@ -56,6 +56,8 @@ Saturday: 星期六
 Sunday: 星期日
 PrevWeek: 上一周
 NextWeek: 下一周
+PrevDay: 上一日
+NextDay: 下一日
 CreateWeekJournal: 创建周记
 WeekJournal: 周记
 Configs/WeekJournalTags/Caption: 周记额外加的标签

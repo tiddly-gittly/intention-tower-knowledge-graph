@@ -50,6 +50,8 @@ Saturday: Saturday
 Sunday: Sunday
 PrevWeek: Previous Week
 NextWeek: Next week
+PrevDay: Previous Day
+NextDay: Next Day
 CreateWeekJournal: Create weekly journal
 WeekJournal: Weekly Journal
 Configs/WeekJournalTags/Caption: additional tags to be added to the weekly journal.

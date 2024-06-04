@@ -1,0 +1,26 @@
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/EventCalendarSideBar/TodayProjectsDaySelect
+
+\whitespace trim
+\procedure lingo-base() $:/plugins/linonetwo/intention-tower-knowledge-graph/language/
+\define get-journal-tags() $(journalTextFieldTags)$ $(journalTagsFieldTags)$ $(weekJournalTags)$
+\procedure currentDayIndexTiddler() $:/temp/ITKG/SidebarCurrentDayIndex
+
+<div class="itkg-week-journal-select-container">
+  <$button>
+    <<lingo PrevDay>>
+    <$action-createtiddler
+      $basetitle=<<currentDayIndexTiddler>>
+      $overwrite="yes"
+      text={{{[<currentDayIndexTiddler>get[text]else[0]subtract[1]]}}}
+    />
+  </$button>
+
+  <$button>
+    <<lingo NextDay>>
+    <$action-createtiddler
+      $basetitle=<<currentDayIndexTiddler>>
+      $overwrite="yes"
+      text={{{[<currentDayIndexTiddler>get[text]else[0]add[1]]}}}
+    />
+  </$button>
+</div>
