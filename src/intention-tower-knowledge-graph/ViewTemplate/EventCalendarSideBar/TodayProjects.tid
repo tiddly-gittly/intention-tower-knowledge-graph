@@ -14,13 +14,19 @@ tags: $:/tags/EventCalendarSideBarSegment
 ! <<lingo Table/TaskList>> - <<now DDD>>
 
 <% if [today.projects[]count[]match[0]then[yes]] %>
-  <<lingo Tabs/ArrangeNextWeek/NoTasks>>
+  <<lingo Tabs/ArrangeNextWeek/SidebarEmpty>>
+
+  <$button>
+    <<lingo Tabs/ArrangeNextWeek>>
+    <$action-createtiddler $basetitle="$:/layout" text="$:/plugins/linonetwo/intention-tower-knowledge-graph/layout/layout" $timestamp="no" $overwrite="yes" />
+    <$action-createtiddler $basetitle="$:/state/ITKG/ProjectsOverview" text="$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/ArrangeNextWeek" $timestamp="no" $overwrite="yes" />
+  </$button>
 <% else %>
   <$list filter="[today.projects[]]" variable="projectTitle">
 
     <h2>
       <$set name=tags filter="[<projectTitle>get[calendar_tag]!is[blank]else{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/default-calendar-entry-tag}] [<projectTitle>]">
-        <$draggable tag=div data-event=`{ "duration": "01:00" }` data-tags=<<tags>>>
+        <$draggable data-event=`{ "duration": "01:00" }` data-tags=<<tags>>>
           <<projectTitle>>
         </$draggable>
       </$set>
@@ -31,7 +37,6 @@ tags: $:/tags/EventCalendarSideBarSegment
         <$set name=tags filter="[<taskTitle>get[calendar_tag]!is[blank]else{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/default-calendar-entry-tag}] [<taskTitle>]">
           <li>
             <$draggable
-              tag=div
               data-event=`{ "duration": "01:00" }`
               data-tags=<<tags>>
             >

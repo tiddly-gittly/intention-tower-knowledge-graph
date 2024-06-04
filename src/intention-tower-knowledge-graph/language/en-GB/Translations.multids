@@ -40,6 +40,7 @@ Configs/AfterModifyTaskTag: After modifying tags such as tasks, the original tid
 Configs/DefaultTagForCalendar: Tags to add when creating a new calendar entry
 Tabs/ArrangeNextWeek/Description: After creating a tiddler for the next week, you can schedule your work for each day of the next week on the next week's tiddler. Once you have created your weekly journal, the seven days of the week and your list of projects will be displayed below. After selecting one of the seven days of the week, you can add it to the selected day by double-clicking on an item in the project list.
 Tabs/ArrangeNextWeek/NoTasks: No tasks are scheduled for this day. Double-click on an item in the list of items below to add it here.
+Tabs/ArrangeNextWeek/SidebarEmpty: No work is scheduled for this day at this time. Click the button to open the Intention Tower to schedule tasks.
 Monday: Monday
 Tuesday: Tuesday
 Wednesday: Wednesday
