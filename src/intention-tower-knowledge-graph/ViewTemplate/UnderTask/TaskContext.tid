@@ -49,13 +49,12 @@ tags: $:/tags/ITKG/UnderTask
 />
 
 <$let graphRootTiddler=<<currentTiddler>> >
-  <$list filter="[all[]in-tagtree-of:inclusive<currentTiddler>filter<filter-is-new-task>count[]match[0]then[yes]]">
+  <% if [all[]in-tagtree-of<currentTiddler>filter<filter-is-new-task>count[]match[0]then[yes]] %>
     <$let currentTiddler=<<graphRootTiddler>> >
-    <<lingo List/SubTasksPredecessorsSuccessors/NoSubTasks>> <<create-task-under-current-tiddler>>
+      <<lingo List/SubTasksPredecessorsSuccessors/NoSubTasks>> <<create-task-under-current-tiddler>>
     </$let>
-  </$list>
-
-  <$list filter="[all[]in-tagtree-of:inclusive<currentTiddler>filter<filter-is-new-task>count[]compare:number:gt[0]then[yes]]">
+  <% else %>
+    Content
     <$flowchart tiddler=<<graphRootTiddler>> height="600px" $template-tags={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}} subfilter="[filter<filter-is-new-task>]" />
-  </$list>
+  <% endif %>
 </$let>
