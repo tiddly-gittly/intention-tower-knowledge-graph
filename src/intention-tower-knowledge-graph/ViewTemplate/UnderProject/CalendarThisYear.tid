@@ -1,14 +1,11 @@
 title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/CalendarEntry/CalendarThisYear
 caption: {{$:/plugins/linonetwo/tw-calendar/Images/CalendarList}} <<lingo Tabs/WorkloadForTheYear $:/plugins/linonetwo/intention-tower-knowledge-graph/language/>>
-tags: $:/tags/ITKG/UnderProject
+tags: $:/tags/ITKG/CalendarEntry
 
 \import [[$:/plugins/linonetwo/intention-tower-knowledge-graph/filters/time]]
 \procedure lingo-base() $:/plugins/linonetwo/intention-tower-knowledge-graph/language/
 \procedure projectTagTiddler() <<currentTiddler>>
-\define calendarWithCurrentTiddler(currentTag)
-<$calendar filter="[all[]field:calendarEntry[yes]in-tagtree-of:inclusive[$currentTag$]]" readonly="yes" initialView="listYear" hideToolbar="yes" />
-\end
 
 <<lingo WorkloadForTheYear>>
 
-<$macrocall $name="calendarWithCurrentTiddler" currentTag=<<currentTiddler>>/>
+<$calendar filter=`[all[]tag[$(currentTiddler)$]field:calendarEntry[yes]]` readonly="yes" initialView="listYear" hideToolbar="yes" />
