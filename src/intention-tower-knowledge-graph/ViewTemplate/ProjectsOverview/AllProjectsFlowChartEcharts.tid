@@ -4,7 +4,6 @@ tags: $:/tags/ITKG/ProjectsOverview
 
 <$echarts
   $height="600px"
-  tiddlerSource="[linonetwo.intention-tower-without-task[]]"
   $tiddler="$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AllProjectsFlowChartEchartsAddon"
   dblclick="(params, parentWidget) => { parentWidget.dispatchEvent({ type: 'tm-navigate', navigateTo: params.data.name }) }"
 />
