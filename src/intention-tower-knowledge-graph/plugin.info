@@ -4,7 +4,7 @@
   "description": "ITKG is a knowledge and task management framework for tiddlywiki. ",
   "core-version": ">=5.1.22",
   "plugin-type": "plugin",
-  "version": "0.8.3",
+  "version": "0.8.4",
   "dependents": ["$:/plugins/linonetwo/flow-chart", "$:/plugins/yaisog/taggingtree-filter", "$:/plugins/yaisog/tagstree-filter", "$:/plugins/linonetwo/in-tagtree-of", "$:/plugins/Gk0Wk/echarts", "$:/plugins/linonetwo/super-tag", "$:/plugins/linonetwo/tw-calendar", "$:/plugins/linonetwo/hyper-table","$:/plugins/kixam/datepicker","$:/plugins/kixam/moment", "$:/plugins/linonetwo/tmo", "$:/plugins/linonetwo/wmo","$:/plugins/linonetwo/date-filters"],
   "list": "readme ControlPanel/Settings tree"
 }
