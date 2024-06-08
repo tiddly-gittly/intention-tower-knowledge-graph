@@ -12,6 +12,8 @@ BackToDefaultLayout: Back To Default Layout
 Configs/Description: These settings let you customise the behaviour of "Intention Tower Knowledge Graph" plugin.
 Tabs/TaskArchive: Task Archive
 Tabs/PriorityTaskList: Priority Task List
+Tabs/EntertainmentTaskList: Entertainment List
+Tabs/EntertainmentTaskList/Description: "Tasks" with an importance of P7 and later, are considered entertainment, i.e., playable things that are not finished and will be continued later.
 Tabs/MeaningOfLife: Meaning Of Life
 Tabs/ProjectOverviewMap: Project Overview Map
 Tabs/AddIntention: Add Intention

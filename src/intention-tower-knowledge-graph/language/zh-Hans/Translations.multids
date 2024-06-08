@@ -12,6 +12,8 @@ BackToDefaultLayout: 返回默认布局
 Configs/Description: 通过这些设置，您可以自定义「意义之塔与知识图谱」插件的行为。
 Tabs/TaskArchive: 任务归档
 Tabs/PriorityTaskList: 优先任务列表
+Tabs/EntertainmentTaskList: 娱乐列表
+Tabs/EntertainmentTaskList/Description: 重要性在 P7 及以后的「任务」，算是娱乐，即没玩完，待之后继续玩的事物。
 Tabs/MeaningOfLife: 人生意义
 Tabs/AddIntention: 添加意义
 Tabs/CalendarRecord: 日历记录

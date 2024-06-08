@@ -1,15 +1,15 @@
-title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/PriorityTaskDynamicTable
-caption: {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Table}} <<lingo Tabs/PriorityTaskList $:/plugins/linonetwo/intention-tower-knowledge-graph/language/>>
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/EntertainmentDynamicTable
+caption: {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Table}} <<lingo Tabs/EntertainmentTaskList $:/plugins/linonetwo/intention-tower-knowledge-graph/language/>>
 tags: $:/tags/ITKG/ProjectsOverview
 
 \import [[$:/plugins/linonetwo/intention-tower-knowledge-graph/filters/leaf-task]]
 \procedure lingo-base() $:/plugins/linonetwo/intention-tower-knowledge-graph/language/
 
-!! <<lingo Table/PriorityToDoList>> <$count filter=<<get-all-non-completed-leaf-tasks entertainment:"!">> />
+<<lingo Tabs/EntertainmentTaskList/Description>>
 
 <$basic-table
   height="800px"
-  filter=<<get-all-non-completed-leaf-tasks entertainment:"!">>
+  filter=<<get-all-non-completed-leaf-tasks entertainment:"">>
   columns="""
     [
       {
