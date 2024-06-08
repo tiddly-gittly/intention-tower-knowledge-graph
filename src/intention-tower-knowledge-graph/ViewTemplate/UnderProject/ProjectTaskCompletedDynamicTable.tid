@@ -13,12 +13,10 @@ tags: $:/tags/ITKG/UnderProject
     [
       {
         field: 'title',
-        title: 'Caption',
         width: 'auto',
       },
       {
         field: 'tags',
-        title: 'Tags',
         width: 200,
         fieldFormat: (record) => record.tags.filter(tag => !([$tw.wiki.getTiddlerText('$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag', '')].includes(tag))).join(', '),
       },
@@ -26,7 +24,6 @@ tags: $:/tags/ITKG/UnderProject
         .split(' ').filter(field => !(['title', 'tags'].includes(field)))
         .map(field => ({
           field,
-          title: field,
           width: 'auto',
         })),
     ]

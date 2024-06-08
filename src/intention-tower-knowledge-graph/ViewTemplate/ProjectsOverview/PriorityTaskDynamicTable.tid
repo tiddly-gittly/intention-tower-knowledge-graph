@@ -14,12 +14,10 @@ tags: $:/tags/ITKG/ProjectsOverview
     [
       {
         field: 'title',
-        title: 'Title',
         width: 'auto',
       },
       {
         field: 'tags',
-        title: 'Tags',
         width: 200,
         fieldFormat: (record) => record.tags.filter(tag => !([$tw.wiki.getTiddlerText('$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag', '')].includes(tag))).join(', '),
       },
