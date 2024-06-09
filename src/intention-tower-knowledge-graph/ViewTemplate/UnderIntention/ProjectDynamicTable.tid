@@ -7,6 +7,7 @@ tags: $:/tags/ITKG/UnderIntention
 <$basic-table
   height="800px"
   filter=<<get-non-completed-leaf-projects>>
+  omitTags="[{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}] [{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}]"
   columns="""
     [
       {
@@ -16,7 +17,6 @@ tags: $:/tags/ITKG/UnderIntention
       {
         field: 'tags',
         width: 200,
-        fieldFormat: (record) => record.tags.filter(tag => !([$tw.wiki.getTiddlerText('$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag', '')].includes(tag))).join(', '),
       },
       ...$tw.wiki.getTiddlerText('$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-ProjectDynamicTable', '')
         .split(' ').filter(field => !(['title', 'tags'].includes(field)))

@@ -10,6 +10,7 @@ tags: $:/tags/ITKG/ProjectsOverview
 <$basic-table
   height="800px"
   filter=<<filter-taskCompleted>>
+  omitTags="[{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}] [{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}]"
   columns="""
     [
       {
@@ -19,7 +20,6 @@ tags: $:/tags/ITKG/ProjectsOverview
       {
         field: 'tags',
         width: 200,
-        fieldFormat: (record) => record.tags.filter(tag => !([$tw.wiki.getTiddlerText('$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag', '')].includes(tag))).join(', '),
       },
       ...$tw.wiki.getTiddlerText('$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-TaskCompletedDynamicTable', '')
         .split(' ').filter(field => !(['title', 'tags'].includes(field)))
