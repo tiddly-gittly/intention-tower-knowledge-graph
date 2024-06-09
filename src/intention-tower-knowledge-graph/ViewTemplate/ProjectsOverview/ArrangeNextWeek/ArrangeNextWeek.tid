@@ -26,7 +26,7 @@ tags: $:/tags/ITKG/ProjectsOverview
     <$messagecatcher $tm-navigate=<<redirected-navigate-actions-to-add-project>>>
       <$basic-table
         height="800px"
-        filter="[all[tiddlers]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}filter<filter-is-new-task>]"
+        filter=<<get-non-completed-leaf-projects input:"all[]">>
         columns="""
           [
             {
@@ -38,7 +38,7 @@ tags: $:/tags/ITKG/ProjectsOverview
               width: 200,
               fieldFormat: (record) => record.tags.filter(tag => !([$tw.wiki.getTiddlerText('$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag', ''), $tw.wiki.getTiddlerText('$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag', '')].includes(tag))).join(', '),
             },
-            ...$tw.wiki.getTiddlerText('$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-IntentionDynamicTable', '')
+            ...$tw.wiki.getTiddlerText('$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-PriorityTaskDynamicTable', '')
               .split(' ').filter(field => !(['title', 'tags'].includes(field)))
               .map(field => ({
                 field,

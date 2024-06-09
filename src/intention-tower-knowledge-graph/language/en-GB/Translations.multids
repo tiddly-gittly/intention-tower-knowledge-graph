@@ -13,7 +13,7 @@ Configs/Description: These settings let you customise the behaviour of "Intentio
 Tabs/TaskArchive: Task Archive
 Tabs/PriorityTaskList: Priority Task List
 Tabs/EntertainmentTaskList: Entertainment List
-Tabs/EntertainmentTaskList/Description: "Tasks" with an importance of P7 and later, are considered entertainment, i.e., playable things that are not finished and will be continued later.
+Tabs/EntertainmentTaskList/Description: "Tasks" with an importance of P7 and later, are considered entertainment, i.e., playable things that are not finished and will be continued later. Note that tasks need to be under some open 'project' to appear here.
 Tabs/MeaningOfLife: Meaning Of Life
 Tabs/ProjectOverviewMap: Project Overview Map
 Tabs/AddIntention: Add Intention
@@ -58,3 +58,5 @@ CreateWeekJournal: Create weekly journal
 WeekJournal: Weekly Journal
 Configs/WeekJournalTags/Caption: additional tags to be added to the weekly journal.
 Configs/WeekJournalTags/Description: Weekly journal will add the tags configured here in addition to the tags that will be added to the journal in the Tiddlywiki settings.
+Tabs/ProjectsDynamicTable: Project Overview Table
+Table/ProjectsDynamicTable: Running projects

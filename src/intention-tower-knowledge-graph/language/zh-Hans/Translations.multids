@@ -13,7 +13,7 @@ Configs/Description: 通过这些设置，您可以自定义「意义之塔与�
 Tabs/TaskArchive: 任务归档
 Tabs/PriorityTaskList: 优先任务列表
 Tabs/EntertainmentTaskList: 娱乐列表
-Tabs/EntertainmentTaskList/Description: 重要性在 P7 及以后的「任务」，算是娱乐，即没玩完，待之后继续玩的事物。
+Tabs/EntertainmentTaskList/Description: 重要性在 P7 及以后的「任务」，算是娱乐，即没玩完，待之后继续玩的事物。注意任务需要在某个未完结的「项目」下才会出现在这里。
 Tabs/MeaningOfLife: 人生意义
 Tabs/AddIntention: 添加意义
 Tabs/CalendarRecord: 日历记录
@@ -64,3 +64,5 @@ CreateWeekJournal: 创建周记
 WeekJournal: 周记
 Configs/WeekJournalTags/Caption: 周记额外加的标签
 Configs/WeekJournalTags/Description: 周记除了加太微设置里日志会加的标签外，还将加上这里配置的标签
+Tabs/ProjectsDynamicTable: 项目概览表
+Table/ProjectsDynamicTable: 运行中的项目

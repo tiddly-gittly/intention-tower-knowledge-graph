@@ -10,12 +10,14 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/filters/leaf-task
 \define filter-is-not-leaf() [all[current]tagging[]filter<filter-is-new-task>]
 
 \define compareByPriority() [get[tmo_priority]match[High]then[3]] :else[get[tmo_priority]match[Medium]then[2]] :else[get[tmo_priority]match[Low]then[1]] :else[[2]]
+<!-- Default the importance to 5 -->
+\define compareByImportance() [get[tmo_importance]else[5]]
 
 \define filter-is-entertainment() [get[tmo_importance]compare:number:gteq[7]]
 
 <!-- // TODO: try replace with in-tagtree-of -->
 <!-- projects are tasks, so getting all projects under current (intention), then get those is in new task state  -->
-\define get-non-completed-leaf-projects() [in-tagtree-of<currentTiddler>tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}filter<filter-is-new-task>]
+\define get-non-completed-leaf-projects(input:"in-tagtree-of<currentTiddler>") [$input$tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}filter<filter-is-new-task>sortsub:integer<compareByImportance>!sortsub:integer<compareByPriority>]
 <!-- for each child (in tagtree of current tiddler), remove out all that is not leaf, and get those is in new task state -->
 \define get-non-completed-leaf-tasks() [in-tagtree-of<currentTiddler>!filter<filter-is-not-leaf>filter<filter-is-new-task>]
 <!--
@@ -24,4 +26,4 @@ get all project first, and for each project, run same logic as get-non-completed
 If some project is sub project of others, this may introduce duplication, so deduplicate by `unique[]` at last.
 Then `!sortsub:integer` to sort by priority from 3 to 1
 -->
-\define get-all-non-completed-leaf-tasks(entertainment:"") [all[tiddlers]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}filter<filter-is-new-task>] :map:flat[all[tiddlers]in-tagtree-of<currentTiddler>!filter<filter-is-not-leaf>filter<filter-is-new-task>$entertainment$filter<filter-is-entertainment>] :and[filter<has-length>unique[]!sortsub:integer<compareByPriority>]
+\define get-all-non-completed-leaf-tasks(entertainment:"") [all[tiddlers]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}filter<filter-is-new-task>] :map:flat[all[tiddlers]in-tagtree-of<currentTiddler>!filter<filter-is-not-leaf>filter<filter-is-new-task>$entertainment$filter<filter-is-entertainment>] :and[filter<has-length>unique[]sortsub:integer<compareByImportance>!sortsub:integer<compareByPriority>]
