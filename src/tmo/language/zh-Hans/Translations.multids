@@ -2,3 +2,4 @@ title: $:/plugins/linonetwo/tmo/language/zh-Hans/
 
 Name: 任务管理本体
 Description: 任务管理本体，用于超级标签。提供待办事项所需的各种字段名和字段描述。
+TMOTaskDescription: "tmo:task" 是任务管理系统的核心。任务的范围可以是在遥远的未来可能要做的模糊事情，也可以是以可预见的方式要做的具体事情。假设知识工作者每天有上百个或更多的任务，并非不切实际。该特质标签包括许多与 "tmo:task" 相关的有用字段

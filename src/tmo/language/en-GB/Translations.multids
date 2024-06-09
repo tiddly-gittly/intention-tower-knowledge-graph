@@ -2,3 +2,4 @@ title: $:/plugins/linonetwo/tmo/language/en-GB/
 
 Name: Task Management Ontology
 Description: Task management ontology for SuperTag. Provides the various field names and field descriptions required by the to-do list.
+TMOTaskDescription: The tmo:task is the central entitiey of the tmo. Task can range from vague things to be possibly done in e distant future to concrete things to be done in a precise forseeable manner. It is not unrealisitc to assume that knowledge worker have hundred or more tasks a day. This trait tag include many useful fields related to the `tmo:task`

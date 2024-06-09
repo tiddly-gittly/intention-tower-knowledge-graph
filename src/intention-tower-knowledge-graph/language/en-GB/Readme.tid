@@ -14,6 +14,22 @@ Online documentation site: https://tiddly-gittly.github.io/intention-tower-knowl
 
 Dependent plugins are many, please install them manually if you are not install them automatically using CPL.
 
-!! TMO
+Here are a few of the most central dependencies:
 
-{{$:/plugins/linonetwo/tmo/readme}}
+!!! Super Tags.
+
+A form used to display quick edit fields under task tiddlers.
+
+[[$:/plugins/linonetwo/super-tag]]
+
+!!! Task Modeling Ontology
+
+Used to tell the Super Tag plugin what fields are available to display.
+
+[[$:/plugins/linonetwo/tmo/readme]]
+
+!!! Dynamic Tables
+
+High-performance sortable form for displaying task-related fields that have been edited by supertag.
+
+[[$:/plugins/linonetwo/hyper-table]]

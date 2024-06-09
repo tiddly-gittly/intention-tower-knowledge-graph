@@ -9,3 +9,5 @@ title: $:/plugins/linonetwo/tmo/language/en-GB/Readme
 [[$:/TraitTag/TMO/Task]]
 
 Based on {{$:/TraitTag/TMO/Task!!url}}
+
+<$json-editor-form filter="[[$:/TraitTag/TMO/Task]get[schema]]" tiddler="$:/temp/TMO-example" />
