@@ -5,3 +5,7 @@ title: $:/plugins/linonetwo/tmo/language/zh-Hans/Readme
 ! <<lingo Name>>
 
 <<lingo Description>>
+
+[[$:/TraitTag/TMO/Task]]
+
+基于 {{$:/TraitTag/TMO/Task!!url}}

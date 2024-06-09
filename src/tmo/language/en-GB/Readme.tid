@@ -5,3 +5,7 @@ title: $:/plugins/linonetwo/tmo/language/en-GB/Readme
 ! <<lingo Name>>
 
 <<lingo Description>>
+
+[[$:/TraitTag/TMO/Task]]
+
+Based on {{$:/TraitTag/TMO/Task!!url}}

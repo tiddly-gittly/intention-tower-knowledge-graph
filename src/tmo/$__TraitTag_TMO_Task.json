@@ -1,7 +1,7 @@
 [
     {
         "created": "20230219143648537",
-        "text": "The tmo:task is the central entitiey of the tmo. Task can range from vague things to be possibly done in e distant future to concrete things to be done in a precise forseeable manner. It is not unrealisitc to assume that knowledge worker have hundred or more tasks a day.",
+        "text": "The tmo:task is the central entitiey of the tmo. Task can range from vague things to be possibly done in e distant future to concrete things to be done in a precise forseeable manner. It is not unrealisitc to assume that knowledge worker have hundred or more tasks a day.\n\n<$codeblock code={{!!schema}} />",
         "title": "$:/TraitTag/TMO/Task",
         "tags": "$:/SuperTag/TraitTag",
         "type": "text/vnd.tiddlywiki",
