@@ -1,5 +1,5 @@
 caption: <<lingo Deck/KnowledgeGraph/Caption $:/plugins/linonetwo/intention-tower-knowledge-graph/language/>>
-card: [all[tiddlers]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}tagging[]]
+card: [all[tiddlers]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}tagging[]!field:calendarEntry[yes]!tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}]
 card_exclude: [tag[!]]
 card_unfold: [tag[.]]
 description: <<lingo Deck/KnowledgeGraph/Description $:/plugins/linonetwo/intention-tower-knowledge-graph/language/>>
