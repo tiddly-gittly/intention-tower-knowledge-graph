@@ -18,7 +18,8 @@ Tabs/MeaningOfLife: Meaning Of Life
 Tabs/ProjectOverviewMap: Project Overview Map
 Tabs/AddIntention: Add Intention
 Tabs/CalendarRecord: Calendar Record
-Tabs/AddTaskToday: Add task today
+Tabs/AddTaskToday: Task today
+Tabs/WeekCalendar: Week Calendar
 Tabs/WorkloadForTheYear: Workload this year
 Tabs/ArrangeNextWeek: Arrange next week
 WorkloadForTheDay: A total of <<workload-for-the-day>> hours were worked today under the project! (including planning but not done)

@@ -1,5 +1,5 @@
 title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/AddCalendarEntryThisWeek
-caption: {{$:/plugins/linonetwo/tw-calendar/Images/CalendarWeek}} 调整本周任务
+caption: {{$:/plugins/linonetwo/tw-calendar/Images/CalendarWeek}} <<lingo Tabs/WeekCalendar $:/plugins/linonetwo/intention-tower-knowledge-graph/language/>>
 tags: $:/tags/ITKG/CalendarEntry
 
 <$set name=tags filter="[<currentTiddler>get[calendar_tag]!is[blank]else{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/default-calendar-entry-tag}] [<currentTiddler>]">

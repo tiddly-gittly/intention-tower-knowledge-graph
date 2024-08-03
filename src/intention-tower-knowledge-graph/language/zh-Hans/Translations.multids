@@ -17,7 +17,8 @@ Tabs/EntertainmentTaskList/Description: 重要性在 P7 及以后的「任务」
 Tabs/MeaningOfLife: 人生意义
 Tabs/AddIntention: 添加意义
 Tabs/CalendarRecord: 日历记录
-Tabs/AddTaskToday: 添加今日任务
+Tabs/AddTaskToday: 今日任务
+Tabs/WeekCalendar: 周日历
 Tabs/WorkloadForTheYear: 本年工作量
 Tabs/ArrangeNextWeek: 安排下周工作
 WorkloadForTheDay: 今日共工作 <<workload-for-the-day>> 小时！（包含计划中未做的）
