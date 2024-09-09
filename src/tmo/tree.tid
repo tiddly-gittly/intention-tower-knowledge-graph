@@ -3,3 +3,4 @@ creator: LinOnetwo
 type: text/vnd.tiddlywiki
 
 <<tree prefix:"$:/plugins/linonetwo/tmo/">>
+<<tree prefix:"$:/TraitTag/TMO/">>
