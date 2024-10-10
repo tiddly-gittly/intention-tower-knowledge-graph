@@ -19,9 +19,8 @@ order: 1
     <$edit-text tiddler=<<tempTitle>> tag="input" field="text" placeholder={{$:/language/EditTemplate/Tags/Add/Placeholder}} />
 
     <$button>
-      <$action-setfield tiddler=<<currentTiddler>> text={{{ [<tempTitle>get[text]] }}}>
-        <$action-setfield tiddler=<<tempTitle>> text="" />
-      </$action-setfield>
+      <$action-setfield tiddler=<<currentTiddler>> text={{{ [<tempTitle>get[text]] }}} />
+      <$action-deletetiddler $tiddler=<<tempTitle>> />
 
       {{$:/language/EditTemplate/Tags/Add/Button}}
     </$button>
