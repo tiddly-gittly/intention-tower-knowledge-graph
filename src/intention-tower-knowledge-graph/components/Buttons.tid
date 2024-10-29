@@ -94,15 +94,15 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/Components/Buttons
   </$button>
 \end
 
-\procedure back-to-default-layout-button()
+\procedure back-to-standard-layout-button()
   <$button>
     <$action-setfield
       $tiddler="$:/layout"
       text=""
       $timestamp="no"
     />
-    {{$:/core/images/default-layout}}
-    <<lingo BackToDefaultLayout>>
+    {{$:/core/images/standard-layout}}
+    <<lingo BackToStandardLayout>>
   </$button>
 \end
 

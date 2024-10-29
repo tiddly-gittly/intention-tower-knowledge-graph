@@ -8,7 +8,7 @@ Intention: Intention
 Project: Project
 Task: Task
 Tags: Tags
-BackToDefaultLayout: Back To Default Layout
+BackToStandardLayout: Back To Standard Layout
 Configs/Description: These settings let you customise the behaviour of "Intention Tower Knowledge Graph" plugin.
 Tabs/TaskArchive: Task Archive
 Tabs/PriorityTaskList: Priority Task List

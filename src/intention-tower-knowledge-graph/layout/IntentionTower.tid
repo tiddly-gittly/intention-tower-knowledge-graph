@@ -32,7 +32,7 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/layout/IntentionTowe
   </div>
 
   <div class="itkg-intention-tower-buttons">
-    <<back-to-default-layout-button>>
+    <<back-to-standard-layout-button>>
     <<create-task-without-parent>>
     <<create-project-without-parent>>
     <<create-intention-without-parent>>
