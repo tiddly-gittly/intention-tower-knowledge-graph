@@ -54,7 +54,6 @@ tags: $:/tags/ITKG/UnderTask
       <<lingo List/SubTasksPredecessorsSuccessors/NoSubTasks>> <<create-task-under-current-tiddler>>
     </$let>
   <% else %>
-    Content
     <$flowchart tiddler=<<graphRootTiddler>> height="600px" $template-tags={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}} subfilter="[filter<filter-is-new-task>]" />
   <% endif %>
 </$let>
