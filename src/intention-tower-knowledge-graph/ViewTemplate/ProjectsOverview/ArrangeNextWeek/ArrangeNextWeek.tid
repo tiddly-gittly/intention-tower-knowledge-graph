@@ -25,7 +25,9 @@ tags: $:/tags/ITKG/ProjectsOverview
     </div>
     <$messagecatcher $tm-navigate=<<redirected-navigate-actions-to-add-project>>>
       <$basic-table
+        search="search-bar-top"
         height="800px"
+        widthMode="standard"
         filter=<<get-non-completed-leaf-projects input:"all[]">>
         omitTags="[{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}] [{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}]"
         columns="""

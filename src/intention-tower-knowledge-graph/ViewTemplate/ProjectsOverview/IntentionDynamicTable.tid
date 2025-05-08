@@ -3,6 +3,7 @@ caption: {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Table}} <
 tags: $:/tags/ITKG/ProjectsOverview
 
 <$basic-table
+  search="search-bar-top"
   height="800px"
   filter="[all[tiddlers]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}]"
   omitTags="[{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}]"

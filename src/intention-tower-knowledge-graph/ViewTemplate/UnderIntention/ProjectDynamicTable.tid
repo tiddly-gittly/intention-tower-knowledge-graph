@@ -5,6 +5,7 @@ tags: $:/tags/ITKG/UnderIntention
 \import [[$:/plugins/linonetwo/intention-tower-knowledge-graph/filters/leaf-task]]
 
 <$basic-table
+  search="search-bar-top"
   height="800px"
   filter=<<get-non-completed-leaf-projects>>
   omitTags="[{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}] [{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}]"

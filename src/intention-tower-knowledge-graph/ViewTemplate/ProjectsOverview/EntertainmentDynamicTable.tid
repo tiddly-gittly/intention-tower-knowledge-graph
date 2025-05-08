@@ -8,6 +8,7 @@ tags: $:/tags/ITKG/ProjectsOverview
 <<lingo Tabs/EntertainmentTaskList/Description>>
 
 <$basic-table
+  search="search-bar-top"
   height="800px"
   filter=<<get-all-non-completed-leaf-tasks entertainment:"">>
   omitTags="[{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}] [{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}]"

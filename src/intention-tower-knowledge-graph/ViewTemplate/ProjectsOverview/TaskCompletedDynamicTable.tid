@@ -8,6 +8,7 @@ tags: $:/tags/ITKG/ProjectsOverview
 !! <<lingo Table/FinishedTask>>
 
 <$basic-table
+  search="search-bar-top"
   height="800px"
   filter=<<filter-taskCompleted>>
   omitTags="[{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}] [{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}]"

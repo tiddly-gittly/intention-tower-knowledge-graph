@@ -48,6 +48,9 @@ div.intention-tower-knowledge-graph-container {
   justify-content: center;
   align-items: center;
 }
+.itkg-week-arrangement-container .tc-hyper-table {
+  width: 100%;
+}
 .itkg-week-arrangement-weeks-container {
   display: flex;
   flex-direction: column;
