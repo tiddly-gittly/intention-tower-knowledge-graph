@@ -1,4 +1,6 @@
 tags: 项目 任务 看书
 title: 看《三体》
-type: text/vnd.tiddlywiki
+tmo_importance: 8
+tmo_priority: Low
 tmo_taskState: Running
+type: text/vnd.tiddlywiki

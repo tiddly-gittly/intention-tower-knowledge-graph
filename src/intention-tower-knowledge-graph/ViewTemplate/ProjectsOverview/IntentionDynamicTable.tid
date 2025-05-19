@@ -7,6 +7,7 @@ tags: $:/tags/ITKG/ProjectsOverview
   height="800px"
   filter="[all[tiddlers]tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}]"
   omitTags="[{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}]"
+  sort="tmo_priority tmo_importance modified"
   columns="""
     [
       {
@@ -22,6 +23,7 @@ tags: $:/tags/ITKG/ProjectsOverview
         .map(field => ({
           field,
           width: 'auto',
+          sort: true,
         })),
     ]
   """

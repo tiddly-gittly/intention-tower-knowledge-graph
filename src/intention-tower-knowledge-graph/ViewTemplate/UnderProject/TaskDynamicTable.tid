@@ -10,6 +10,7 @@ tags: $:/tags/ITKG/UnderProject
   search="search-bar-top"
   filter=<<get-non-completed-leaf-tasks>>
   omitTags="[{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}] [{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}]"
+  sort="tmo_priority tmo_importance modified"
   columns="""
     [
       {
@@ -25,6 +26,7 @@ tags: $:/tags/ITKG/UnderProject
         .map(field => ({
           field,
           width: 'auto',
+          sort: true,
         })),
     ]
   """

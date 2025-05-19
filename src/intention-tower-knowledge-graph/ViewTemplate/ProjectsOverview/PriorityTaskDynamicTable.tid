@@ -12,6 +12,7 @@ tags: $:/tags/ITKG/ProjectsOverview
   height="800px"
   filter=<<get-all-non-completed-leaf-tasks entertainment:"!">>
   omitTags="[{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}]"
+  sort="tmo_priority tmo_importance modified"
   columns="""
     [
       {
@@ -28,6 +29,7 @@ tags: $:/tags/ITKG/ProjectsOverview
           field,
           title: field,
           width: 'auto',
+          sort: true,
         })),
     ]
   """
