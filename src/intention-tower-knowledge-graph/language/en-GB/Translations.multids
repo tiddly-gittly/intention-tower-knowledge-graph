@@ -61,3 +61,7 @@ Configs/WeekJournalTags/Caption: additional tags to be added to the weekly journ
 Configs/WeekJournalTags/Description: Weekly journal will add the tags configured here in addition to the tags that will be added to the journal in the Tiddlywiki settings.
 Tabs/ProjectsDynamicTable: Project Overview Table
 Table/ProjectsDynamicTable: Running projects
+Action/SetAsTask/Caption: Set As Task
+Action/SetAsTask/Hint: Set the current tiddler as a Task
+Action/SetAsProject/Caption: Set As Project
+Action/SetAsProject/Hint: Set the current tiddler as a Project (with Task tag)

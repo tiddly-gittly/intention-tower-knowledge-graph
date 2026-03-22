@@ -1,0 +1,8 @@
+caption: <<lingo Action/SetAsTask/Caption $:/plugins/linonetwo/intention-tower-knowledge-graph/language/>>
+description: <<lingo Action/SetAsTask/Hint $:/plugins/linonetwo/intention-tower-knowledge-graph/language/>>
+tags: $:/tags/Actions
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/Actions/SetAsTask
+condition: [<currentTiddler>!is[blank]]
+
+\whitespace trim
+<$action-listops $tiddler=<<currentTiddler>> $tags={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}} />

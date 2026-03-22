@@ -67,3 +67,7 @@ Configs/WeekJournalTags/Caption: 周记额外加的标签
 Configs/WeekJournalTags/Description: 周记除了加太微设置里日志会加的标签外，还将加上这里配置的标签
 Tabs/ProjectsDynamicTable: 项目概览表
 Table/ProjectsDynamicTable: 运行中的项目
+Action/SetAsTask/Caption: 设为任务
+Action/SetAsTask/Hint: 将当前条目设为任务
+Action/SetAsProject/Caption: 设为项目
+Action/SetAsProject/Hint: 将当前条目设为项目（包含任务标签）

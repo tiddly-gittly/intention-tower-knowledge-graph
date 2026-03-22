@@ -1,0 +1,7 @@
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/changelog
+creator: LinOnetwo
+type: text/vnd.tiddlywiki
+
+!!! 0.10.2
+
+* Add new ActionTiddlers: SetAsProject and SetAsTask, which add project and task tags to the current tiddler, respectively.
