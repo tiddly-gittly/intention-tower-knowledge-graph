@@ -18,29 +18,29 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Install Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: lts/*
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v6
         with:
           version: 'latest'
           run_install: false
 
       - name: Cache dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             **/node_modules
             ~/.pnpm-store
             ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-node-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
-            ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+            ${{ runner.os }}-node-${{ hashFiles('**/pnpm-lock.yaml') }}
             ${{ runner.os }}-node-
 
       - name: Install Dependencies
@@ -57,12 +57,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-      - uses: jsmrcaga/action-netlify-deploy@v2.4.0
-        with:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_PERSONAL_ACCESS_TOKEN }}
-          NETLIFY_DEPLOY_TO_PROD: true
-          NETLIFY_SITE_ID: 1e7ee811-e6ff-43de-9bb3-3fa107d4fa23
-          build_directory: ./dist
-          NETLIFY_DEPLOY_MESSAGE: "Deployed from GitHub action"
-          install_command: "echo Skipping installing the dependencies"
-          build_command: "echo Skipping building the web files"
