@@ -11,9 +11,9 @@ tags: $:/tags/ITKG/UnderTask
   <$list filter="[<counter1-last>match[no]]"> / </$list>
 </$list>
 
-<details>
+<details class="itkg-task-context-details">
   <summary><<lingo List/SubTasksPredecessorsSuccessors/Caption>></summary>
-  <fieldset>
+  <fieldset class="itkg-task-context-fieldset">
     <legend><<lingo List/SubTasksPredecessorsSuccessors/CurrentSubTask>></legend>
     <div class="itkg-project-list">
       <$list filter="[tag<currentTiddler>tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}]">
@@ -22,7 +22,7 @@ tags: $:/tags/ITKG/UnderTask
     </div>
   </fieldset>
 
-  <fieldset>
+  <fieldset class="itkg-task-context-fieldset">
     <legend><<lingo List/SubTasksPredecessorsSuccessors/PreTask>></legend>
     <div class="itkg-project-list">
       <$list filter="[enlist{!!tmo_dependency}]">
@@ -31,7 +31,7 @@ tags: $:/tags/ITKG/UnderTask
     </div>
   </fieldset>
 
-  <fieldset>
+  <fieldset class="itkg-task-context-fieldset">
     <legend><<lingo List/SubTasksPredecessorsSuccessors/FollowUps>></legend>
     <div class="itkg-project-list">
       <$list filter="[tmo_dependency<currentTiddler>]">
