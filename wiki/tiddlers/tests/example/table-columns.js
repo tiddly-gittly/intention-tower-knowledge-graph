@@ -20,6 +20,8 @@ describe('ITKG table columns', function() {
     expect(['中', '高', '低'].sort(function(a, b) { return sort(a, b, 'desc'); })).toEqual(['高', '中', '低']);
     expect(sort('High', 'Medium', 'asc')).toBeGreaterThan(0);
     expect(sort('中', '中', 'asc')).toBe(0);
+    expect(sort(undefined, 'Medium', 'asc')).toBe(0);
+    expect(sort('', '中', 'asc')).toBe(0);
   });
 
   it('formats timestamps in the active wiki language and local time zone', function() {

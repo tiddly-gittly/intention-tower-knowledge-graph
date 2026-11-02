@@ -19,7 +19,8 @@ export function getColumn(field: string): TableColumn {
   }
 
   if (field === 'tmo_priority') {
-    const ranks: Record<string, number> = { undefined: 0 };
+    // Match the default Medium priority used by compareByPriority.
+    const ranks: Record<string, number> = { undefined: 2, '': 2 };
     ['Low', 'Medium', 'High'].forEach((priority, index) => {
       const label = $tw.wiki.getTiddlerText(
         '$:/plugins/linonetwo/tmo/language/' + locale + '/TraitTag/TMO/Task/Priority/' + priority,
@@ -28,7 +29,6 @@ export function getColumn(field: string): TableColumn {
       ranks[priority] = index + 1;
       ranks[label] = index + 1;
     });
-    ranks[''] = 0;
     column.sort = (left, right, order) => (ranks[left] - ranks[right]) * (order === 'desc' ? -1 : 1);
   }
 

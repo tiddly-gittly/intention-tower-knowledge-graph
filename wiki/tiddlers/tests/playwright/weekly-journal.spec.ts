@@ -61,7 +61,7 @@ test('sorts priorities through the canvas header and formats dates locally', asy
   await page.waitForFunction(() => {
     function find(widget: any): any {
       if (widget.tableInstance) return widget;
-      for (const child of widget.children || []) {
+      for (const child of widget.children) {
         const result = find(child);
         if (result) return result;
       }
