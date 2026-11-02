@@ -24,11 +24,7 @@ tags: $:/tags/ITKG/UnderProject
       },
       ...$tw.wiki.getTiddlerText('$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-ProjectTaskCompletedDynamicTable', '')
         .split(' ').filter(field => !(['title', 'tags'].includes(field)))
-        .map(field => ({
-          field,
-          width: 'auto',
-          sort: true,
-        })),
+        .map(field => $tw.modules.execute('$:/plugins/linonetwo/intention-tower-knowledge-graph/utils/table-columns.js').getColumn(field)),
     ]
   """
 />

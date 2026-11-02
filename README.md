@@ -17,3 +17,13 @@ ITKG is a knowledge and task management framework for tiddlywiki. ITKG short for
 之后太微将自动为你定下每日的任务，但是不做具体时间安排，不做微操作。这个系统要保证的是做任务的态度端正，将精力投入到优先级最高的任务中去。
 
 只要态度不滑坡，办法总比问题多。鼓励自己，端正自己的态度。重振精神，创造新事物。
+
+## Development
+
+Run `pnpm install`, then `pnpm dev`. Use `pnpm test`, `pnpm check`,
+`pnpm lint`, and `pnpm test:playwright` to validate changes. Install the browser
+with `pnpm exec playwright install chromium` before running the browser tests.
+
+The project uses TypeScript 7 for `tsc`. `.pnpmfile.cjs` supplies TypeScript 6 to
+tools that consume the JavaScript compiler API, including TypeScript ESLint and
+ts-node, according to their published compiler API requirements.

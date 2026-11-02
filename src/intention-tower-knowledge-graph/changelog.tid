@@ -2,6 +2,13 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/changelog
 creator: LinOnetwo
 type: text/vnd.tiddlywiki
 
+!!! 0.10.4
+
+* 在每周安排表上方直接编辑当前周记，切换周时同步切换编辑内容。
+* 按当前 Wiki 语言和本地时区显示简洁的创建与修改日期。
+* 按低、中、高的实际优先级排序，支持升序和降序。
+* 升级开发依赖及演示 Wiki 的社区插件、语言包和主题。
+
 !!! 0.10.3
 
 * 修复了黑暗模式下任务上下文区域显示白色底色的样式问题。

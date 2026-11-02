@@ -72,3 +72,19 @@ div.intention-tower-knowledge-graph-container {
   width: 50%;
   font-size: large;
 }
+
+.itkg-week-journal-editor {
+  display: block;
+  width: 100%;
+  margin: 0.75em 0;
+}
+.itkg-week-journal-editor > span {
+  display: block;
+  margin-bottom: 0.5em;
+}
+.itkg-week-journal-editor textarea {
+  width: 100%;
+  min-height: 8em;
+  box-sizing: border-box;
+  resize: vertical;
+}
