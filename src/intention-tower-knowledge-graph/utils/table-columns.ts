@@ -5,7 +5,7 @@ interface TableColumn {
   fieldFormat?: (record: { title: string }) => string;
 }
 
-function compareImportance(left: string, right: string, order: string): number {
+function compareImportance(left: string | undefined, right: string | undefined, order: string): number {
   const leftImportance = left === undefined || left === '' ? 5 : Number(left);
   const rightImportance = right === undefined || right === '' ? 5 : Number(right);
   return (leftImportance - rightImportance) * (order === 'desc' ? -1 : 1);
