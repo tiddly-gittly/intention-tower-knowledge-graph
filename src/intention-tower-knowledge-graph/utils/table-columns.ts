@@ -5,10 +5,20 @@ interface TableColumn {
   fieldFormat?: (record: { title: string }) => string;
 }
 
+function compareImportance(left: string, right: string, order: string): number {
+  const leftImportance = left === undefined || left === '' ? 5 : Number(left);
+  const rightImportance = right === undefined || right === '' ? 5 : Number(right);
+  return (leftImportance - rightImportance) * (order === 'desc' ? -1 : 1);
+}
+
 export function getColumn(field: string): TableColumn {
   const column: TableColumn = { field, width: 'auto', sort: true };
   const language = $tw.wiki.getTiddlerText('$:/language')!;
   const locale = $tw.wiki.getTiddler(language)!.fields.name as string;
+
+  if (field === 'tmo_importance') {
+    column.sort = compareImportance;
+  }
 
   if (field === 'modified' || field === 'created') {
     const formatter = new Intl.DateTimeFormat(locale, { dateStyle: 'medium', timeStyle: 'short' });

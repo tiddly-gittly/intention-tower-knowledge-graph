@@ -20,10 +20,9 @@ tags: $:/tags/ITKG/ProjectsOverview
 <div class="itkg-week-arrangement-container">
   {{$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/WeekJournalSelect}}
   <% if [<journal-title-this-week>!is[missing]] %>
-    <label class="itkg-week-journal-editor">
-      <span><<lingo WeekJournal>></span>
+    <div class="itkg-week-journal-editor">
       <$edit-text tiddler=<<journal-title-this-week>> field="text" tag="textarea" rows="6" class="tc-edit-texteditor" />
-    </label>
+    </div>
     <div class="itkg-week-arrangement-weeks-container">
       <<tabs "[all[shadows]tag[$:/tags/ITKG/ArrangeNextWeek]nsort[order]]" "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/ArrangeNextWeek/1" explicitState:"$:/temp/ITKG/ArrangeNextWeek" class:"tc-vertical">>
     </div>

@@ -40,6 +40,14 @@ describe('ITKG table columns', function() {
   it('keeps optional dates empty and ordinary fields sortable', function() {
     $tw.wiki.addTiddler({ title: 'ITKG date test' });
     expect(getColumn('modified').fieldFormat({ title: 'ITKG date test' })).toBe('');
-    expect(getColumn('tmo_importance').sort).toBe(true);
+    expect(getColumn('title').sort).toBe(true);
+  });
+
+  it('sorts numeric importance and uses the existing default importance of five', function() {
+    var sort = getColumn('tmo_importance').sort;
+    expect(['10', '2', '7'].sort(function(left, right) { return sort(left, right, 'asc'); })).toEqual(['2', '7', '10']);
+    expect(['10', '2', '7'].sort(function(left, right) { return sort(left, right, 'desc'); })).toEqual(['10', '7', '2']);
+    expect(sort(undefined, '5', 'asc')).toBe(0);
+    expect(sort('', '5', 'asc')).toBe(0);
   });
 });
