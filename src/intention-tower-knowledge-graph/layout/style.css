@@ -17,19 +17,39 @@ div.intention-tower-knowledge-graph-container {
 	word-break: break-all;
 }
 
-.itkg-intention-tower-buttons {
+.itkg-toolbar {
   padding: 10px 0;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
 }
-.itkg-intention-tower-buttons button {
+.itkg-back-to-layout button {
   padding: 15px 20px;
-  margin-bottom: 10px;
 }
-.itkg-create-task .tc-edit-texteditor {
+.itkg-search {
+  flex: 1;
+  min-width: 0;
+}
+.itkg-search .tw-auto-complete-container {
   width: 100%;
+}
+
+.intention-tower-knowledge-graph-container .tc-hyper-table,
+.intention-tower-knowledge-graph-container .tc-hyper-table-list-table {
+  width: 100%;
+  min-width: 0;
+}
+
+@media (max-width: 640px) {
+  .itkg-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .itkg-back-to-layout,
+  .itkg-back-to-layout button,
+  .itkg-search {
+    width: 100%;
+  }
 }
 
 .itkg-week-journal-select-container {
