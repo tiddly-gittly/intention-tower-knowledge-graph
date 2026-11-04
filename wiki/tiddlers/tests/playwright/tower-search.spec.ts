@@ -77,6 +77,21 @@ test('creates intentions and opens existing results from the list', async ({ pag
   await expect.poll(() => page.evaluate(() => $tw.wiki.getTiddlerText('$:/layout'))).toBe('');
 });
 
+test('uses English search labels with the core default language setting', async ({ page }) => {
+  await page.evaluate(() => {
+    $tw.wiki.setText('$:/layout', 'text', undefined, '');
+    $tw.wiki.setText('$:/language', 'text', undefined, '');
+  });
+  await expect(page.locator('.itkg-search input')).toHaveCount(0);
+  await page.evaluate(({ plugin }) => {
+    $tw.wiki.setText('$:/layout', 'text', undefined, `${plugin}/layout/layout`);
+  }, { plugin });
+  const input = page.locator('.itkg-search input');
+  await expect(input).toHaveAttribute('placeholder', 'Search Intention Tower or create an entry');
+  await input.focus();
+  await expect(page.locator('.itkg-search-action')).toHaveText(['New task', 'New project', 'New intention']);
+});
+
 test('places the layout button beside search on wide screens and above it on narrow screens', async ({ page }) => {
   for (const width of [1600, 390]) {
     await page.setViewportSize({ width, height: 1000 });

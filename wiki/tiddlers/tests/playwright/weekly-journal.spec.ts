@@ -61,7 +61,7 @@ test('sorts priorities through the canvas header and formats dates locally', asy
         modified: new Date(['2024-12-31T02:09:27Z', '2023-01-01T02:09:27Z', '2024-02-01T02:09:27Z'][index]),
       });
     }
-    tw.wiki.addTiddler({ title: 'ITKG browser table', text: `<$basic-table filter="[prefix[ITKG browser row ]]" sort="tmo_priority" columns="""['title', 'tmo_priority', 'modified', 'tmo_importance'].map(field => $tw.modules.execute('${plugin}/utils/table-columns.js').getColumn(field))""" />` });
+    tw.wiki.addTiddler({ title: 'ITKG browser table', text: `<$basic-table filter="[prefix[ITKG browser row ]]" sort="tmo_priority" columns="""$tw.modules.execute('${plugin}/utils/table-columns.js').getColumns(['title', 'tmo_priority', 'modified', 'tmo_importance'])""" />` });
     tw.wiki.setText('$:/StoryList', 'list', undefined, ['ITKG browser table']);
   }, { plugin });
   await expect(page.locator('.tc-hyper-table canvas').first()).toBeVisible();

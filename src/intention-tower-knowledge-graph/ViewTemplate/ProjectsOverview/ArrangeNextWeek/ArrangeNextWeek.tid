@@ -44,9 +44,10 @@ tags: $:/tags/ITKG/ProjectsOverview
               field: 'tags',
               width: 200,
             },
-            ...$tw.wiki.getTiddlerText('$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-PriorityTaskDynamicTable', '')
-              .split(' ').filter(field => !(['title', 'tags'].includes(field)))
-              .map(field => $tw.modules.execute('$:/plugins/linonetwo/intention-tower-knowledge-graph/utils/table-columns.js').getColumn(field)),
+            ...$tw.modules.execute('$:/plugins/linonetwo/intention-tower-knowledge-graph/utils/table-columns.js').getColumns(
+              $tw.wiki.getTiddlerText('$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-PriorityTaskDynamicTable', '')
+                .split(' ').filter(field => field && !(['title', 'tags'].includes(field))),
+            ),
           ]
         """
       />

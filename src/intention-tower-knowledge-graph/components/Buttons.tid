@@ -43,57 +43,6 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/Components/Buttons
   </$button>
 \end
 
-\procedure after-create-tiddler-without-parent()
-  <$action-navigate $to=<<createTiddler-title>>/>
-  <$let currentTiddler=<<createTiddler-title>> >
-    <$action-sendmessage $message="tm-save-tiddler" $param=<<currentTiddler>> />
-    <$action-sendmessage $message="tm-auto-save-wiki" />
-  </$let>
-  <$action-setfield
-  $tiddler="$:/state/ITKG/PageLayout/create-tiddler-title"
-  text=""
-  />
-\end
-
-\procedure create-task-without-parent()
-  <$button tooltip="点击创建新任务">
-    <$action-createtiddler
-      $basetitle={{$:/state/ITKG/PageLayout/create-tiddler-title}}
-      tags={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}}
-      tmo_taskState="New"
-      tmo_priority=""
-    >
-      <<after-create-tiddler-without-parent>>
-    </$action-createtiddler>
-    {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Task}} 新任务
-  </$button>
-\end
-
-\procedure create-project-without-parent()
-  <$button tooltip="点击创建新项目">
-    <$action-createtiddler
-      $basetitle={{$:/state/ITKG/PageLayout/create-tiddler-title}}
-      tags={{{ [{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}addsuffix[ ]addsuffix{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}] }}}
-      tmo_taskState="New"
-    >
-      <<after-create-tiddler-without-parent>>
-    </$action-createtiddler>
-    {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Project}} 新项目
-  </$button>
-\end
-
-\procedure create-intention-without-parent()
-  <$button tooltip="点击创建新意义条目">
-    <$action-createtiddler
-      $basetitle={{$:/state/ITKG/PageLayout/create-tiddler-title}}
-      tags={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}}
-    >
-      <<after-create-tiddler-without-parent>>
-      </$action-createtiddler>
-      {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Motivation}} 新意义
-  </$button>
-\end
-
 \procedure back-to-standard-layout-button()
   <$button>
     <$action-setfield

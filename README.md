@@ -18,9 +18,9 @@ ITKG is a knowledge and task management framework for tiddlywiki. ITKG short for
 
 只要态度不滑坡，办法总比问题多。鼓励自己，端正自己的态度。重振精神，创造新事物。
 
-## Tower Search
+## Search and Create
 
-The tower toolbar embeds the `auto-complete-search` widget from
+The Intention Tower toolbar embeds the `auto-complete-search` widget from
 [tw-command-palette](https://github.com/tiddly-gittly/tw-command-palette/), using
 an ITKG-specific candidate source. It searches titles, captions, aliases and
 body text in the configured task, project, intention, calendar-entry and
@@ -31,6 +31,9 @@ keeps its own search behaviour.
 The layout button sits beside search above 640px and spans the row above
 search on narrower screens. Weekly tables use HyperTable's adaptive width
 mode to fill the available space.
+
+See the [autocomplete API evaluation](docs/autocomplete-integration-review.md)
+for the proposed WikiText integration and follow-up review findings.
 
 ## Development
 

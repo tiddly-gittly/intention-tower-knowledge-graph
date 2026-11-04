@@ -4,17 +4,20 @@ type: text/vnd.tiddlywiki
 
 !!! 0.10.4
 
-* 顶部采用自动补全搜索框，候选限定为意义之塔内容，并整合新任务、新项目与新意义操作。
-* 返回标准布局按钮随屏幕宽度排列在搜索框左侧或上方。
-* 每周安排表使用自适应列宽，充分利用宽屏空间。
-* 在每周安排表上方直接编辑当前周记，切换周时同步切换编辑内容。
-* 按当前 Wiki 语言和本地时区显示简洁的创建与修改日期。
-* 按低、中、高的实际优先级排序，支持升序和降序。
-* 升级开发依赖及演示 Wiki 的社区插件、语言包和主题。
+* Add scoped autocomplete search with actions to create tasks, projects and intentions.
+* Place the standard-layout button beside search on wide screens and above it on narrow screens.
+* Use adaptive column widths to fill the available space in the weekly planning table.
+* Edit the selected entry's body above the weekly schedule, keeping its existing title.
+* Format creation and modification dates using the wiki language and local time zone.
+* Sort priorities by Low, Medium and High, and importance numerically, in both directions.
+* Build table columns in one batch and share a date formatter across date columns.
+* Support the core English language setting in table columns and search labels.
+* Remove unused standalone creation buttons and the former title input component.
+* Upgrade development dependencies and bundled community plugins, language packs and themes.
 
 !!! 0.10.3
 
-* 修复了黑暗模式下任务上下文区域显示白色底色的样式问题。
+* Fix the task context background colour in dark mode.
 
 !!! 0.10.2
 

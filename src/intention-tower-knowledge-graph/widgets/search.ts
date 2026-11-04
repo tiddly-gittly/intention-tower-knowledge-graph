@@ -24,7 +24,7 @@ interface SearchWidget extends Widget {
 }
 
 function lingo(key: string): string {
-  const language = $tw.wiki.getTiddler($tw.wiki.getTiddlerText('$:/language')!)!.fields.name as string;
+  const language = $tw.wiki.filterTiddlers('[{$:/language}get[name]else[en-GB]]')[0];
   return $tw.wiki.getTiddlerText(`${plugin}/language/${language}/${key}`, $tw.wiki.getTiddlerText(`${plugin}/language/en-GB/${key}`))!;
 }
 

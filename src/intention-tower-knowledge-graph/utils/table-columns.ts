@@ -11,36 +11,39 @@ function compareImportance(left: string | undefined, right: string | undefined, 
   return (leftImportance - rightImportance) * (order === 'desc' ? -1 : 1);
 }
 
-export function getColumn(field: string): TableColumn {
-  const column: TableColumn = { field, width: 'auto', sort: true };
-  const language = $tw.wiki.getTiddlerText('$:/language')!;
-  const locale = $tw.wiki.getTiddler(language)!.fields.name as string;
+export function getColumns(fields: string[]): TableColumn[] {
+  const locale = $tw.wiki.filterTiddlers('[{$:/language}get[name]else[en-GB]]')[0];
+  let formatter: Intl.DateTimeFormat | undefined;
 
-  if (field === 'tmo_importance') {
-    column.sort = compareImportance;
-  }
+  return fields.map(field => {
+    const column: TableColumn = { field, width: 'auto', sort: true };
 
-  if (field === 'modified' || field === 'created') {
-    const formatter = new Intl.DateTimeFormat(locale, { dateStyle: 'medium', timeStyle: 'short' });
-    column.fieldFormat = record => {
-      const date = $tw.wiki.getTiddler(record.title)!.fields[field];
-      return date ? formatter.format(date) : '';
-    };
-  }
+    if (field === 'tmo_importance') {
+      column.sort = compareImportance;
+    }
 
-  if (field === 'tmo_priority') {
-    // Match the default Medium priority used by compareByPriority.
-    const ranks: Record<string, number> = { undefined: 2, '': 2 };
-    ['Low', 'Medium', 'High'].forEach((priority, index) => {
-      const label = $tw.wiki.getTiddlerText(
-        '$:/plugins/linonetwo/tmo/language/' + locale + '/TraitTag/TMO/Task/Priority/' + priority,
-        priority,
-      );
-      ranks[priority] = index + 1;
-      ranks[label] = index + 1;
-    });
-    column.sort = (left, right, order) => (ranks[left] - ranks[right]) * (order === 'desc' ? -1 : 1);
-  }
+    if (field === 'modified' || field === 'created') {
+      formatter ??= new Intl.DateTimeFormat(locale, { dateStyle: 'medium', timeStyle: 'short' });
+      const dateFormatter = formatter;
+      column.fieldFormat = record => {
+        const date = $tw.wiki.getTiddler(record.title)!.fields[field];
+        return date ? dateFormatter.format(date) : '';
+      };
+    }
 
-  return column;
+    if (field === 'tmo_priority') {
+      const ranks: Record<string, number> = { undefined: 2, '': 2 };
+      ['Low', 'Medium', 'High'].forEach((priority, index) => {
+        const label = $tw.wiki.getTiddlerText(
+          '$:/plugins/linonetwo/tmo/language/' + locale + '/TraitTag/TMO/Task/Priority/' + priority,
+          priority,
+        );
+        ranks[priority] = index + 1;
+        ranks[label] = index + 1;
+      });
+      column.sort = (left, right, order) => (ranks[left] - ranks[right]) * (order === 'desc' ? -1 : 1);
+    }
+
+    return column;
+  });
 }
