@@ -33,6 +33,7 @@ test('limits autocomplete to tower content and offers creation actions', async (
   await input.focus();
   await expect(page.locator('.itkg-search-action')).toHaveCount(3);
   await input.fill('Scope');
+  await expect(page.locator('.itkg-search .aa-LoadingIndicator')).toBeHidden();
   await expect(page.locator('.itkg-search-result').filter({ hasText: 'Scope task' })).toBeVisible();
   await expect(page.locator('.itkg-search-result').filter({ hasText: 'Scope child' })).toBeVisible();
   await expect(page.locator('.itkg-search-result').filter({ hasText: 'Scope unrelated' })).toHaveCount(0);

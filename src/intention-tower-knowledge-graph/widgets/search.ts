@@ -15,6 +15,7 @@ interface SearchParameters {
 }
 
 interface SearchWidget extends Widget {
+  autoCompleteState?: unknown;
   autoCompleteInstance: {
     update(options: Record<string, unknown>): void;
     setQuery(query: string): void;
@@ -68,6 +69,9 @@ class IntentionTowerSearch extends Widget {
     this.search.autoCompleteInstance.update({
       plugins: undefined,
       reshape: ({ sources }: { sources: Array<{ sourceId: string }> }) => sources.filter(source => source.sourceId === 'itkg'),
+      onStateChange: (state: unknown) => {
+        this.search.autoCompleteState = state;
+      },
       detachedMediaQuery: 'none',
       openOnFocus: true,
       placeholder: lingo('Search/Placeholder'),
