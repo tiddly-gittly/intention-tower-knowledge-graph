@@ -51,7 +51,7 @@ cd ../tw-command-palette
 pnpm install
 pnpm exec tiddlywiki-plugin-dev build --library --output dist/library
 cd ../intention-tower-knowledge-graph
-pnpm demo:autocomplete -- ../tw-command-palette
+pnpm demo:autocomplete ../tw-command-palette
 pnpm dev
 ```
 
