@@ -27,7 +27,7 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/layout/IntentionTowe
 
   <div class="itkg-toolbar">
     <div class="itkg-back-to-layout"><<back-to-standard-layout-button>></div>
-    <div class="itkg-search"><$itkg-search /></div>
+    <div class="itkg-search">{{$:/plugins/linonetwo/intention-tower-knowledge-graph/Components/Search}}</div>
   </div>
 
   <<project-list>>

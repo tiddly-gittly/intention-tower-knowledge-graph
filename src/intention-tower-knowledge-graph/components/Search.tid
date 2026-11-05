@@ -1,0 +1,27 @@
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/Components/Search
+
+\procedure itkg-search-candidates()
+[all[tiddlers]in-tagtree-of{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}]
+[all[tiddlers]in-tagtree-of{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}]
+[all[tiddlers]in-tagtree-of{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/intention-tag}]
+[all[tiddlers]in-tagtree-of{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/default-calendar-entry-tag}]
+[enlist{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/WeekJournalTags}tagging[]]
+[tag[$:/tags/ITKG/WeeklyEntry]]
+[has[projects-on-1]] [has[projects-on-2]] [has[projects-on-3]] [has[projects-on-4]]
+[has[projects-on-5]] [has[projects-on-6]] [has[projects-on-7]]
++[!is[system]unique[]]
+\end
+
+<$wikify name="itkg-search-placeholder" text="<<lingo Search/Placeholder $:/plugins/linonetwo/intention-tower-knowledge-graph/language/>>">
+  <$auto-complete-search
+    id="itkg"
+    mode="search"
+    candidateFilter=<<itkg-search-candidates>>
+    actionFilter="[all[tiddlers+shadows]tag[$:/tags/ITKG/SearchAction]nsort[order]]"
+    placeholder=<<itkg-search-placeholder>>
+    autoFocus="no"
+    openOnFocus="yes"
+    detachedMediaQuery="none"
+    limit="30"
+  />
+</$wikify>

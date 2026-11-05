@@ -24,21 +24,25 @@ test.beforeEach(async ({ page }) => {
     tw.wiki.addTiddler({ title: 'Scope task', tags: [tw.wiki.getTiddlerText(`${plugin}/Config/task-tag`)], text: 'Scope body' });
     tw.wiki.addTiddler({ title: 'Scope child', tags: ['Scope task'] });
     tw.wiki.addTiddler({ title: 'Scope unrelated', text: 'Scope body' });
+    tw.wiki.setText('$:/config/NewJournal/Tags', 'text', undefined, 'GenericJournal');
+    tw.wiki.addTiddler({ title: 'Scope generic journal', tags: ['GenericJournal'] });
   }, { plugin });
+  await page.waitForFunction(() => $tw.wiki.getSizeOfTiddlerEventQueue() === 0);
 });
 
 test('limits autocomplete to tower content and offers creation actions', async ({ page }) => {
   const input = page.locator('.itkg-search input');
   await expect(input).toBeVisible();
   await input.focus();
-  await expect(page.locator('.itkg-search-action')).toHaveCount(3);
+  await expect(page.locator('.tw-autocomplete-action')).toHaveCount(3);
   await input.fill('Scope');
   await expect(page.locator('.itkg-search .aa-LoadingIndicator')).toBeHidden();
-  await expect(page.locator('.itkg-search-result').filter({ hasText: 'Scope task' })).toBeVisible();
-  await expect(page.locator('.itkg-search-result').filter({ hasText: 'Scope child' })).toBeVisible();
-  await expect(page.locator('.itkg-search-result').filter({ hasText: 'Scope unrelated' })).toHaveCount(0);
-  await expect(page.locator('.itkg-search-action')).toHaveCount(3);
-  await page.locator('.itkg-search-action').filter({ hasText: '新项目' }).click();
+  await expect(page.locator('.tw-autocomplete-result').filter({ hasText: 'Scope task' })).toBeVisible();
+  await expect(page.locator('.tw-autocomplete-result').filter({ hasText: 'Scope child' })).toBeVisible();
+  await expect(page.locator('.tw-autocomplete-result').filter({ hasText: 'Scope unrelated' })).toHaveCount(0);
+  await expect(page.locator('.tw-autocomplete-result').filter({ hasText: 'Scope generic journal' })).toHaveCount(0);
+  await expect(page.locator('.tw-autocomplete-action')).toHaveCount(3);
+  await page.locator('.tw-autocomplete-action').filter({ hasText: '新项目' }).click();
   await expect.poll(() =>
     page.evaluate(() => {
       const tw = $tw;
@@ -52,11 +56,12 @@ test('supports keyboard creation and keeps the search scope for special prefixes
   const input = page.locator('.itkg-search input');
   for (const prefix of ['>', '#', '[', '?']) {
     await input.fill(prefix);
-    await expect(page.locator('.itkg-search-action')).toHaveCount(3);
-    await expect(page.locator('.aa-Source')).toHaveCount(1);
+    await expect(page.locator('.tw-autocomplete-action')).toHaveCount(3);
+    await expect(page.locator('.aa-Source:not([data-autocomplete-source-id="scoped-actions"]):not([data-autocomplete-source-id="scoped-results"])')).toHaveCount(0);
+    await expect(page.locator('.tw-autocomplete-action').first()).toHaveText(`新任务：${prefix}`);
   }
   await input.fill('Keyboard task');
-  await expect(page.locator('.itkg-search-action').first()).toHaveText('新任务：Keyboard task');
+  await expect(page.locator('.tw-autocomplete-action').first()).toHaveText('新任务：Keyboard task');
   await input.press('ArrowDown');
   await input.press('ArrowUp');
   await input.press('Enter');
@@ -66,13 +71,14 @@ test('supports keyboard creation and keeps the search scope for special prefixes
 test('creates intentions and opens existing results from the list', async ({ page }) => {
   const input = page.locator('.itkg-search input');
   await input.fill('New purpose');
-  await page.locator('.itkg-search-action').filter({ hasText: '新意义' }).click();
+  await expect(page.locator('.tw-autocomplete-action').last()).toHaveText('新意义：New purpose');
+  await page.locator('.tw-autocomplete-action').filter({ hasText: '新意义' }).click();
   await expect.poll(() => page.evaluate(() => $tw.wiki.getTiddler('New purpose')?.fields.tags)).toEqual(['意义']);
   await page.evaluate(({ plugin }) => {
     $tw.wiki.setText('$:/layout', 'text', undefined, `${plugin}/layout/layout`);
   }, { plugin });
   await input.fill('Scope task');
-  await page.locator('.itkg-search-result').filter({ hasText: 'Scope task' }).click();
+  await page.locator('.tw-autocomplete-result').filter({ hasText: 'Scope task' }).click();
   await expect.poll(() => page.evaluate(() => $tw.wiki.getTiddlerList('$:/StoryList'))).toContain('Scope task');
   await expect.poll(() => page.evaluate(() => $tw.wiki.getTiddlerText('$:/layout'))).toBe('');
 });
@@ -89,7 +95,7 @@ test('uses English search labels with the core default language setting', async 
   const input = page.locator('.itkg-search input');
   await expect(input).toHaveAttribute('placeholder', 'Search Intention Tower or create an entry');
   await input.focus();
-  await expect(page.locator('.itkg-search-action')).toHaveText(['New task', 'New project', 'New intention']);
+  await expect(page.locator('.tw-autocomplete-action')).toHaveText(['New task', 'New project', 'New intention']);
 });
 
 test('places the layout button beside search on wide screens and above it on narrow screens', async ({ page }) => {

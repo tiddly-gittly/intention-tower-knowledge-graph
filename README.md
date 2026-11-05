@@ -22,7 +22,7 @@ ITKG is a knowledge and task management framework for tiddlywiki. ITKG short for
 
 The Intention Tower toolbar embeds the `auto-complete-search` widget from
 [tw-command-palette](https://github.com/tiddly-gittly/tw-command-palette/), using
-an ITKG-specific candidate source. It searches titles, captions, aliases and
+WikiText `candidateFilter` and `actionFilter` attributes. It searches titles, captions, aliases and
 body text in the configured task, project, intention, calendar-entry and
 weekly-entry tag trees. The same list offers task, project and intention
 creation using the entered text as the title. The global command palette
@@ -32,8 +32,9 @@ The layout button sits beside search above 640px and spans the row above
 search on narrower screens. Weekly tables use HyperTable's adaptive width
 mode to fill the available space.
 
-See the [autocomplete API evaluation](docs/autocomplete-integration-review.md)
-for the proposed WikiText integration and follow-up review findings.
+The Demo includes a locally built autocomplete 0.9.7. See the
+[declarative integration guide](docs/autocomplete-integration-review.md)
+for the upstream API, review findings and local plugin rebuild commands.
 
 ## Development
 

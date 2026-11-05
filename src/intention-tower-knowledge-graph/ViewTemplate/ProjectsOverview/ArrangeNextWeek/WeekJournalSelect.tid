@@ -2,7 +2,7 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/WeekJou
 
 \whitespace trim
 \procedure lingo-base() $:/plugins/linonetwo/intention-tower-knowledge-graph/language/
-\define get-journal-tags() $(journalTextFieldTags)$ $(journalTagsFieldTags)$ $(weekJournalTags)$
+\define get-journal-tags() $(journalTextFieldTags)$ $(journalTagsFieldTags)$ $(weekJournalTags)$ $:/tags/ITKG/WeeklyEntry
 \procedure currentWeekIndexTiddler() $:/temp/ITKG/CurrentWeekIndex
 \function journal-title-this-week()
 [weekstart{$:/temp/ITKG/CurrentWeekIndex}format:date{$:/config/NewJournal/Title}]

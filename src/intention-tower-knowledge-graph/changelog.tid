@@ -5,6 +5,8 @@ type: text/vnd.tiddlywiki
 !!! 0.10.4
 
 * Add scoped autocomplete search with actions to create tasks, projects and intentions.
+* Configure autocomplete through WikiText using per-instance filters and action tiddlers, with a locally built upstream plugin in the demo.
+* Keep generic journal entries outside the search scope and mark entries created from weekly planning with a dedicated tag.
 * Place the standard-layout button beside search on wide screens and above it on narrow screens.
 * Use adaptive column widths to fill the available space in the weekly planning table.
 * Edit the selected entry's body above the weekly schedule, keeping its existing title.
