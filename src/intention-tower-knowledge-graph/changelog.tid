@@ -2,9 +2,24 @@ title: $:/plugins/linonetwo/intention-tower-knowledge-graph/changelog
 creator: LinOnetwo
 type: text/vnd.tiddlywiki
 
+!!! 0.10.4
+
+* Add scoped autocomplete search with actions to create tasks, projects and intentions.
+* Configure autocomplete through WikiText using per-instance filters and action tiddlers, with a locally built upstream plugin in the demo.
+* Keep generic journal entries outside the search scope and mark entries created from weekly planning with a dedicated tag.
+* Place the standard-layout button beside search on wide screens and above it on narrow screens.
+* Use adaptive column widths to fill the available space in the weekly planning table.
+* Edit the selected entry's body above the weekly schedule, keeping its existing title.
+* Format creation and modification dates using the wiki language and local time zone.
+* Sort priorities by Low, Medium and High, and importance numerically, in both directions.
+* Build table columns in one batch and share a date formatter across date columns.
+* Support the core English language setting in table columns and search labels.
+* Remove unused standalone creation buttons and the former title input component.
+* Upgrade development dependencies and bundled community plugins, language packs and themes.
+
 !!! 0.10.3
 
-* 修复了黑暗模式下任务上下文区域显示白色底色的样式问题。
+* Fix the task context background colour in dark mode.
 
 !!! 0.10.2
 

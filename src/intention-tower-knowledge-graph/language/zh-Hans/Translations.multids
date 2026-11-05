@@ -9,6 +9,10 @@ Project: 项目
 Task: 任务
 Tags: 标签
 BackToStandardLayout: 返回标准布局
+Search/Placeholder: 搜索意义之塔内容或创建条目
+Search/Create/task: 新任务
+Search/Create/project: 新项目
+Search/Create/intention: 新意义
 Configs/Description: 通过这些设置，您可以自定义「意义之塔与知识图谱」插件的行为。
 Tabs/TaskArchive: 任务归档
 Tabs/PriorityTaskList: 优先任务列表

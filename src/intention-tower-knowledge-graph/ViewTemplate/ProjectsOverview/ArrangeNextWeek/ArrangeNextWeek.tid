@@ -20,6 +20,9 @@ tags: $:/tags/ITKG/ProjectsOverview
 <div class="itkg-week-arrangement-container">
   {{$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/WeekJournalSelect}}
   <% if [<journal-title-this-week>!is[missing]] %>
+    <div class="itkg-week-journal-editor">
+      <$edit-text tiddler=<<journal-title-this-week>> field="text" tag="textarea" rows="6" class="tc-edit-texteditor" />
+    </div>
     <div class="itkg-week-arrangement-weeks-container">
       <<tabs "[all[shadows]tag[$:/tags/ITKG/ArrangeNextWeek]nsort[order]]" "$:/plugins/linonetwo/intention-tower-knowledge-graph/ViewTemplate/ArrangeNextWeek/1" explicitState:"$:/temp/ITKG/ArrangeNextWeek" class:"tc-vertical">>
     </div>
@@ -27,7 +30,7 @@ tags: $:/tags/ITKG/ProjectsOverview
       <$basic-table
         search="search-bar-top"
         height="800px"
-        widthMode="standard"
+        widthMode="adaptive"
         filter=<<get-non-completed-leaf-projects input:"all[]">>
         omitTags="[{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/project-tag}] [{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}]"
         sort="tmo_priority tmo_importance modified"
@@ -41,13 +44,10 @@ tags: $:/tags/ITKG/ProjectsOverview
               field: 'tags',
               width: 200,
             },
-            ...$tw.wiki.getTiddlerText('$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-PriorityTaskDynamicTable', '')
-              .split(' ').filter(field => !(['title', 'tags'].includes(field)))
-              .map(field => ({
-                field,
-                width: 'auto',
-                sort: true,
-              })),
+            ...$tw.modules.execute('$:/plugins/linonetwo/intention-tower-knowledge-graph/utils/table-columns.js').getColumns(
+              $tw.wiki.getTiddlerText('$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/defaultFields-PriorityTaskDynamicTable', '')
+                .split(' ').filter(field => field && !(['title', 'tags'].includes(field))),
+            ),
           ]
         """
       />

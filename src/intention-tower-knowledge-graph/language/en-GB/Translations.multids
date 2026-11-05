@@ -9,6 +9,10 @@ Project: Project
 Task: Task
 Tags: Tags
 BackToStandardLayout: Back To Standard Layout
+Search/Placeholder: Search Intention Tower or create an entry
+Search/Create/task: New task
+Search/Create/project: New project
+Search/Create/intention: New intention
 Configs/Description: These settings let you customise the behaviour of "Intention Tower Knowledge Graph" plugin.
 Tabs/TaskArchive: Task Archive
 Tabs/PriorityTaskList: Priority Task List

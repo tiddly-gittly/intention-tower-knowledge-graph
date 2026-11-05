@@ -1,0 +1,16 @@
+title: $:/plugins/linonetwo/intention-tower-knowledge-graph/Actions/Search/CreateTask
+tags: $:/tags/ITKG/SearchAction
+order: 1
+caption: <<lingo Search/Create/task $:/plugins/linonetwo/intention-tower-knowledge-graph/language/>><$text text={{{ [<commandpaletteinput>trim[]!match[]addprefix[：]] }}} />
+
+<$wikify name="default-title" text="<<lingo Search/Create/task $:/plugins/linonetwo/intention-tower-knowledge-graph/language/>>">
+  <$action-createtiddler
+    $basetitle={{{ [<commandpaletteinput>trim[]!match[]else<default-title>] }}}
+    tags={{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}}
+    tmo_taskState="New"
+    tmo_priority=""
+  >
+    <$action-sendmessage $message="tm-auto-save-wiki" />
+    <$action-navigate $to=<<createTiddler-title>> />
+  </$action-createtiddler>
+</$wikify>
