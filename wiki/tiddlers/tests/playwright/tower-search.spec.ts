@@ -68,6 +68,18 @@ test('supports keyboard creation and keeps the search scope for special prefixes
   await expect.poll(() => page.evaluate(() => $tw.wiki.getTiddler('Keyboard task')?.fields.tags)).toEqual(['任务']);
 });
 
+test('creates localized default titles from empty input', async ({ page }) => {
+  for (const [title, tags] of [['新任务', ['任务']], ['新项目', ['项目', '任务']], ['新意义', ['意义']]] as const) {
+    await page.evaluate(({ plugin }) => {
+      $tw.wiki.setText('$:/layout', 'text', undefined, `${plugin}/layout/layout`);
+    }, { plugin });
+    await page.locator('.itkg-search input').focus();
+    await page.locator('.tw-autocomplete-action').filter({ hasText: title }).click();
+    await expect.poll(() => page.evaluate(title => $tw.wiki.getTiddler(title)?.fields.tags, title)).toEqual([...tags]);
+    await expect(page.locator('.itkg-search input')).toHaveCount(0);
+  }
+});
+
 test('creates intentions and opens existing results from the list', async ({ page }) => {
   const input = page.locator('.itkg-search input');
   await input.fill('New purpose');
